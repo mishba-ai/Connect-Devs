@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-const footer = () => {
+const Footerla = () => {
   return (
     <div className="px-14 mb-5">
       <div className="w-full h-[400px] bg-black rounded-[40px]">
@@ -25,7 +25,7 @@ const footer = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default footer;
+export default Footerla

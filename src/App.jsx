@@ -7,7 +7,7 @@ import livecode2 from "./assets/livecode2.png";
 import buildingl2 from "./assets/buildingl2.jfif";
 import ppcoder from "./assets/ppcoder.png";
 import friend2 from "./assets/friend2.png";
-import Footer from "./components/footer";
+import Footerla from "./components/Footerla";
 function App() {
   return (
     <div>
@@ -100,7 +100,7 @@ function App() {
 
      
       </main>
-      <Footer/>
+      <Footerla />
     </div>
   );
 }
