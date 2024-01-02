@@ -8,6 +8,7 @@ import buildingl2 from "./assets/buildingl2.jfif";
 import ppcoder from "./assets/ppcoder.png";
 import friend2 from "./assets/friend2.png";
 import Footerla from "./components/Footerla";
+
 function App() {
   return (
     <div>
