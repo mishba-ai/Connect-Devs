@@ -57,6 +57,7 @@ const Footerla = () => {
                   <img src={discord} alt="" />{" "}
                 </a>
               </div>
+             
             </div>
           </div>
         </div>
