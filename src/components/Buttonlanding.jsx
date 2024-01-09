@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from 'prop-types';
 
 const Buttonlanding = ({text , style,style_button}) => { 
   return (
@@ -9,6 +9,11 @@ const Buttonlanding = ({text , style,style_button}) => {
       </div>
 
   );
+};
+Buttonlanding.propTypes = {
+  text: PropTypes.string.isRequired, // Require the `text` prop
+  style: PropTypes.object, // Optional prop with type `object`
+  style_button: PropTypes.object, // Optional prop with type `object`
 };
 
 export default Buttonlanding;

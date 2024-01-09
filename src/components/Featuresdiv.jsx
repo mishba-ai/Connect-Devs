@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from 'prop-types';
 const Featuresdiv = ({ style, image, heading, para, styleimg, styletext }) => {
   return (
     <div className="">
@@ -28,5 +28,12 @@ const Featuresdiv = ({ style, image, heading, para, styleimg, styletext }) => {
     </div>
   );
 };
-
+  Featuresdiv.propTypes = {
+    style: PropTypes.object, // Optional prop with type `object`
+    image: PropTypes.string.isRequired, // Require the `text` prop
+    heading: PropTypes.string.isRequired, // Require the `text` prop
+    para: PropTypes.string.isRequired, // Require the `text` prop
+    styleimg: PropTypes.object, // Optional prop with type `object`
+    styletext: PropTypes.object, // Optional prop with type `object`
+  };
 export default Featuresdiv;
