@@ -1,14 +1,17 @@
-import React from 'react'
+import PropTypes from 'prop-types';
 
-function Sidebar() {
+function Sidebar({ links , style}) {
   return (
-    <div>
-        <div className='h-[607px] w-64 bg-[#EEF3F0]'>
-            
+    <div className=''>
+        <div className='h-[607px] w-48 bg-[#EEF3F0] ' style={style}>
+            {links}
         </div>
 
     </div>
   )
 }
-
+Sidebar.propTypes = {
+  links: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  style: PropTypes.object, // Optional prop with type `object`
+};
 export default Sidebar

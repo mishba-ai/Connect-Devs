@@ -26,7 +26,7 @@ function App() {
                   textShadow: "none",
                 }}
               >
-                {" "}
+                {" "} 
                 Projects & Hackathons
               </span>
               : Find Your Dream {" "}
