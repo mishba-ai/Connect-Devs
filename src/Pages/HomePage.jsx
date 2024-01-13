@@ -4,7 +4,7 @@ import Sidebarlinks from "../components/Sidebarlinks.jsx";
 import Cards from "../components/Cards.jsx";
 const HomePage = () => {
   return (
-    <div className="">
+    <div className="bg-background">
       <Header />
       <div className="mt-4 flex gap-x-16">
         <Sidebar links={<Sidebarlinks />} style={{position:'sticky',top:'88px'}} />

@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+  
+
+:root {
+  --primaryColor: #e4ede8;
+  --backgroundColor: #dfe8e2;
+}
