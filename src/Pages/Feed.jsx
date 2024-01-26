@@ -1,13 +1,14 @@
-import Header from "../components/Header"
+
 import Sidebar from "../components/Sidebar"
 import Sidebarlinks from "../components/Sidebarlinks"
 const Feed = () => {
   return (
-    <div className="bg-background">
-    <Header />
-    <div className="flex mt-4">
-    <Sidebar links={<Sidebarlinks />} style={{position:'sticky',top:'88px'}} />
-      
+    <div className="flex p-6 bg-background">
+    <div className="">
+      <Sidebar
+        links={<Sidebarlinks />}
+        style={{ position: "sticky", top:"0px" , backgroundColor:"" , height:"93vh" , borderRadius:"35px" }}
+      />
     </div>
   </div>
   )

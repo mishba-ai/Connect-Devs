@@ -6,13 +6,18 @@ export default {
       colors: {
         "primary": "var(--primaryColor)",
         "background": "var(--backgroundColor)",
+        "purple": "var(--purple)",
+        "orange": "var(--orange)",
+        "green": "var(--green)",
+        "red": "var(--red)",
+        "highlight": "var(--highlightColor)",
       },
       scale: {
         "-100": "-1",
       },
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
-        Averia:['Averia Serif Libre', 'serif'],
+        Lexend:[ 'Lexend Mega', 'sans-serif'],
       },
     },
   },

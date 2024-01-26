@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 function Sidebar({ links , style}) {
   return (
     <div className=''>
-        <div className='h-[607px] w-48 bg-primary ' style={style}>
+        <div className='h-[607px] w-24 bg-primary border border-white  ' style={style}>
             {links}
         </div>
 

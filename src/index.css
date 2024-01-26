@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,6 +7,12 @@
   
 
 :root {
-  --primaryColor: #e4ede8;
-  --backgroundColor: #dfe8e2;
+  --primaryColor: #000;
+  --backgroundColor: #000;
+  --purple:#8455ff;
+  --highlightColor:#DEFF0A;
+  --green:#DEFF0A;
+  --orange:#FE4E00;
+
 }
+

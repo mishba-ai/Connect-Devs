@@ -1,34 +1,26 @@
+import PropTypes from "prop-types";
 
-import userplus from "../assets/userplus.svg";
-import expandarrow from "../assets/expandarrow.svg";
-const Header = () => {
+const Header = ({ page }) => {
   return (
-    <div className="py-1 sticky top-0 px-4 flex justify-between bg-primary">
+    <div className="py-2 sticky top-0 px-3 text-white flex justify-between bg-transparent  h-14 w-[1000px]">
       <div>
-        <img
-          src="../../connectdevsicon.png"
-          alt="image"
-          className="h-16 w-20"
-        />
+        {" "}
+        <strong className="text-3xl text-[#A1FF0A] font-Lexend font-extrabold">{page}</strong>{" "}
       </div>
-      <div className="flex gap-x-10 ">
-
-        <button className="rounded-full">
-          <img src={userplus} alt="image" className="h-9 w-9 bg-transparent rounded-full p-2 border-[#dfe4e0] border-2" />
-        </button>
-
-        <button className="flex gap-x-3 items-center">
-          {" "}
-          <img
-            src="https://img.freepik.com/premium-vector/young-muslim-woman-wearing-hijab-taking-photo-with-camera-aesthetic-profile_513640-464.jpg?w=2000"
-            alt="pfp"
-            className="h-9 w-9 rounded-full border-black border-2"
-          />
-          <img src={expandarrow} alt="image" className="h-4 w-4 m-2" />
-        </button>
+      <div className="flex gap-x-6">
+        <div className="p-2 border">
+          <button>dark</button>
+        </div>
+        <img
+          src="https://t3.ftcdn.net/jpg/05/16/27/58/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg"
+          alt="img"
+          className="rounded-full w-10 h-10"
+        />
       </div>
     </div>
   );
 };
-
+Header.propTypes = {
+  page: PropTypes.string.isRequired, // Require the `text` prop
+};
 export default Header;
