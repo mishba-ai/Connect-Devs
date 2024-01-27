@@ -11,6 +11,7 @@ export default {
         "green": "var(--green)",
         "red": "var(--red)",
         "highlight": "var(--highlightColor)",
+        "secondary": "var(--secondaryColor)",
       },
       scale: {
         "-100": "-1",
@@ -18,6 +19,7 @@ export default {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
         Lexend:[ 'Lexend Mega', 'sans-serif'],
+        Encode:['Encode Sans Semi Condensed', 'sans-serif']
       },
     },
   },

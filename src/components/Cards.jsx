@@ -2,7 +2,7 @@ import propTypes from 'prop-types'
 function Cards({style}) {
   return (
     <div>
-        <div className='w-[500px] h-72 bg-primary border-b-2 border-r-2 border-white border rounded-3xl' style={style}>
+        <div className='w-[500px] h-72 bg-secondary border-white border-2 rounded-[8px] hover:shadow-none transition-all hover:translate-x-[3px] shadow-[4px_4px_0px_rgb(255,255,255)] hover:translate-y-[3px] ' style={style}>
     
         </div>
     </div>
