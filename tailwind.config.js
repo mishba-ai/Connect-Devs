@@ -19,7 +19,9 @@ export default {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
         Lexend:[ 'Lexend Mega', 'sans-serif'],
-        Encode:['Encode Sans Semi Condensed', 'sans-serif']
+        Encode:['Encode Sans Semi Condensed', 'sans-serif'],
+        Michroma:['Michroma', 'sans-serif'],
+        Archivo:['Archivo', 'sans-serif'],
       },
     },
   },
