@@ -7,15 +7,9 @@ const HomePage = () => {
     <div>
       <section className="flex gap-x-12 bg-background h-screen w-full">
         <div className="">
-          <Sidebar
-          
+          <Sidebar 
             style={{
-              position: "sticky",
-              top: "0px",
-              backgroundColor: "",
-              height: "93vh",
-              borderRadius: "35px",
-              margin: "24px",
+             
             }}
           />
         </div>

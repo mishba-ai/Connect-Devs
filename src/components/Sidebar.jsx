@@ -11,7 +11,7 @@ import userplus from "../assets/userplus.svg";
 function Sidebar({  style}) {
   return (
     <div className=''>
-        <div className='h-[607px] w-24 bg-primary border border-white  ' style={style}>
+        <div className='h-[93vh] rounded-[35px] m-[24px] w-24 bg-primary border border-white  top-0 sticky ' style={style}>
         <div className="">
       {/* <img
         src="../../connectdevsicon.png"

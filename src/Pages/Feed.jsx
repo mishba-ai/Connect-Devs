@@ -1,17 +1,21 @@
-
-import Sidebar from "../components/Sidebar"
-
+import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
 const Feed = () => {
   return (
-    <div className="flex p-6 bg-background">
     <div className="">
-      <Sidebar
-      
-        style={{ position: "sticky", top:"0px" , backgroundColor:"" , height:"93vh" , borderRadius:"35px" }}
-      />
+      <section className="flex gap-x-12  h-screen w-full  bg-background">
+        <Sidebar
+          style={{
+          }}
+        />
+        <div className="flex-col  mt-10">
+          <div>
+            <Header page="Feed" />
+          </div>
+        </div>
+      </section>
     </div>
-  </div>
-  )
-}
+  );
+};
 
-export default Feed
+export default Feed;
