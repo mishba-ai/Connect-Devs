@@ -4,11 +4,8 @@ const Feed = () => {
   return (
     <div className="">
       <section className="flex gap-x-12  h-screen w-full  bg-background">
-        <Sidebar
-          style={{
-          }}
-        />
-        <div className="flex-col  mt-10">
+        <Sidebar style={{}} />
+        <div className="flex-col  w-full mt-10">
           <div>
             <Header page="Feed" />
           </div>

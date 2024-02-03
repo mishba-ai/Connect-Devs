@@ -5,18 +5,9 @@ function challenge() {
     <div className="">
       <section className="flex gap-x-12 bg-background h-screen w-full">
         <div>
-          <Sidebar
-            style={{
-              position: "sticky",
-              top: "0px",
-              backgroundColor: "",
-              height: "93vh",
-              borderRadius: "35px",
-              margin: "24px",
-            }}
-          />
+          <Sidebar style={{}} />
         </div>
-        <div className="flex-col  mt-10">
+        <div className="flex-col w-full mt-10">
           <div>
             <Header page="Challenges" />
           </div>

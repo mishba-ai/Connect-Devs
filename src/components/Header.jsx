@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-const Header = ({ page }) => {
+const Header = ({ page ,style }) => {
   return (
-    <div className="py-2 sticky top-0 px-3 text-white flex justify-between bg-transparent  h-14 w-[1000px]">
+    <div className="py-2 sticky top-0 px-3 pr-12 text-white flex justify-between bg-trasparen  h-14 w-full bg" style={{style}}>
       <div>
         {" "}
         <strong className="text-4xl text-green font-Encode font-extrabold">{page}</strong>{" "}
@@ -22,5 +22,6 @@ const Header = ({ page }) => {
 };
 Header.propTypes = {
   page: PropTypes.string.isRequired, // Require the `text` prop
+  style: PropTypes.object.isRequired
 };
 export default Header;

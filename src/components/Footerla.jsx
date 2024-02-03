@@ -4,7 +4,7 @@ import linkedin from "../assets/linkedin.svg";
 import discord from "../assets/discord.svg";
 const Footerla = () => {
   return (
-    <div className="px-14 mb-5">
+    <div className="px-14 pb-5">
       <div className="w-full h-[400px] bg-black rounded-3xl">
         <div className="w-full h-[400px] border-[3px] relative right-3 bottom-3 rounded-3xl border-black bg-white ">
           <div className="flex gap-x-52 p-10">

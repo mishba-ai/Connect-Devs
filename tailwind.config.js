@@ -12,6 +12,8 @@ export default {
         "red": "var(--red)",
         "highlight": "var(--highlightColor)",
         "secondary": "var(--secondaryColor)",
+        "yellow":"var(--yellow)",
+        "cyan":"var(--cyan)",
       },
       scale: {
         "-100": "-1",
@@ -22,6 +24,9 @@ export default {
         Encode:['Encode Sans Semi Condensed', 'sans-serif'],
         Michroma:['Michroma', 'sans-serif'],
         Archivo:['Archivo', 'sans-serif'],
+        PressStart: ['"Press Start 2P"', 'monospace'],
+        Ubuntu: ['Ubuntu Mono', 'monospace'],
+        RobotoMono: ['Roboto Mono', 'monospace']
       },
     },
   },

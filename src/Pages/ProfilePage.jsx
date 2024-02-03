@@ -5,7 +5,7 @@ const ProfilePage = () => {
     <div className="">
       <section className="flex  h-screen gap-x-12 bg-background w-full">
         <Sidebar style={{}} />
-        <div className="flex-col  mt-10">
+        <div className="flex-col w-full mt-10">
           <div>
             <Header page="Profile" />
           </div>
