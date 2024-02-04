@@ -4,7 +4,7 @@ import Featuresdiv from "./components/Featuresdiv";
 import communityimg from "./assets/communityimg.png";
 import meetl from "./assets/meetl.png";
 import livecode2 from "./assets/livecode2.png";
-import building2 from "./assets/building2.png";
+import devl from "./assets/devl.png";
 import ppcoder from "./assets/ppcoder.png";
 import friend2 from "./assets/friend2.png";
 import Footerla from "./components/Footerla";
@@ -54,7 +54,7 @@ function App() {
               style_button={{ backgroundColor: "#dde5b6" }}
             />
           </div>
-          <img src={building2} alt="team" className="w-[640px] h-[660px] " />
+          <img src={devl} alt="team" className="w-[640px] h-[660px] " />
         </section>
 
         <section className="flex justify-between flex-wrap gap-y-12 relative left-2">
