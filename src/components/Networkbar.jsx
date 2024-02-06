@@ -12,7 +12,7 @@ const Networkbar = () => {
         </div>
 
         <div className=" flex px-2 py-4 text-black mt-8 w-full justify-around bg-[#303030] rounded-md">
-          <Neobutton
+          <Neobutton 
             text="Activities"
             style={{
               backgroundColor: "#DEFF0A",
