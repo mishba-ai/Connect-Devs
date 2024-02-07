@@ -24,7 +24,24 @@
 
 }
 
-.active img{
-  stroke:#99ff52;
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #797979;
+  border-radius: px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ceff1a;
+  border-radius: px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #DEFF0A;
+}

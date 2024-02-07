@@ -1,7 +1,7 @@
-import connectlogo from "../assets/connectlogo.png";
+// import connectlogo from "../assets/connectlogo.png";
 import connecthlogo from "../assets/connecthlogo.png";
 import Buttonlanding from "./Buttonlanding";
-import cdlogo from "../assets/cdlogo.png";
+// import cdlogo from "../assets/cdlogo.png";
 
 const Headerlanding = () => {
   return (

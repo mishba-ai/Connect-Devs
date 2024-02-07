@@ -5,7 +5,7 @@ import discord from "../assets/discord.svg";
 import connectlogo from "../assets/connectlogo.png";
 const Footerla = () => {
   return (
-    <div className="px-14 pb-5">
+    <div className="px-14  pb-5">
       
         <div className="w-full h-[300px] border transition-all hover:translate-x-[-3px] hover:shadow-none rounded-sm shadow-[8px_8px_0px_#99ff52] hover:translate-y-[-3px] border-green bg-transparent text-white ">
           <div className="flex gap-x-52 p-10">
@@ -29,15 +29,13 @@ const Footerla = () => {
                 <ul className="space-y-3  flex-col">
                   <li>Log In</li>
                   <li>Request Access</li>
-                  <li>Partnership</li>
+                  {/* <li>Partnership</li> */}
                 </ul>
                 <ul className="space-y-3 flex-col  text-left">
                   <li>Contact Us</li>
                   <li>Features</li>
                 </ul>
                 <ul className="space-y-3 flex-col">
-                  <li>Help Center</li>
-                  <li>server status</li>
                   <li>Blog</li>
                 </ul>
                 <ul className="space-y-3 flex-col">
@@ -45,7 +43,7 @@ const Footerla = () => {
                   <li>we would love to hear from you</li>
                 </ul>
               </div>
-              <div className="flex gap-x-10 -mt-8 ml-[590px] ">
+              <div className="flex gap-x-10 mt-4 ml-[590px] ">
                 <a href="">
                   {" "}
                   <img src={x} alt="ximage" />{" "}

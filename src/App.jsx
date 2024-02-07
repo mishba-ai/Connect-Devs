@@ -58,79 +58,42 @@ function App() {
               </div>{" "}
             </div>
 
-            <img src={webs} alt="team" className="w-[640px] h-[660px] " />
+            {/* <img src={webs} alt="team" className="w-[640px] h-[660px] " /> */}
           </div>{" "}
-          <div className="overflow-x-hidden -pt-24 text-4xl flex relative font-PressStart  text-white">
-            <div className="animate-marquee whitespace-nowrap">
-              <span className=" mx-2 ">SQUAD UP!</span>
-              <span className=" mx-2 ">CODE UP!</span>
-              <span className=" mx-2">LEVEL UP!</span>
-              <span className=" mx-">Build Something Epic !</span>
-              <span className="mx-2">Click, Connect, Create! </span>
+        </section>
+        <section className="relative -mt-10 text-gray-400 ">
+          <div className="overflow-x-hidden tracking-tighter leading-none whitespace-nowrap flex  text-5xl flex-nowrap relative font-Ubuntu font-semibold ">
+            <div className="uppercase animate-marquee flex whitespace-nowrap flex-nowrap">
+              <span className="block mr-7" > squad up! code up! level up! </span>
+              <span className="block mr-7"> squad up! code up! level up! </span>
+              <span className="block mr-7"> squad up! code up! level up! </span>
+              <span className="block mr-7"> squad up! code up! level up! </span> 
             </div>
-
-            <div className="animate-marquee2 whitespace-nowrap">
-              <span className=" mx-2 ">SQUAD UP!</span>
-              <span className=" mx-2 ">CODE UP!</span>
-              <span className=" mx-2">LEVEL UP!</span>
-              <span className=" mx-">Build Something Epic !</span>
-              <span className="mx-2">Click, Connect, Create! </span>
+          </div>
+          <div className="overflow-hidden font-semibold tracking-tighter text-5xl  font-Ubuntu leading-none whitespace-nowrap flex flex-nowrap">
+            <div className="uppercase flex animate-marquee2 whitespace-nowrap flex-nowrap">
+              <span className="block mr-7">Build Epic shit!</span>
+              <span className="block mr-7">Build Epic shit!</span>
+              <span className="block mr-7">Build Epic shit!</span>
+              <span className="block mr-7">Build Epic shit!</span>
             </div>
           </div>
         </section>
+        
+        <section className="flex gap-x-5 mt-6  mx-24 pt-4 r bg-[#4ae7ff] justify-center h-screen max-w-[1345px ] rounded-[26px] skew-y-3 text-black wrapper xl:pl-[111px] xl:pr-7 z-3"> 
+         
+         <h1></h1>
 
-        <section className="flex gap-x-5 mt-10  justify-center  flex-wrap">
-          <Featuresdiv
-            style={{ backgroundColor: "#FFB2EF" }}
-            image={communityimg}
-            // heading={"Built-in-chat"}
-            // para={
-            //   "Interact directly with team members through one-on-one or group chats within the platform."
-            // }
-            styleimg={{ position: "relative", right: "46px", width: "350px" }}
-            styletext={{ position: "relative", right: "52px" }}
-          />
-          <Featuresdiv
-            style={{ backgroundColor: " #c5e063" }}
-            image={""}
-            // heading={"coding co-pilot"}
-            // para={
-            //   "Find the perfect teammates for your project or hackathon, instantly matched based on your skills, needs, and goals."
-            // }
-          />
-          <Featuresdiv
-            style={{ backgroundColor: "#ffb703" }}
-            image={meetl}
-            // heading={"Video conferencing"}
-            // para={
-            //   "Hold virtual meetings and presentations seamlessly integrated with the platform."
-            // }
-            styleimg={{
-              position: "relative",
-              right: "52px",
-              width: "340px",
-              height: "270px",
-            }}
-            styletext={{ position: "relative", right: "52px" }}
-          />
-          <Featuresdiv
-            style={{ backgroundColor: "#6637ee" }}
-            image={""}
-            // heading={"Thriving Community"}
-            // para={
-            //   "Connect with like-minded developers. Find inspiration, build your network, and conquer any coding challenge together."
-            // }
-          />
         </section>
 
         <section className="mt-10">
-          <div>
+          {/* <div>
             <img
               src={""}
               alt="image"
               className="w-[600px] h-[600px] transform -scale-x-100"
             />
-          </div>
+          </div> */}
         </section>
       </main>
       <Footerla />
