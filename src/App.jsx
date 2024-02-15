@@ -31,52 +31,53 @@ function App() {
 
           {/* connect icon */}
           <div className="flex justify-between">
-          <div className=" bottom-56 absolute flex ">
-            <div className="  ">
-              <img
-                src={girl1}
-                className="top-48 left-36 relative  rounded-full w-12 h-12"
-              ></img>
-              <img
-                src={girl2}
-                className="-top-10 left-40 relative  rounded-full w-12 h-12"
-              ></img>
-              <img
-                src={boy1}
-                className="top-64 left-80 relative  rounded-full w-12 h-12"
-              ></img>
-              <img
-                src={girl3}
-                className="top-44 left-24 relative  rounded-full w-12 h-12"
-              ></img>
-              <img
-                src={boy2}
-                className="-top-80 left-80 relative  rounded-full w-12 h-12"
-              ></img>
+            <div className=" bottom-56 absolute flex ">
+              <div className="  ">
+                <img
+                  src={girl1}
+                  className="top-48 left-36 relative  rounded-full w-12 h-12"
+                ></img>
+                <img
+                  src={girl2}
+                  className="-top-10 left-40 relative  rounded-full w-12 h-12"
+                ></img>
+                <img
+                  src={boy1}
+                  className="top-64 left-80 relative  rounded-full w-12 h-12"
+                ></img>
+                <img
+                  src={girl3}
+                  className="top-44 left-24 relative  rounded-full w-12 h-12"
+                ></img>
+                <img
+                  src={boy2}
+                  className="-top-80 left-80 relative  rounded-full w-12 h-12"
+                ></img>
+              </div>
+              <div className="">
+                <img
+                  src={girl4}
+                  className="top-48 left-[1370px] relative   rounded-full w-12 h-12"
+                ></img>
+                <img
+                  src={boy5}
+                  className="-top-16 left-[1300px] relative  rounded-full w-12 h-12"
+                ></img>
+                <img
+                  src={girl5}
+                  className="-top-56 left-[1070px] relative  rounded-full w-12 h-12"
+                ></img>
+                <img
+                  src={boy3}
+                  className="top-64 left-[1040px] relative  rounded-full w-12 h-12"
+                ></img>
+                <img
+                  src={boy4}
+                  className="top-20 left-[1200px] relative  rounded-full w-12 h-12"
+                ></img>
+              </div>
             </div>
-            <div className="">
-              <img
-                src={girl4}
-                className="top-48 left-[1370px] relative   rounded-full w-12 h-12"
-              ></img>
-              <img
-                src={boy5}
-                className="-top-16 left-[1300px] relative  rounded-full w-12 h-12"
-              ></img>
-              <img
-                src={girl5}
-                className="-top-56 left-[1070px] relative  rounded-full w-12 h-12"
-              ></img>
-              <img
-                src={boy3}
-                className="top-64 left-[1040px] relative  rounded-full w-12 h-12"
-              ></img>
-              <img
-                src={boy4}
-                className="top-20 left-[1200px] relative  rounded-full w-12 h-12"
-              ></img>
-            </div>
-          </div></div>
+          </div>
           {/* hero heading */}
 
           <div
@@ -127,8 +128,8 @@ function App() {
             </div>{" "}
           </div>
         </section>
-        <section className="relative mt-2 text-gray-400 ">
-          <div className="overflow-x-hidden tracking-tighter leading-none whitespace-nowrap flex  text-5xl flex-nowrap relative font-Ubuntu font-semibold ">
+        <section className="relative mt-4 font-medium ">
+          <div className="overflow-x-hidden text-cyan  tracking-tighter leading-none whitespace-nowrap flex  text-5xl flex-nowrap relative font-Ubuntu  ">
             <div className="uppercase animate-marquee flex whitespace-nowrap flex-nowrap">
               <span className="block mr-7"> squad up! code up! level up! </span>
               <span className="block mr-7"> squad up! code up! level up! </span>
@@ -136,7 +137,7 @@ function App() {
               <span className="block mr-7"> squad up! code up! level up! </span>
             </div>
           </div>
-          <div className="overflow-hidden font-semibold tracking-tighter text-5xl  font-Ubuntu leading-none whitespace-nowrap flex flex-nowrap">
+          <div className="overflow-hidden text-yellow   tracking-tighter text-5xl  font-Ubuntu leading-none whitespace-nowrap flex flex-nowrap">
             <div className="uppercase flex animate-marquee2 whitespace-nowrap flex-nowrap">
               <span className="block mr-7">Build Epic shit!</span>
               <span className="block mr-7">Build Epic shit!</span>
@@ -146,8 +147,26 @@ function App() {
           </div>
         </section>
 
-        <section className="flex gap-x-5 mt-6  mx-24 pt-4 bg-[#4ae7ff] justify-center h-screen max-w-[1345px ] rounded-[26px] skew-y-3 text-black ">
-          <h1></h1>
+        <section className="flex flex-col gap-4 mt-4 justify-center  items-center ">
+          {" "}
+          <div className="flex space-x-7 ">
+            <div className="w-72 h-24 bg-transparent rounded-xl text-4xl font-bold font-PressStart text-center justify-center flex items-center text-green">
+              <h1>Features</h1>
+            </div>
+            <div className="w-72 h-28 rounded-xl bg-lime-200"></div>
+          </div>
+          <div className="flex space-x-4">
+            <div className="w-72 h-28 rounded-xl bg-lime-200"></div>
+            <div className="w-72 h-28 rounded-xl bg-lime-200"></div>
+            <div className="w-72 h-28 rounded-xl bg-lime-200"></div>
+          </div>
+          <div className="flex space-x-4">
+            <div className="w-64 h-56 rounded-xl bg-lime-200"></div>
+            <div className="flex flex-col space-y-4">
+              <div className="w-72 h-28 rounded-md  bg-purple"></div>
+              <div className="w-72 h-28 rounded-md bg-purple ml-16"></div>
+            </div>
+          </div>
         </section>
       </main>
       <Footerla />

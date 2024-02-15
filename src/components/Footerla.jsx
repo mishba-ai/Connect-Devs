@@ -7,7 +7,7 @@ const Footerla = () => {
   return (
     <div className="px-14  pb-5">
       
-        <div className="w-full h-[300px] border transition-all hover:translate-x-[-3px] hover:shadow-none rounded-sm shadow-[8px_8px_0px_#99ff52] hover:translate-y-[-3px] border-green bg-transparent text-white ">
+        <div className="w-full h-[300px] bg-transparent text-white ">
           <div className="flex gap-x-52 p-10">
             <div className="-mt-4">
               <img
