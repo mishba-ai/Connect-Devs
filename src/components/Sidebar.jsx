@@ -21,7 +21,7 @@ function Sidebar({ style }) {
   };
   
   return (
-    <div className="">
+    <div className=" sticky top-6">
       <div
         className="h-[93vh] rounded-[35px] m-[24px] w-24 bg-primary border border-white  top-0 sticky "
         style={style}
@@ -43,6 +43,7 @@ function Sidebar({ style }) {
                 
               >
                 <img src={userplus} alt="image" className="h-8 w-8  p-1" />
+                <span></span>
               </button>
             </li>
           </ul>
@@ -55,11 +56,12 @@ function Sidebar({ style }) {
                 <button
                   className={` ${
                     isCurrentPath("/Home")
-                      ? "transition-all translate-x-[-3px] shadow-[2px_2px_0px_rgb(255,255,255)] rounded-xl px-1 py-1  translate-y-[-3px]"
+                      ? "transition-all translate-x-[-3px] shadow-[2px_2px_0px_rgb(206,255,26)] rounded-xl px-1 py-1  translate-y-[-3px]"
                       : "bg-transparent rounded-xl px-1 py-1  transition-all hover:translate-x-[-3px] hover:shadow-[2px_2px_0px_rgb(255,255,255)] hover:translate-y-[-3px]"
                   }`}
                 >
                   <img src={dashboard} alt="dash" />
+                  
                 </button>
                 {/* <p>Dashboard</p> */}
               </li>
@@ -69,7 +71,7 @@ function Sidebar({ style }) {
                 <button
                   className={` ${
                     isCurrentPath("/Project")
-                      ? "transition-all translate-x-[-3px] shadow-[2px_2px_0px_rgb(255,255,255)]  translate-y-[-3px]"
+                      ? "transition-all translate-x-[-3px] rounded-xl px-1 py-1 shadow-[2px_2px_0px_rgb(206,255,26)]  translate-y-[-3px]"
                       : "bg-transparent rounded-xl px-1 py-1  transition-all hover:translate-x-[-3px] hover:shadow-[2px_2px_0px_rgb(255,255,255)] hover:translate-y-[-3px]"
                   }`}
                 >
@@ -83,7 +85,7 @@ function Sidebar({ style }) {
                 <button
                   className={` ${
                     isCurrentPath("/Challenge")
-                      ? "transition-all translate-x-[-3px] shadow-[2px_2px_0px_rgb(255,255,255)]  translate-y-[-3px]"
+                      ? "transition-all translate-x-[-3px] shadow-[2px_2px_0px_rgb(206,255,26)] rounded-xl px-1 py-1 translate-y-[-3px]"
                       : "bg-transparent rounded-xl px-1 py-1  transition-all hover:translate-x-[-3px] hover:shadow-[2px_2px_0px_rgb(255,255,255)] hover:translate-y-[-3px] "
                   }`}
               
@@ -98,7 +100,7 @@ function Sidebar({ style }) {
                 <button
                   className={` ${
                     isCurrentPath("/Feed")
-                      ? "transition-all translate-x-[-3px] shadow-[2px_2px_0px_rgb(255,255,255)]  translate-y-[-3px]"
+                      ? "transition-all translate-x-[-3px] shadow-[2px_2px_0px_rgb(206,255,26)] rounded-xl px-1 py-1 translate-y-[-3px]"
                       : "bg-transparent rounded-xl px-1 py-1  transition-all hover:translate-x-[-3px] hover:shadow-[2px_2px_0px_rgb(255,255,255)] hover:translate-y-[-3px]"
                   }`}
                 >
@@ -112,7 +114,7 @@ function Sidebar({ style }) {
                 <button
                   className={` ${
                     isCurrentPath("/Profile")
-                      ? "transition-all translate-x-[-3px] shadow-[2px_2px_0px_rgb(255,255,255)]  translate-y-[-3px]"
+                      ? "transition-all translate-x-[-3px] shadow-[2px_2px_0px_rgb(206,255,26)] rounded-xl px-1 py-1 translate-y-[-3px]"
                       : "bg-transparent rounded-xl px-1 py-1  transition-all hover:translate-x-[-3px] hover:shadow-[2px_2px_0px_rgb(255,255,255)] hover:translate-y-[-3px]"
                   }`}
                 >
@@ -130,7 +132,7 @@ function Sidebar({ style }) {
                 <button
                   className={` ${
                     isCurrentPath("/Logout")
-                      ? "transition-all translate-x-[-3px] shadow-[2px_2px_0px_rgb(255,255,255)]  translate-y-[-3px]"
+                      ? "transition-all translate-x-[-3px] shadow-[2px_2px_0px_rgb(206,255,26)] rounded-xl px-1 py-1 translate-y-[-3px]"
                       : "bg-transparent rounded-xl px-1 py-1  transition-all hover:translate-x-[-3px] hover:shadow-[2px_2px_0px_rgb(255,255,255)] hover:translate-y-[-3px] mt-2"
                   }`}
                 >

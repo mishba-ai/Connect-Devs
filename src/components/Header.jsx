@@ -5,7 +5,7 @@ const Header = ({ page ,style }) => {
     <div className="py-2 sticky top-0 px-3 pr-12  text-white flex justify-between bg-trasparen  h-14 w-full bg" style={{style}}>
       <div>
         {" "}
-        <strong className="text-4xl text-green font-Encode font-extrabold">{page}</strong>{" "}
+        <strong className="text-4xl text-tiltbtn font-Encode font-extrabold">{page}</strong>{" "}
       </div>
       <div className="flex gap-x-6">
         <div className="p-2 border">
