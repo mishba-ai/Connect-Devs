@@ -7,8 +7,8 @@ import explore from "../assets/explore.svg";
 import logout from "../assets/logout.svg";
 import { Link } from "react-router-dom";
 import userplus from "../assets/userplus.svg";
-// import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import Tooltip from "./Tooltip";
 
 function Sidebar({ style }) {
   // const [activeIndex, setActiveIndex] = useState(null);
@@ -19,7 +19,7 @@ function Sidebar({ style }) {
   const isCurrentPath = (path) => {
     return location.pathname === path; // Check if the current path is the same as the given path
   };
-  
+
   return (
     <div className=" sticky top-6">
       <div
@@ -34,25 +34,26 @@ function Sidebar({ style }) {
       /> */}
           <ul className="pt-7 px- flex justify-center">
             <li>
+              <Tooltip text="User">
               <button
                 className={` ${
                   isCurrentPath("/userplus")
                     ? "transition-all translate-x-[-3px] shadow-[2px_2px_0px_rgb(255,255,255)] active translate-y-[-3px] "
                     : "bg-transparent rounded-2xl px-1 py-1  transition-all hover:translate-x-[-3px] hover:shadow-[2px_2px_0px_rgb(255,255,255)] hover:translate-y-[-3px]"
                 }`}
-                
-              >
+              > 
                 <img src={userplus} alt="image" className="h-8 w-8  p-1" />
-                <span></span>
-              </button>
+                
+              </button></Tooltip>
             </li>
           </ul>
           <hr className="border-gray-300 m-3" />
-          <ul className="gap-y-10   font-mono  flex justify-center items-center flex-col list-none text-xl font-semibold">
+          <ul className="gap-y-10     flex justify-center items-center flex-col list-none ">
             {" "}
             <Link to="/Home">
               {" "}
               <li className=" pt-3">
+                <Tooltip text="dashboard">
                 <button
                   className={` ${
                     isCurrentPath("/Home")
@@ -61,13 +62,14 @@ function Sidebar({ style }) {
                   }`}
                 >
                   <img src={dashboard} alt="dash" />
-                  
-                </button>
+                </button></Tooltip>
                 {/* <p>Dashboard</p> */}
               </li>
             </Link>
             <Link to="/Project">
               <li className="">
+              <Tooltip text="Project">
+
                 <button
                   className={` ${
                     isCurrentPath("/Project")
@@ -76,27 +78,30 @@ function Sidebar({ style }) {
                   }`}
                 >
                   <img src={project} alt="pjt" />
-                </button>
+                </button></Tooltip>
                 {/* <p>Projects</p> */}
               </li>
             </Link>
             <Link to="/Challenge">
               <li className="">
+              <Tooltip text="Challenge">
+
                 <button
                   className={` ${
                     isCurrentPath("/Challenge")
                       ? "transition-all translate-x-[-3px] shadow-[2px_2px_0px_rgb(206,255,26)] rounded-xl px-1 py-1 translate-y-[-3px]"
                       : "bg-transparent rounded-xl px-1 py-1  transition-all hover:translate-x-[-3px] hover:shadow-[2px_2px_0px_rgb(255,255,255)] hover:translate-y-[-3px] "
                   }`}
-              
                 >
                   <img src={challenge} alt="chg" />
-                </button>
+                </button></Tooltip>
                 {/* <p>Challenges</p> */}
               </li>
             </Link>
             <Link to="/Feed">
               <li className="">
+              <Tooltip text="Feed">
+
                 <button
                   className={` ${
                     isCurrentPath("/Feed")
@@ -105,12 +110,14 @@ function Sidebar({ style }) {
                   }`}
                 >
                   <img src={explore} alt="exp" />
-                </button>
+                </button></Tooltip>
                 {/* <p>Explore</p> */}
               </li>
             </Link>
             <Link to="/Profile">
               <li className="">
+              <Tooltip text="Profile">
+
                 <button
                   className={` ${
                     isCurrentPath("/Profile")
@@ -120,7 +127,7 @@ function Sidebar({ style }) {
                 >
                   {" "}
                   <img src={profile} alt="pfp" />
-                </button>
+                </button></Tooltip>
                 {/* <p>Profile</p> */}
               </li>
             </Link>
@@ -129,6 +136,7 @@ function Sidebar({ style }) {
             <hr className="border-gray-300 mx-3" />{" "}
             <Link to="/Logout">
               <div className="mt-4 flex  justify-center ">
+              <Tooltip text="Logout">
                 <button
                   className={` ${
                     isCurrentPath("/Logout")
@@ -138,7 +146,7 @@ function Sidebar({ style }) {
                 >
                   {" "}
                   <img src={logout} alt="lout" className="rotate-180" />
-                </button>
+                </button></Tooltip>
                 {/* <p>Logout</p> */}
               </div>
             </Link>

@@ -19,7 +19,7 @@ const project = () => {
             ></input>
           </div>
 
-          <div className="mt-14 mx-7 flex flex-wrap gap-8">
+          <div className="mt-14 mx-7 mb-2 flex flex-wrap gap-8">
             <ProjectCard/>
             <ProjectCard/>
             <ProjectCard/>
@@ -27,7 +27,6 @@ const project = () => {
             <ProjectCard/>
             <ProjectCard/>
             <ProjectCard/>
-
 
           </div>
         </div>

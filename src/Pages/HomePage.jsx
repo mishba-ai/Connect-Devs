@@ -26,7 +26,7 @@ const HomePage = () => {
                   Pair Request
                 </h1>
               </div>
-              <div className="flex gap-x-5 overflow-x-scroll overflow-y-hidden">
+              <div className="flex  gap-x-5 overflow-x-scroll overflow-y-hidden">
                 <Cards style={{ width: "350px", height: "450px" }} />
                 <Cards style={{ width: "350px", height: "450px" }} />
                 <Cards style={{ width: "350px", height: "450px" }} />
@@ -34,7 +34,7 @@ const HomePage = () => {
               </div>
             </section> 
 
-            <section className="mb-2">
+            <section className="mb-2 gap-y-6 flex flex-col mt-2">
             <div>
                 <h1 className="text-3xl text-tiltbtn font-Ubuntu">
                   Top Hackers

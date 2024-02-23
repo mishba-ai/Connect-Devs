@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -14,14 +14,13 @@
   --primaryColor: #000000;
   --secondaryColor: #0f0e0e;
   --backgroundColor: #000;
-  --purple:#6637ee;
-  --highlightColor:#DEFF0A;
-  --cyan:#00FFc2;
-  --green:#99ff52;
-  --orange:#FE4E00;
-  --yellow:#efff36; 
-  --tiltbtn:#ceff1a;
-
+  --purple: #6637ee;
+  --highlightColor: #deff0a;
+  --cyan: #00ffc2;
+  --green: #99ff52;
+  --orange: #fe4e00;
+  --yellow: #efff36;
+  --tiltbtn: #ceff1a;
 }
 
 /* width */
@@ -43,5 +42,23 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #DEFF0A;
+  background: #deff0a;
+}
+
+.triangle::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: -1px;
+  border-width: 10px;
+  border-color: #fff transparent transparent #fff;
+}
+
+.triangle::after {
+  border-color: #000 transparent transparent #000;
+  border-width: 8px;
+  position: absolute;
+  content: " ";
+  bottom: -15px;
+  left: 0;
 }
