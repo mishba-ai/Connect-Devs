@@ -82,7 +82,7 @@ function Sidebar({ style }) {
                 {/* <p>Projects</p> */}
               </li>
             </Link>
-            <Link to="/Challenge">
+            <Link to="/Challenges">
               <li className="">
               <Tooltip text="Challenge">
 

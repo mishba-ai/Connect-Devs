@@ -5,7 +5,7 @@ import Home from "./Pages/HomePage.jsx";
 import Profile from "./Pages/ProfilePage.jsx";
 import Project from "./Pages/project.jsx";
 import Feed from "./Pages/Feed.jsx";
-import  Challenge from "./Pages/Challenge.jsx";
+import Challenges from "./Pages/Challenges.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -27,12 +27,12 @@ const router = createBrowserRouter([
     element: <Profile />,
   },
   {
-    path: "Challenge",
-    element: <Challenge />,
-  },
-  {
     path: "Project",
     element: <Project />,
+  },
+  {
+    path: "Challenges",
+    element: <Challenges />,
   },
   
   
