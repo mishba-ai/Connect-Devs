@@ -9,6 +9,9 @@ const ProfilePage = () => {
           <div>
             <Header page="Profile" />
           </div>
+          <div className="flex flex-col justify-center items-center">
+                <img src="https://t3.ftcdn.net/jpg/05/16/27/58/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg" className="w-28 h-28 rounded-full" alt="pfp" />
+          </div>
         </div>
       </section>
     </div>
