@@ -11,6 +11,13 @@ import boy2 from "./assets/boy2.jfif";
 import boy3 from "./assets/boy3.jfif";
 import boy4 from "./assets/boy4.jfif";
 import boy5 from "./assets/boy5.jfif";
+import shaper from "./assets/shaper.png";
+import shapet from "./assets/shapet.png";
+import shapef from "./assets/shapef.png";
+import shapec from "./assets/shapec.png";
+import shapes from "./assets/shapes.png";
+import shapetr from "./assets/shapetr.png";
+import shapeo from "./assets/shapeo.png";
 function App() {
   return (
     <div className="bg-black  w-full">
@@ -20,7 +27,7 @@ function App() {
         <section className="mt-0 mx-0 px-2 text-white  overflow-hidden h-screen w-full ">
           <div className="flex -mt-44 justify-between">
             <div className="mx-16">
-              <div className="w-44 h-[680px] animate-pulse rotate-[42deg] bg-transparent border-tiltbtn border-2 border-b-0 rounded-t-full"></div>
+              <div className="w-44 h-[680px] animate-pulse  rotate-[42deg] bg-transparent border-tiltbtn border-2 border-b-0 rounded-t-full"></div>
               <div className="w-44 h-[620px] -mt-80 animate-pulse -rotate-[47deg] bg-transparent border-cyan border-2 border-t-0 rounded-b-full"></div>{" "}
             </div>
             <div className="mx-16">
@@ -128,7 +135,7 @@ function App() {
             </div>{" "}
           </div>
         </section>
-        <section className="relative mt-4 font-medium ">
+        {/* <section className="relative mt-4 font-medium ">
           <div className="overflow-x-hidden text-cyan  tracking-tighter leading-none whitespace-nowrap flex  text-5xl flex-nowrap relative font-Ubuntu  ">
             <div className="uppercase animate-marquee flex whitespace-nowrap flex-nowrap">
               <span className="block mr-7"> squad up! code up! level up! </span>
@@ -145,29 +152,82 @@ function App() {
               <span className="block mr-7">Build Epic shit!</span>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section className="flex flex-col gap-4 mt-4 justify-center  items-center ">
+        <section className="flex flex-col gap-8 mt-14 justify-center text-lg font-PressStart text-white items-center ">
           {" "}
-          <div className="flex space-x-7 ">
+          <div className="flex  space-x-7 ">
             <div className="w-72 h-24 bg-transparent rounded-xl text-4xl font-bold font-PressStart text-center justify-center flex items-center text-green">
               <h1>Features</h1>
             </div>
-            <div className="w-72 h-28 rounded-xl bg-lime-200"></div>
+            <div className="w-96 h-28 items-center rounded-xl border border-orange flex justify-center">
+              {/* <img
+                src={shapeo}
+                alt=""
+                className="h-24 w-24 absolute left-[64rem]"
+              /> */}
+              <p>Collaboration</p>
+            </div>
+          </div>
+          <div className="flex  space-x-4">
+            <div className="w-[26rem] h-28 justify-center items-center flex rounded-xl border-green border">
+              {/* <img
+                src={shaper}
+                alt=""
+                className="h-36 w-36 absolute rotate-12 -bottom-[24rem] left-[20rem]"
+              /> */}
+              <p>Feedback and Ratings</p>
+            </div>
+            <div className="w-96 justify-center items-center h-28 flex rounded-xl border border-yellow">
+              {/* <img
+                src={shapetr}
+                alt=""
+                className="h-20 w-20 rotate-12 absolute -bottom-[26rem] left-[36rem]"
+              /> */}
+              <p>Community Forums</p>
+            </div>
+            <div className="w-[25rem] h-28 flex rounded-xl border border-cyan items-center justify-center">
+              {/* <img
+                src={shapet}
+                alt=""
+                className="h-24 w-24 absolute -bottom-[26rem] left-[53rem]"
+              /> */}
+              <p>Collaboration Tools</p>
+            </div>
           </div>
           <div className="flex space-x-4">
-            <div className="w-72 h-28 rounded-xl bg-lime-200"></div>
-            <div className="w-72 h-28 rounded-xl bg-lime-200"></div>
-            <div className="w-72 h-28 rounded-xl bg-lime-200"></div>
-          </div>
-          <div className="flex space-x-4">
-            <div className="w-64 h-56 rounded-xl bg-lime-200"></div>
+            <div className="w-[25rem] h-56 flex justify-center items-center rounded-xl border border-pink ">
+              {/* <img
+                src={shapef}
+                alt=""
+                className="h-28 w-28 absolute left-[24rem] -bottom-[48rem]"
+              /> */}
+              <p>Easy search</p>
+            </div>
             <div className="flex flex-col space-y-4">
-              <div className="w-72 h-28 rounded-md  bg-purple"></div>
-              <div className="w-72 h-28 rounded-md bg-purple ml-16"></div>
+              <div
+                className="w-96 h-28 flex rounded-md border border-purple justify-center items-center 
+                 "
+              >
+                {/* <img
+                  src={shapec}
+                  alt=""
+                  className="h-20 absolute -bottom-[35rem] left-[44rem] w-20"
+                /> */}
+                <p>Hack Squad Match</p>
+              </div>
+              <div className="w-96 h-28 flex justify-center items-center rounded-md border  border-red ml-16">
+                {/* <img
+                  src={shapes}
+                  alt=""
+                  className="h-24 w-24 absolute -bottom-[40rem] left-[65rem]"
+                /> */}
+                <p>Project Matching</p>
+              </div>
             </div>
           </div>
         </section>
+        <hr className="border-green mx-28 mt-20"/>
       </main>
       <Footerla />
     </div>

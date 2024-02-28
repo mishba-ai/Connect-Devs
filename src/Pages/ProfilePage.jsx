@@ -10,7 +10,9 @@ const ProfilePage = () => {
   return (
     <div className="w-full">
       <section className="flex gap-x-12 bg-background w-full">
-        <Sidebar style={{}} />
+        <div>
+          <Sidebar style={{}} />
+        </div>
         <div className="flex-col w-full mt-10">
           <div>
             <Header page="Profile" />

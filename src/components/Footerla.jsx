@@ -5,7 +5,7 @@ import discord from "../assets/discord.svg";
 import connectlogo from "../assets/connectlogo.png";
 const Footerla = () => {
   return (
-    <div className="px-14  pb-5">
+    <div className="px-14 mt-2 pb-3">
       
         <div className="w-full h-[300px] bg-transparent text-white ">
           <div className="flex gap-x-52 p-10">

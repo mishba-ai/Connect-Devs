@@ -32,6 +32,7 @@ export default {
         "yellow":"var(--yellow)",
         "cyan":"var(--cyan)",
         "tiltbtn":"var(--tiltbtn)",
+        "pink":"var(--pink)",
       },
       scale: {
         "-100": "-1",
@@ -46,6 +47,9 @@ export default {
         Ubuntu: ['Ubuntu Mono', 'monospace'],
         RobotoMono: ['Roboto Mono', 'monospace']
       },
+      boxShadow:{
+        "custom":"9px 10px 0 -1px var(--primaryColor), 9px 10px 0 rgb(102,55,238)"
+      }
     },
   },
   plugins: [],

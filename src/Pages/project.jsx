@@ -5,9 +5,10 @@ const project = () => {
   return (
     <div className="">
       <section className="flex gap-x-12  bg-background w-full">
-        <Sidebar style={{}} />
+        <div>
+          <Sidebar style={{}} />
+        </div>
         <div className="flex-col w-full mt-10">
-
           <div className=" ">
             <Header page="Project" />
           </div>
@@ -20,14 +21,13 @@ const project = () => {
           </div>
 
           <div className="mt-14 mx-7 mb-2 flex flex-wrap gap-8">
-            <ProjectCard/>
-            <ProjectCard/>
-            <ProjectCard/>
-            <ProjectCard/>
-            <ProjectCard/>
-            <ProjectCard/>
-            <ProjectCard/>
-
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
           </div>
         </div>
       </section>
