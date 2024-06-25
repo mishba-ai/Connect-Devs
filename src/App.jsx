@@ -11,16 +11,14 @@ import boy2 from "./assets/boy2.jfif";
 import boy3 from "./assets/boy3.jfif";
 import boy4 from "./assets/boy4.jfif";
 import boy5 from "./assets/boy5.jfif";
-import shaper from "./assets/shaper.png";
-import shapet from "./assets/shapet.png";
-import shapef from "./assets/shapef.png";
-import shapec from "./assets/shapec.png";
-import shapes from "./assets/shapes.png";
-import shapetr from "./assets/shapetr.png";
-import shapeo from "./assets/shapeo.png";
+import teamicon from "./assets/teamicon.svg";
+import ratings from "./assets/ratings.svg";
+import forum from "./assets/forumicon.svg";
+import tools from "./assets/tools.svg";
+import easysearch from "./assets/easysearch.svg";
 function App() {
   return (
-    <div className="bg-black  w-full">
+    <div className="bg-[#191919]  w-full">
       <Headerlanding />
 
       <main className=" pb-4 overflow-hidden">
@@ -135,7 +133,7 @@ function App() {
             </div>{" "}
           </div>
         </section>
-        {/* <section className="relative mt-4 font-medium ">
+        <section className="relative mt-4 font-medium ">
           <div className="overflow-x-hidden text-cyan  tracking-tighter leading-none whitespace-nowrap flex  text-5xl flex-nowrap relative font-Ubuntu  ">
             <div className="uppercase animate-marquee flex whitespace-nowrap flex-nowrap">
               <span className="block mr-7"> squad up! code up! level up! </span>
@@ -152,82 +150,101 @@ function App() {
               <span className="block mr-7">Build Epic shit!</span>
             </div>
           </div>
-        </section> */}
+        </section>
 
-        <section className="flex flex-col gap-8 mt-14 justify-center text-lg font-PressStart text-white items-center ">
-          {" "}
-          <div className="flex  space-x-7 ">
-            <div className="w-72 h-24 bg-transparent rounded-xl text-4xl font-bold font-PressStart text-center justify-center flex items-center text-green">
-              <h1>Features</h1>
-            </div>
-            <div className="w-96 h-28 items-center rounded-xl border border-orange flex justify-center">
-              {/* <img
-                src={shapeo}
-                alt=""
-                className="h-24 w-24 absolute left-[64rem]"
-              /> */}
-              <p>Collaboration</p>
+        {/*feature section  */}
+
+        <section className="w-screen h-screen px-12 flex mt-10 gap-16">
+          <div className="w-[45%]">
+            <h1 className="text-[#3f3e3e] text-4xl font-Ubuntu font-semibold mt-4">
+              Hackathons? Projects? Get Your Team Onboard & Brighten Things Up!
+            </h1>
+
+            <div className="mt-8 ">
+              <ul className=" flex-wrap w-full flex gap-x-2 gap-y-3  font-Michroma  text-white">
+                <li className="w-[45%] h-44 bg-tiltbtn text-purple p-10 rounded-xl ">
+                  <div className="flex">
+                    <img src={teamicon} alt="team" className="w-12 h-12" />
+                    <h1 className="text-xl">Collaboration</h1>
+                  </div>
+                  <p className="text-sm font-Ubuntu mt-2">
+                    {" "}
+                    Find your perfect match! 
+                  </p>
+                </li>
+                <li className="w-[45%] h-44 hover:bg-tiltbtn 
+                  bg-[#323031] rounded-xl hover:text-purple p-10">
+                  <div className="flex">
+                    <img src={ratings} alt="" className="hover:text-purple h-12 w-12" />{" "}
+                    <h1>Feedback & Ratings</h1>
+                  </div>
+                  <p className="text-sm font-Ubuntu mt-2">
+                    {" "}
+                    Get valuable insights and build trust. 
+                  </p>
+                </li>
+                <li className="w-[45%] h-44 hover:bg-tiltbtn bg-[#323031] rounded-xl hover:text-purple p-10">
+                  <div className="flex">
+                    <img src={forum} alt="" className="w-12  h-12"/> <h1>Community Forums</h1>
+                  </div>{" "}
+                  <p className="text-sm font-Ubuntu mt-2">
+                    Engage with the developer community.{" "}
+                  </p>
+                </li>
+                <li className="w-[45%] h-44 hover:bg-tiltbtn bg-[#323031] rounded-xl hover:text-purple p-10">
+                  <div className="flex">
+                    {" "}
+                    <img src={tools} alt="" className="w-12 h-12"/>
+                    <h1>Collaboration Tools</h1>
+                  </div>
+                  <p className="text-sm font-Ubuntu mt-2">
+                    {" "}
+                    Streamline your teamwork. 
+                  </p>
+                </li>
+                <li className="w-[92%] h-44 hover:bg-tiltbtn bg-[#323031] rounded-xl hover:text-purple p-10">
+                  <div className="flex">
+                    <img src={easysearch} alt="" /> <h1>Easy Search</h1>
+                  </div>
+                  <p className="text-sm font-Ubuntu mt-2">
+                    Find the right partner, fast. Utilize advanced search
+                    filters to quickly identify potential collaborators based on
+                    skills, experience, and interests
+                  </p>
+                </li>
+              </ul>
             </div>
           </div>
-          <div className="flex  space-x-4">
-            <div className="w-[26rem] h-28 justify-center items-center flex rounded-xl border-green border">
-              {/* <img
-                src={shaper}
-                alt=""
-                className="h-36 w-36 absolute rotate-12 -bottom-[24rem] left-[20rem]"
-              /> */}
-              <p>Feedback and Ratings</p>
-            </div>
-            <div className="w-96 justify-center items-center h-28 flex rounded-xl border border-yellow">
-              {/* <img
-                src={shapetr}
-                alt=""
-                className="h-20 w-20 rotate-12 absolute -bottom-[26rem] left-[36rem]"
-              /> */}
-              <p>Community Forums</p>
-            </div>
-            <div className="w-[25rem] h-28 flex rounded-xl border border-cyan items-center justify-center">
-              {/* <img
-                src={shapet}
-                alt=""
-                className="h-24 w-24 absolute -bottom-[26rem] left-[53rem]"
-              /> */}
-              <p>Collaboration Tools</p>
-            </div>
-          </div>
-          <div className="flex space-x-4">
-            <div className="w-[25rem] h-56 flex justify-center items-center rounded-xl border border-pink ">
-              {/* <img
-                src={shapef}
-                alt=""
-                className="h-28 w-28 absolute left-[24rem] -bottom-[48rem]"
-              /> */}
-              <p>Easy search</p>
-            </div>
-            <div className="flex flex-col space-y-4">
-              <div
-                className="w-96 h-28 flex rounded-md border border-purple justify-center items-center 
-                 "
-              >
-                {/* <img
-                  src={shapec}
-                  alt=""
-                  className="h-20 absolute -bottom-[35rem] left-[44rem] w-20"
-                /> */}
-                <p>Hack Squad Match</p>
-              </div>
-              <div className="w-96 h-28 flex justify-center items-center rounded-md border  border-red ml-16">
-                {/* <img
-                  src={shapes}
-                  alt=""
-                  className="h-24 w-24 absolute -bottom-[40rem] left-[65rem]"
-                /> */}
-                <p>Project Matching</p>
-              </div>
-            </div>
+          <div className="w-1/2 ">
+            <ul className="flex flex-wrap gap-x-10  justify-center items-center ">
+              <li
+                className="w-72 h-72 border-2 border-green transform-gpu rounded-bl-[50%] rounded-tl-[50%] rounded-br-[50%]  mt-10"
+                style={{
+                  backgroundImage: `url("https://i.pinimg.com/564x/3a/62/1e/3a621e147ff47f5830acdf06ee4c1b3b.jpg")`,
+                }}
+              ></li>
+              <li
+                className="w-72 h-72 border-2 border-green transform-gpu  relative  -top-8 rounded-t-[50%] rounded-tr-[] rounded-br-[50%] rounded-bl-[0%] mt-10"
+                style={{
+                  backgroundImage: `url("https://i.pinimg.com/564x/d2/70/f5/d270f57ef778b98f5cc129225dcb17a1.jpg")`,
+                }}
+              ></li>
+              <li
+                className="w-72 h-72 border-2 border-green transform-gpu  rounded-bl-[50%] rounded-tl-[50%] rounded-br-[50%] mt-10"
+                style={{
+                  backgroundImage: `url("https://i.pinimg.com/736x/58/a2/f1/58a2f1569332c0754dc50ec230766615.jpg")`,
+                }}
+              ></li>
+              <li
+                className="w-72 h-72 border-2 border-green transform-gpu  relative -top-10 rounded-t-[50%] rounded-tr-[] rounded-br-[50%] rounded-bl-[0%] mt-10"
+                style={{
+                  backgroundImage: `url("https://i.pinimg.com/564x/75/94/d9/7594d994ceca06befc20a4b1695054a5.jpg")`,
+                }}
+              ></li>
+            </ul>
           </div>
         </section>
-        <hr className="border-green mx-28 mt-20"/>
+        <hr className="border-green mx-28 mt-20" />
       </main>
       <Footerla />
     </div>
