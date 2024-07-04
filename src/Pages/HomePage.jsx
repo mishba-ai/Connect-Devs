@@ -2,6 +2,7 @@ import Sidebar from "../components/Sidebar.jsx";
 import Cards from "../components/Cards.jsx";
 import Header from "../components/Header.jsx";
 import Networkbar from "../components/Networkbar.jsx";
+import Paircard from "../components/paircard.jsx";
 const HomePage = () => {
   return (
     <div className="">
@@ -27,19 +28,15 @@ const HomePage = () => {
                 </h1>
               </div>
               <div className="flex  gap-x-5 overflow-x-scroll overflow-y-hidden">
-                <Cards style={{ width: "350px", height: "450px" }} />
-                <Cards style={{ width: "350px", height: "450px" }} />
-                <Cards style={{ width: "350px", height: "450px" }} />
-                <Cards style={{ width: "350px", height: "450px" }} />
+             <Paircard/>
               </div>
-            </section> 
+            </section>
 
             <section className="mb-2 gap-y-6 flex flex-col mt-2">
-            <div>
+              <div>
                 <h1 className="text-3xl text-tiltbtn font-Ubuntu">
                   Top Hackers
                 </h1>
-
               </div>
 
               <div className="flex gap-x-5 overflow-x-scroll overflow-y-hidden">
@@ -48,13 +45,11 @@ const HomePage = () => {
                 <Cards style={{ width: "350px", height: "450px" }} />
                 <Cards style={{ width: "350px", height: "450px" }} />
               </div>
-
             </section>
           </div>
         </div>
 
         <Networkbar />
-
       </section>
     </div>
   );

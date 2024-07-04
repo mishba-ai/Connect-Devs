@@ -89,15 +89,13 @@ function App() {
             className=" absolute top-[35%] flex flex-col left-[50%] text-center  w-[900px] "
             style={{ transform: "translate(-50%, 0)" }}
           >
-            <h1 className="text-6xl font-Ubuntu text-gray-300  font-medium">
-              <span className="text-cyan font-PressStart text-5xl">
-                &lt;&gt;
-              </span>
+            <h1 className="text-4xl font-Ubuntu text-gray-300  font-medium">
+              <span className="text-cyan font-Archivo text-5xl">&lt;&gt;</span>
               INSTANTLY TEAM UP FOR{" "}
               <span
-                className="stroke-[1px]  text-green font-semibold "
+                className=" text-green font-medium "
                 style={{
-                  WebkitTextStrokeWidth: "1px",
+                  WebkitTextStrokeWidth: "px",
                   WebkitTextStrokeColor: "",
                   textShadow: "none",
                 }}
@@ -107,9 +105,9 @@ function App() {
               </span>
               :FIND YOUR DREAM{" "}
               <span
-                className="stroke-[1px] text-green font-semibold "
+                className="text-green font-medium "
                 style={{
-                  WebkitTextStrokeWidth: "1px",
+                  WebkitTextStrokeWidth: "px",
                   WebkitTextStrokeColor: "",
                   textShadow: "none",
                 }}
@@ -117,7 +115,7 @@ function App() {
                 COLLABORATORS{" "}
               </span>
               WITH CONNECT DEVS.
-              <span className="text-cyan font-PressStart  text-5xl">
+              <span className="text-cyan font-Archivo  text-5xl">
                 &lt;/&gt;
               </span>
             </h1>
@@ -125,7 +123,7 @@ function App() {
               A platform to connect great talents around the globe,build yours
               now
             </p>
-            <div className="ml-4 mt-8">
+            <div className="ml-4 mt-8 ">
               <Buttonlanding
                 text="START HACK!!"
                 style_button={{ padding: "10px" }}
@@ -133,7 +131,7 @@ function App() {
             </div>{" "}
           </div>
         </section>
-        <section className="relative mt-4 font-medium ">
+        {/* <section className="relative mt-4 font-medium ">
           <div className="overflow-x-hidden text-cyan  tracking-tighter leading-none whitespace-nowrap flex  text-5xl flex-nowrap relative font-Ubuntu  ">
             <div className="uppercase animate-marquee flex whitespace-nowrap flex-nowrap">
               <span className="block mr-7"> squad up! code up! level up! </span>
@@ -150,7 +148,7 @@ function App() {
               <span className="block mr-7">Build Epic shit!</span>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/*feature section  */}
 
@@ -169,23 +167,30 @@ function App() {
                   </div>
                   <p className="text-sm font-Ubuntu mt-2">
                     {" "}
-                    Find your perfect match! 
+                    Find your perfect match!
                   </p>
                 </li>
-                <li className="w-[45%] h-44 hover:bg-tiltbtn 
-                  bg-[#323031] rounded-xl hover:text-purple p-10">
+                <li
+                  className="w-[45%] h-44 hover:bg-tiltbtn 
+                  bg-[#323031] rounded-xl hover:text-purple p-10"
+                >
                   <div className="flex">
-                    <img src={ratings} alt="" className="hover:text-purple h-12 w-12" />{" "}
+                    <img
+                      src={ratings}
+                      alt=""
+                      className="hover:text-purple h-12 w-12"
+                    />{" "}
                     <h1>Feedback & Ratings</h1>
                   </div>
                   <p className="text-sm font-Ubuntu mt-2">
                     {" "}
-                    Get valuable insights and build trust. 
+                    Get valuable insights and build trust.
                   </p>
                 </li>
                 <li className="w-[45%] h-44 hover:bg-tiltbtn bg-[#323031] rounded-xl hover:text-purple p-10">
                   <div className="flex">
-                    <img src={forum} alt="" className="w-12  h-12"/> <h1>Community Forums</h1>
+                    <img src={forum} alt="" className="w-12  h-12" />{" "}
+                    <h1>Community Forums</h1>
                   </div>{" "}
                   <p className="text-sm font-Ubuntu mt-2">
                     Engage with the developer community.{" "}
@@ -194,17 +199,19 @@ function App() {
                 <li className="w-[45%] h-44 hover:bg-tiltbtn bg-[#323031] rounded-xl hover:text-purple p-10">
                   <div className="flex">
                     {" "}
-                    <img src={tools} alt="" className="w-12 h-12"/>
+                    <img src={tools} alt="" className="w-12 h-12" />
                     <h1>Collaboration Tools</h1>
                   </div>
                   <p className="text-sm font-Ubuntu mt-2">
                     {" "}
-                    Streamline your teamwork. 
+                    Streamline your teamwork.
                   </p>
                 </li>
-                <li className="w-[92%] h-44 hover:bg-tiltbtn bg-[#323031] rounded-xl hover:text-purple p-10">
-                  <div className="flex">
-                    <img src={easysearch} alt="" /> <h1>Easy Search</h1>
+                <li className="w-[92%] h-44 hover:bg-tiltbtn hover:text-purple bg-[#323031] rounded-xl  p-10 ">
+                  <div className="flex ">
+                    <img src={easysearch} alt="" className="w-12 h-12" />
+                  
+                    <h1>Easy Search</h1>
                   </div>
                   <p className="text-sm font-Ubuntu mt-2">
                     Find the right partner, fast. Utilize advanced search
