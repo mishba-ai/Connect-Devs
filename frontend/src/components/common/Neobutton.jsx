@@ -1,4 +1,3 @@
-import props from "prop-types";
 import { useState } from "react";
 const Neobutton = ({ style, text, hoverStyle }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,11 +13,6 @@ const Neobutton = ({ style, text, hoverStyle }) => {
       </button>
     </div>
   );
-};
-Neobutton.propTypes = {
-  style: props.object.isRequired, // Require the `text` prop
-  text: props.string.isRequired,
-  hoverStyle: props.object.isRequired,
 };
 
 export default Neobutton;

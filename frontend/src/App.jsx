@@ -25,12 +25,12 @@ function App() {
         <section className="mt-0 mx-0 px-2 text-white  overflow-hidden h-screen w-full ">
           <div className="flex -mt-44 justify-between">
             <div className="mx-16">
-              <div className="w-44 h-[680px] animate-pulse  rotate-[42deg] bg-transparent border-tiltbtn border-2 border-b-0 rounded-t-full"></div>
-              <div className="w-44 h-[620px] -mt-80 animate-pulse -rotate-[47deg] bg-transparent border-cyan border-2 border-t-0 rounded-b-full"></div>{" "}
+              <div className="w-44 h-[680px] animate-pulse  rotate-42 bg-transparent border-tiltbtn border-2 border-b-0 rounded-t-full"></div>
+              <div className="w-44 h-[620px] -mt-80 animate-pulse -rotate-47 bg-transparent border-cyan border-2 border-t-0 rounded-b-full"></div>{" "}
             </div>
             <div className="mx-16">
-              <div className="w-44 h-[680px] animate-pulse  -rotate-[42deg] bg-transparent border-cyan border-2 border-b-0 rounded-t-full"></div>
-              <div className="w-44 h-[620px] animate-pulse  -mt-80 rotate-[47deg] bg-transparent border-tiltbtn border-2 border-t-0 rounded-b-full"></div>
+              <div className="w-44 h-[680px] animate-pulse  -rotate-42 bg-transparent border-cyan border-2 border-b-0 rounded-t-full"></div>
+              <div className="w-44 h-[620px] animate-pulse  -mt-80 rotate-47 bg-transparent border-tiltbtn border-2 border-t-0 rounded-b-full"></div>
             </div>
           </div>
 

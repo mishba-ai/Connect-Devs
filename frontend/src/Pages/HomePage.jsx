@@ -65,7 +65,7 @@ const HomePage = () => {
       </div>
 
       {/* Networkbar - Fixed position */}
-      {/* <div className="w-72 flex-shrink-0">
+      {/* <div className="w-72 shrink-0">
         <div className="fixed top-0 right-0 w-72 h-screen">
           <Networkbar />
         </div>

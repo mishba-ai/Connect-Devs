@@ -5,7 +5,7 @@ const Challenges = () => {
       <section className="">
         <div className="">
           <div className="flex justify-center items-center">
-            <img src={dodonutglobe} alt="" className="h-[32rem] w-[36rem]" />
+            <img src={dodonutglobe} alt="" className="h-128 w-xl" />
           </div>
         </div>
       </section>

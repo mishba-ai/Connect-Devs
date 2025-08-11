@@ -63,7 +63,7 @@ export default function ActiveProjectCard() {
   ];
 
   return (
-    <div className="w-[750px] h-[450px] bg-gray-50 border-black rounded-sm shadow-[4px_4px_0px_rgb(0,0,0)] border-2 p-6">
+    <div className="w-[750px] h-[450px] bg-gray-50 border-black rounded-xs shadow-[4px_4px_0px_rgb(0,0,0)] border-2 p-6">
       {/* Header */}
       <div className="mb-6">
         <h2 className="text-lg font-semibold text-gray-500 tracking-wider uppercase">
@@ -79,12 +79,12 @@ export default function ActiveProjectCard() {
             className="flex items-center gap-4 p-3 bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow"
           >
             {/* Project Icon */}
-            <div className={`w-16 h-16 ${project.color} rounded-lg flex items-center justify-center text-2xl flex-shrink-0`}>
+            <div className={`w-16 h-16 ${project.color} rounded-lg flex items-center justify-center text-2xl shrink-0`}>
               {project.projectIcon}
             </div>
 
             {/* Team Members Avatars */}
-            <div className="flex flex-col gap-2 flex-shrink-0">
+            <div className="flex flex-col gap-2 shrink-0">
               <div className="flex -space-x-2">
                 {project.teamMembers.slice(0, 2).map((member) => (
                   <div
@@ -132,7 +132,7 @@ export default function ActiveProjectCard() {
             </div>
 
             {/* Likes */}
-            <div className="flex flex-col items-center gap-1 flex-shrink-0">
+            <div className="flex flex-col items-center gap-1 shrink-0">
               <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                 <Heart className="w-5 h-5 text-gray-400 hover:text-red-500" />
               </button>

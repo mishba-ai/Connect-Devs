@@ -1,14 +1,86 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap')
+layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@900&display=swap')
+layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap')
+layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap')
+layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap')
+layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap')
+layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap')
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-marquee2: marquee2 25s linear infinite;
+
+  --color-primary: var(--primaryColor);
+  --color-background: var(--backgroundColor);
+  --color-purple: var(--purple);
+  --color-orange: var(--orange);
+  --color-green: var(--green);
+  --color-red: var(--red);
+  --color-highlight: var(--highlightColor);
+  --color-secondary: var(--secondaryColor);
+  --color-yellow: var(--yellow);
+  --color-cyan: var(--cyan);
+  --color-tiltbtn: var(--tiltbtn);
+  --color-pink: var(--pink);
+
+  --scale--100: -1;
+
+  --font-sans: Poppins, sans-serif;
+  --font-Lexend: Lexend Mega, sans-serif;
+  --font-Encode: Encode Sans Semi Condensed, sans-serif;
+  --font-Michroma: Michroma, sans-serif;
+  --font-Archivo: Archivo, sans-serif;
+  --font-Press-start: 'Press Start 2P', monospace;
+  --font-Ubuntu: Ubuntu Mono, monospace;
+  --font-Roboto-mono: Roboto Mono, monospace;
+
+  --shadow-custom:
+    9px 10px 0 -1px var(--primaryColor), 9px 10px 0 rgb(102, 55, 238);
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes marquee2 {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(240%);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 :root {
   --primaryColor: #000000;

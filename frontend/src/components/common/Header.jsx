@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import connectlogo from "../../assets/connectlogo.png";
 // import DarkLight from "./DarkLight";
 import { Link } from "react-router-dom";
@@ -28,8 +27,5 @@ const Header = ({ page, style }) => {
     </div>
   );
 };
-Header.propTypes = {
-  page: PropTypes.string.isRequired, // Require the `text` prop
-  style: PropTypes.object.isRequired,
-};
+
 export default Header;
