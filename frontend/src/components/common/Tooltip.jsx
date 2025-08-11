@@ -9,7 +9,7 @@ const Tooltip = ({ text, children }) => {
     >
       {children}
       {isVisibile && (
-        <span className="invisible absolute -top-12 py-1 px-2  text-white bg-secondary  shadow-[2px_2px_0px_rgb(255,255,255)] w-20 font-Ubuntu  text-center border border-white group-hover:visible text-sm ">
+        <span className="invisible absolute -top-8 left-8 py-1 px-1  text-white bg-secondary  shadow-[2px_2px_0px_rgb(255,255,255)] w-20 font-Ubuntu  text-center border-2 border-white group-hover:visible text-xs ">
           {text} <div className="triangle"></div>
         </span>
       )}
@@ -18,3 +18,6 @@ const Tooltip = ({ text, children }) => {
 };
 
 export default Tooltip;
+
+
+

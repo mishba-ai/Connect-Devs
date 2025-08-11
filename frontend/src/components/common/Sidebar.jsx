@@ -1,0 +1,90 @@
+import PropTypes from "prop-types";
+import { Link, useLocation } from "react-router-dom";
+import Tooltip from "./Tooltip";
+
+import dashboard from "../../assets/dashboard.svg";
+import project from "../../assets/project.svg";
+// import challenge from "../../assets/challenge.svg";
+import profile from "../../assets/profile.svg";
+// import explore from "../assets/explore.svg";
+// import logout from "../assets/logout.svg";
+import userplus from "../../assets/userplus.svg";
+
+// A single array to hold all your navigation items
+const navItems = [
+  { path: "/userplus", icon: userplus, alt: "User", tooltip: "User" },
+  { path: "/Home", icon: dashboard, alt: "Dashboard", tooltip: "dashboard" },
+  { path: "/Project", icon: project, alt: "Project", tooltip: "Project" },
+  // { path: "/Challenges", icon: challenge, alt: "Challenges", tooltip: "Challenge" },
+  // { path: "/Feed", icon: explore, alt: "Explore", tooltip: "Feed" },
+  // { path: "/Profile", icon: profile, alt: "Profile", tooltip: "Profile" },
+];
+
+const ProfileItem = { path: "/Profile", icon: profile, alt: "profile", tooltip: "profile" };
+
+function Sidebar({ style }) {
+  const location = useLocation();
+
+  // Helper function to determine the button classes
+  const getButtonClass = (path) => {
+    const baseClasses = "rounded-xl px-1 py-1 transition-all hover:translate-x-[-3px] hover:shadow-[2px_2px_0px_rgb(255,255,255)] hover:translate-y-[-3px]";
+    const activeClasses = "translate-x-[-3px] shadow-[2px_2px_0px_rgb(206,255,26)] translate-y-[-3px]";
+    return location.pathname === path ? `${baseClasses} ${activeClasses}` : baseClasses;
+  };
+
+  return (
+    <div className="sticky top-0">
+      <div
+        className="h-screen w-12 bg-primary border-r-2 border-tiltbtn top-0 sticky"
+        style={style}
+      >
+        <div className="">
+          <ul className="pt-7 flex justify-center">
+            {/* The first userplus item is handled separately as it's not part of the main nav */}
+            <li>
+              <Tooltip text={navItems[0].tooltip}>
+                <Link to={navItems[0].path}>
+                  <button className={getButtonClass(navItems[0].path)}>
+                    <img src={navItems[0].icon} alt={navItems[0].alt} className="h-8 w-8 p-1" />
+                  </button>
+                </Link>
+              </Tooltip>
+            </li>
+          </ul>
+          <hr className="border-gray-300 m-3" />
+          <ul className="gap-y-10 flex justify-center items-center flex-col list-none">
+            {navItems.slice(1).map((item) => (
+              <li key={item.path} className="">
+                <Tooltip text={item.tooltip}>
+                  <Link to={item.path}>
+                    <button className={getButtonClass(item.path)}>
+                      <img src={item.icon} alt={item.alt} />
+                    </button>
+                  </Link>
+                </Tooltip>
+              </li>
+            ))}
+          </ul>
+          <div className="flex-col  relative top-80 ">
+            <hr className="border-gray-300 mx-3" />
+            <div className="mt-4 flex justify-center">
+              <Tooltip text={ProfileItem.tooltip}>
+                <Link to={ProfileItem.path}>
+                  <button className={`${getButtonClass(ProfileItem.path)} mt-2`}>
+                    <img src={ProfileItem.icon} alt={ProfileItem.alt} className="" />
+                  </button>
+                </Link>
+              </Tooltip>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+Sidebar.propTypes = {
+  style: PropTypes.object,
+};
+
+export default Sidebar;

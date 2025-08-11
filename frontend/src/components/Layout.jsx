@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
+import Header from "./common/Header";
+import Sidebar from "./common/Sidebar";
 
 export default function Layout() {
   const location = useLocation();
@@ -36,24 +36,20 @@ export default function Layout() {
   const isHome = pageName.toLowerCase() === "home";
 
   return (
-    <div className="min-h-screen bg-background">
-      <section className="flex gap-x-12 min-h-screen bg-background w-full">
+    <div className="min-h-screen bg-white">
+      <section className="flex gap-x-12 min-h-screen bg-[#f8f9fa] w-full">
         <div className="flex-shrink-0">
           <Sidebar style={{}} />
         </div>
         <div className="flex-1 flex flex-col min-h-screen ">
-          <div
-            className={
-              isHome ? "w-[1000px]   mt-10" : " w-full mt-10"
-            }
-          >
+          <div className={isHome ? "w-[] " : " w-full"}>
             <div>
               <Header page={pageName} />
-            </div>          <div>
-            <Outlet />
-          </div>
+            </div>{" "}
+            <div className="mt-2">
+              <Outlet />
+            </div>
           </div>{" "}
-
         </div>{" "}
       </section>
     </div>

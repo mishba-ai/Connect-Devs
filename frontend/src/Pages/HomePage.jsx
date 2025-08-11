@@ -1,25 +1,22 @@
 import Cards from "../components/Cards.jsx";
-import Networkbar from "../components/Networkbar.jsx";
-import Paircard from "../components/paircard.jsx";
-import ActiveProjectCard from "../components/ActiveProjectCard.jsx";
-
-//https://claude.ai/public/artifacts/a75bf90f-3f64-4b7b-9371-8c63c01f20ee
-//https://claude.ai/public/artifacts/2edb3b0e-177c-43b2-bf86-03d61f421db2
-
+import Paircard from "../components/dashboard/Paircard.jsx";
+import ActiveProjectCard from "../components/dashboard/ActiveProjectCard.jsx";
+import Map from "../components/dashboard/Map.jsx";
 const HomePage = () => {
   return (
     <div className="flex flex- w-full h-full ">
       {/* Main Content - Scrollable */}
       <div className="w-full  pr-4 ">
         <div className="flex flex-col p-4 w-full">
-          <div className="mt-6 gap-x-2 flex justify-between">
+          <div className="mt-6  flex gap-x-12 ">
             <ActiveProjectCard />
-            <Cards style={{ width: "300px", height: "350px" }} />
+            {/* <Cards style={{ width: "300px", height: "350px" }} /> */}
+            <Map/>
           </div>
 
           <section className="flex flex-col gap-y-6 mt-2">
             <div>
-              <h1 className="text-3xl mt-3 text-tiltbtn font-Ubuntu">
+              <h1 className="text-3xl mt-3 text-black font-Ubuntu">
                 Pair Request
               </h1>
             </div>
@@ -30,7 +27,7 @@ const HomePage = () => {
 
           <section className="mb-2 gap-y-6 flex flex-col mt-2">
             <div>
-              <h1 className="text-3xl mt-3 text-tiltbtn font-Ubuntu">
+              <h1 className="text-3xl mt-3 text-black font-Ubuntu">
                 Top Hackers
               </h1>
             </div>
@@ -68,11 +65,11 @@ const HomePage = () => {
       </div>
 
       {/* Networkbar - Fixed position */}
-      <div className="w-72 flex-shrink-0">
+      {/* <div className="w-72 flex-shrink-0">
         <div className="fixed top-0 right-0 w-72 h-screen">
           <Networkbar />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

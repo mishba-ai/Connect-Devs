@@ -3,7 +3,7 @@ function Cards({ style }) {
   return (
     <div>
       <div
-        className="w-[500px] border-2  border-white  rounded-sm  shadow-[4px_4px_0px_rgb(255,255,255)]   h-72 bg-purple"
+        className="w-[500px] border-2  border-black  rounded-sm  shadow-[4px_4px_0px_rgb(0,0,0)]   h-72 bg-purple"
         style={style}
       >
       </div>

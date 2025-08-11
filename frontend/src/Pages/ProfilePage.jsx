@@ -1,5 +1,3 @@
-import Sidebar from "../components/Sidebar";
-import Header from "../components/Header";
 import location from "../assets/location.svg";
 import x from "../assets/x.svg";
 import linkedin from "../assets/linkedin.svg";

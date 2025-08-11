@@ -1,8 +1,8 @@
 
-import x from "../assets/x.svg";
-import linkedin from "../assets/linkedin.svg";
-import discord from "../assets/discord.svg";
-import connectlogo from "../assets/connectlogo.png";
+import x from "../../assets/x.svg";
+import linkedin from "../../assets/linkedin.svg";
+import discord from "../../assets/discord.svg";
+import connectlogo from "../../assets/connectlogo.png";
 const Footerla = () => {
   return (
     <div className="px-14 mt-2 pb-3">

@@ -1,5 +1,5 @@
 // import connectlogo from "../assets/connectlogo.png";
-import connecthlogo from "../assets/connecthlogo.png";
+import connecthlogo from "../../assets/connecthlogo.png";
 import Buttonlanding from "./Buttonlanding";
 // import cdlogo from "../assets/cdlogo.png";
 
