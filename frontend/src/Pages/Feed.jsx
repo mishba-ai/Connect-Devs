@@ -1,5 +1,3 @@
-import Sidebar from "../components/Sidebar";
-import Header from "../components/Header";
 import forum from "../assets/forum.svg";
 import pitch from "../assets/pitch.png";
 import idea from "../assets/idea.png";
@@ -7,12 +5,8 @@ import projectt from "../assets/projectt.png";
 const Feed = () => {
   return (
     <div className="">
-      <section className="flex gap-x-12  h-screen w-full  bg-background">
-        <Sidebar style={{}} />
-        <div className="flex-col  w-full mt-10">
-          <div>
-            <Header page="Feed" />
-          </div>
+      <section className="">
+        <div className="">
           <div className="font-Ubuntu text-white ">
             <div className="flex justify-center px-10 mt-2  items-center w-full">
               <input

@@ -9,14 +9,10 @@ import forward from "../assets/forward.svg";
 const ProfilePage = () => {
   return (
     <div className="w-full">
-      <section className="flex gap-x-12 bg-background w-full">
-        <div>
-          <Sidebar style={{}} />
-        </div>
-        <div className="flex-col w-full mt-10">
-          <div>
-            <Header page="Profile" />
-          </div>
+      <section className="">
+      
+        <div className="">
+          
           <div className="flex gap-y-6 flex-col justify-center text-white items-center mb-4">
             <img
               src="https://t3.ftcdn.net/jpg/05/16/27/58/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg"

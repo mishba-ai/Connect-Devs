@@ -17,12 +17,12 @@
   --purple: #6637ee;
   --highlightColor: #deff0a;
   --cyan: #00ffc2;
-  --green: #99ff52;
+  --green: rgb(153, 255, 82);
   --orange: #fe4e00;
   --yellow: #efff36;
   --tiltbtn: #ceff1a;
   --red:#fb6612;
-  --pink:#f2a3d8
+  --pink:#f2a3d8;
 }
 
 /* width */
@@ -64,5 +64,3 @@
   bottom: -15px;
   left: 0;
 }
-
-

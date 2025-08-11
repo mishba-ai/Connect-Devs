@@ -8,6 +8,9 @@ import Feed from "./Pages/Feed.jsx";
 import Challenges from "./Pages/Challenges.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Notfound from "./components/Notfound.jsx";
+import Setting from "./Pages/Setting.jsx";
+import Layout from "./components/Layout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,27 +18,40 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "Home",
-    element: <Home />,
+    path: "",
+    element: <Layout />,
+    children: [
+      {
+        path: "Home",
+        element: <Home />,
+      },
+      {
+        path: "Feed",
+        element: <Feed />,
+      },
+      {
+        path: "Profile",
+        element: <Profile />,
+      },
+      {
+        path: "Project",
+        element: <Project />,
+      },
+      {
+        path: "Challenges",
+        element: <Challenges />,
+      },
+    ],
+  },
+
+  {
+    path: "*",
+    element: <Notfound />,
   },
   {
-    path: "Feed",
-    element: <Feed />,
+    path: "setting",
+    element: <Setting />,
   },
-  {
-    path: "Profile",
-    element: <Profile />,
-  },
-  {
-    path: "Project",
-    element: <Project />,
-  },
-  {
-    path: "Challenges",
-    element: <Challenges />,
-  },
-  
-  
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
