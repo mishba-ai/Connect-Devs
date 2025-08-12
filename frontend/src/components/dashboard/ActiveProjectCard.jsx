@@ -67,7 +67,7 @@ export default function ActiveProjectCard() {
       {/* Header */}
       <div className="mb-6">
         <h2 className="text-lg font-semibold text-gray-500 tracking-wider uppercase">
-          Projects Spotlight
+          Projects Spotlights 
         </h2>
       </div>
 
