@@ -1,0 +1,5 @@
+DJANGO==5.2.5
+psycopg==3.2.9
+djangorestframework==3.16.1
+django-cors-headers==4.7.0
+python-dotenv==1.1.1
