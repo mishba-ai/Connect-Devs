@@ -110,7 +110,7 @@ layer(base);
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #ceff1a;
+  background: rgb(206, 255, 26);
   border-radius: px;
 }
 

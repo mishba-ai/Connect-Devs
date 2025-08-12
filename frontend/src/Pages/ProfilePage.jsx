@@ -8,10 +8,8 @@ const ProfilePage = () => {
   return (
     <div className="w-full">
       <section className="">
-      
         <div className="">
-          
-          <div className="flex gap-y-6 flex-col justify-center text-white items-center mb-4">
+          <div className="flex gap-y-6 flex-col justify-center text-black items-center mb-4">
             <img
               src="https://t3.ftcdn.net/jpg/05/16/27/58/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg"
               className="w-32 h-32 rounded-full"
@@ -52,7 +50,7 @@ const ProfilePage = () => {
             </div>
 
             <div className="flex justify-between w-full mt-4 ">
-              <div className="w-[800px] h-[450px] bg-[#1a1919] p-4">
+              <div className="w-[800px] h-[450px] bg-[#fff] shadow-[4px_4px_0px_rgb(0,0,0)] border-2 border-black p-4">
                 <div className="text-lg font-PressStart">About</div>
                 <hr className="border-green mt-2" />
                 <div className="gap-y-2 mt-2 font-Ubuntu flex flex-col">
@@ -73,7 +71,7 @@ const ProfilePage = () => {
                   </ul>
                 </div>
               </div>
-              <div className="w-[450px] h-[400px] bg-[#1a1919] mr-10 p-4">
+              <div className="w-[450px] h-[400px] bg-[#fff] shadow-[4px_4px_0px_rgb(0,0,0)] border-2 border-black mr-10 p-4">
                 <h1 className="text-lg font-PressStart">Socials</h1>
                 <ul className="gap-y-5 font-Ubuntu  text-2xl  p-1  flex flex-col mt-4">
                   <li className="bg-[#252525] hover:bg-[#393939]  p-4 w-full h-16 rounded-xl">
@@ -104,27 +102,6 @@ const ProfilePage = () => {
                       <img src={forward} alt="" />
                     </a>
                   </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="flex justify-between w-full">
-              <div className="h-[400px] w-[650px] bg-[#1a1919] p-4">
-                <h1 className="font-PressStart text-lg">Projects</h1>
-                <ul className="flex gap-x-2 flex-unwrap mt-4 justify-center items-center">
-                  <li className="h-44 w-96 bg-[#252525]"></li>
-                  <li className="h-44 w-96 bg-[#252525]"></li>
-                  <li className="h-44 w-96 bg-[#252525]"></li>
-                  <li className="h-44 w-96 bg-[#252525]"></li>
-                </ul>
-              </div>
-              <div className="h-[400px] w-[620px] bg-[#1a1919] mr-10 p-4">
-                <h1 className="font-PressStart text-lg p-4">Hackathons</h1>
-                <ul className="flex gap-x-2 flex-unwrap mt-4 justify-center items-center">
-                  <li className="h-44 w-96 bg-[#252525]"></li>
-                  <li className="h-44 w-96 bg-[#252525]"></li>
-                  <li className="h-44 w-96 bg-[#252525]"></li>
-                  <li className="h-44 w-96 bg-[#252525]"></li>
                 </ul>
               </div>
             </div>

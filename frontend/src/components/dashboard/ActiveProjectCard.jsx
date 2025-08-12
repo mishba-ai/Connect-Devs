@@ -63,7 +63,7 @@ export default function ActiveProjectCard() {
   ];
 
   return (
-    <div className="w-[750px] h-[450px] bg-gray-50 border-black rounded-xs shadow-[4px_4px_0px_rgb(0,0,0)] border-2 p-6">
+    <div className="w-[750px] h-[600px] bg-gray-50 border-black rounded-xs shadow-[4px_4px_0px_rgb(0,0,0)] border-2 p-6">
       {/* Header */}
       <div className="mb-6">
         <h2 className="text-lg font-semibold text-gray-500 tracking-wider uppercase">
@@ -72,14 +72,14 @@ export default function ActiveProjectCard() {
       </div>
 
       {/* Projects List */}
-      <div className="space-y-4 overflow-y-auto h-[350px]">
+      <div className="space-y-4 overflow-y- h-[350px]">
         {activeProjects.map((project) => (
           <div
             key={project.id}
-            className="flex items-center gap-4 p-3 bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow"
+            className="flex items-center gap-4 p-3 bg- rounded-lg border border-gray-200 hover:shadow-md transition-shadow"
           >
             {/* Project Icon */}
-            <div className={`w-16 h-16 ${project.color} rounded-lg flex items-center justify-center text-2xl shrink-0`}>
+            <div className={`w-18 h-18 ${project.color} rounded-lg transition-transform scale-110 flex items-center justify-center text-2xl shrink-0`}>
               {project.projectIcon}
             </div>
 

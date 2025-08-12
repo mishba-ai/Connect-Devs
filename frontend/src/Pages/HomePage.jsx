@@ -11,13 +11,13 @@ const HomePage = () => {
           <div className="mt-6  flex gap-x-12 ">
             <ActiveProjectCard />
             {/* <Cards style={{ width: "300px", height: "350px" }} /> */}
-            <Map/>
+            <Map />
           </div>
 
           <section className="flex flex-col gap-y-6 mt-2">
             <div>
               <h1 className="text-3xl mt-3 text-black font-Ubuntu">
-                Pair Request
+                Need teammate{" "}
               </h1>
             </div>
             <div className="flex gap-x-5">
@@ -56,7 +56,7 @@ const HomePage = () => {
               />
             </div>
           </section>
-          
+
           {/* Add some extra content to demonstrate scrolling */}
           <div className="h-96 bg-blue-300 mt-4 rounded-lg flex items-center justify-center">
             <p className="text-2xl">Extra content to show scrolling</p>
