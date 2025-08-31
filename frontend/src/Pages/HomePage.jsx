@@ -1,75 +1,76 @@
 import Cards from "../components/Cards.jsx";
 import Paircard from "../components/dashboard/Paircard.jsx";
-import ActiveProjectCard from "../components/dashboard/ActiveProjectCard.jsx";
+import ProjectSpotlight from "../components/dashboard/ProjectSpotlight.jsx";
 import Map from "../components/dashboard/Map.jsx";
+import TopHackers from "../components/dashboard/TopHackers.jsx";
+
 const HomePage = () => {
   return (
-    <div className="flex flex- w-full h-full ">
-      {/* Main Content - Scrollable */}
-      <div className="w-full  pr-4 ">
-        <div className="flex flex-col p-4 w-full">
-          <div className="mt-6  flex gap-x-12 ">
-            <ActiveProjectCard />
-            {/* <Cards style={{ width: "300px", height: "350px" }} /> */}
+    <div className="min-h-screen ">
+      {/* Main Content Container */}
+      <div className="">
+
+        {/* Main Grid - Active Project & Map */}
+        <div className="flex justify-between mt-10 gap-4  mb-16">
+          <div className="space-y-6">
+            <ProjectSpotlight />
+          </div>
+          <div className="">
             <Map />
           </div>
+        </div>
 
-          <section className="flex flex-col gap-y-6 mt-2">
-            <div>
-              <h1 className="text-3xl mt-3 text-black font-Ubuntu">
-                Need teammate{" "}
-              </h1>
-            </div>
-            <div className="flex gap-x-5">
-              <Paircard />
-            </div>
-          </section>
-
-          <section className="mb-2 gap-y-6 flex flex-col mt-2">
-            <div>
-              <h1 className="text-3xl mt-3 text-black font-Ubuntu">
-                Top Hackers
-              </h1>
-            </div>
-
-            <div className="flex justify-between mb-6">
-              <Cards
-                style={{
-                  width: "300px",
-                  height: "300px",
-                  background: "#FFD966",
-                }}
-              />
-              <Cards
-                style={{
-                  width: "300px",
-                  height: "300px",
-                  background: "#FFD966",
-                }}
-              />
-              <Cards
-                style={{
-                  width: "300px",
-                  height: "300px",
-                  background: "#f2a3d8",
-                }}
-              />
-            </div>
-          </section>
-
-          {/* Add some extra content to demonstrate scrolling */}
-          <div className="h-96 bg-blue-300 mt-4 rounded-lg flex items-center justify-center">
-            <p className="text-2xl">Extra content to show scrolling</p>
+        {/* Project Discovery Section */}
+        <section className="mb-16">
+          <div className="mb-8">
+            <h2 className="text-2xl font-light text-gray-900 mb-3 tracking-tight">
+              Discover Projects
+            </h2>
+            <p className="text-gray-600 font-light">
+              Find the perfect hackathon project to showcase your skills
+            </p>
           </div>
-        </div>
-      </div>
 
-      {/* Networkbar - Fixed position */}
-      {/* <div className="w-72 shrink-0">
-        <div className="fixed top-0 right-0 w-72 h-screen">
-          <Networkbar />
-        </div>
-      </div> */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Paircard />
+            <Paircard />
+            <Paircard />
+            {/* Add more project cards as needed */}
+          </div>
+        </section>
+
+        {/* Top Contributors Section */}
+        <section className="mb-16">
+          <div className="mb-8">
+            <h2 className="text-2xl font-light text-gray-900 mb-3 tracking-tight">
+Top Hackers            </h2>
+            <p className="text-gray-600 font-light">
+              Connect with talented developers in the community
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="group">
+            <TopHackers/>
+            </div>
+           
+          </div>
+        </section>
+
+        {/* Call to Action Section */}
+        <section className="text-center py-12 bg-black rounded-xs border border-gray-100 shadow-sm">
+          <h3 className="text-xl font-Lexend text-white mb-4 tracking-tight">
+            Ready to Start Building?
+          </h3>
+          <p className="text-white font-Michroma mb-6 max-w-md mx-auto">
+            Join thousands of developers creating amazing projects together
+          </p>
+          <button className="px-8 py-3 bg-purple shadow-[4px_4px_0px_rgb(255,255,255)] text-white font-medium rounded-xs">
+            Explore Projects
+          </button>
+        </section>
+
+      </div>
     </div>
   );
 };

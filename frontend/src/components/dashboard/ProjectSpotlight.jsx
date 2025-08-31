@@ -1,6 +1,6 @@
 import { Heart } from "lucide-react";
 
-export default function ActiveProjectCard() {
+export default function ProjectSpotlight() {
   const activeProjects = [
     {
       id: 1,
@@ -63,7 +63,7 @@ export default function ActiveProjectCard() {
   ];
 
   return (
-    <div className="w-[750px] h-[600px] bg-gray-50 border-black rounded-xs shadow-[4px_4px_0px_rgb(0,0,0)] border-2 p-6">
+    <div className="w-[650px] h-[600px] bg-gray-50 border-black rounded-xs shadow-[4px_4px_0px_rgb(0,0,0)] border-2 p-6">
       {/* Header */}
       <div className="mb-6">
         <h2 className="text-lg font-semibold text-gray-500 tracking-wider uppercase">

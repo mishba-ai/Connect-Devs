@@ -94,7 +94,7 @@ export default function Map() {
   }, []);
 
   return (
-    <div className="w-[550px] h-[350px] border-2 shadow-[4px_4px_0px_rgb(0,0,0)] border-black rounded-xs overflow-hidden bg-black">
+    <div className="w-[550px] h-[350px] border-2 shadow-[4px_4px_0px_rgb(206,255,26)] border-[#6637ee] rounded-xs overflow-hidden bg-black">
       <MapContainer 
         center={position} 
         zoom={13} 

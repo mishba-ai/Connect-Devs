@@ -92,9 +92,9 @@ layer(base);
   --green: rgb(153, 255, 82);
   --orange: #fe4e00;
   --yellow: #efff36;
-  --tiltbtn: #ceff1a;
+  --tiltbtn: rgb(206, 255, 26);
   --red:#fb6612;
-  --pink:#f2a3d8;
+  --pink:rgb(242, 163, 216);
 }
 
 /* width */

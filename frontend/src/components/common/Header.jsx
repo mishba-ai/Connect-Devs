@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 const Header = ({ page, style }) => {
   return (
     <div
-      className="py-2  sticky top-0 px-3 pr-  text-black flex justify-between bg-trasparent h-8 w-full "
+      className="py-2  sticky top-0 px-3   text-black flex justify-between bg-trasparent h-8 w-full "
       style={{ style }}
     >
       <div>
         {" "}
-        <strong className="text-4xl text-black font-Encode font-extrabold">
+        <strong className="text-4xl md:text-5xl font-light text-gray-900  tracking-tight">
           {page}
         </strong>{" "}
       </div>
