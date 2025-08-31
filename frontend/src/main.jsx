@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import Home from "./Pages/HomePage.jsx";
 import Profile from "./Pages/ProfilePage.jsx";
-import Project from "./Pages/project.jsx";
+import Project from "./Pages/Project.jsx";
 import Feed from "./Pages/Feed.jsx";
 import Challenges from "./Pages/Challenges.jsx";
 import "./index.css";

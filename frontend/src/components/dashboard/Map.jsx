@@ -13,7 +13,7 @@ L.Icon.Default.mergeOptions({
 
 const position = [51.505, -0.09];
 
-export default function Map() {
+export default function Map({style,mapStyle}) {
   useEffect(() => {
     // Add custom CSS for map styling with black primary background
     const style = document.createElement('style');
@@ -94,12 +94,14 @@ export default function Map() {
   }, []);
 
   return (
-    <div className="w-[550px] h-[350px] border-2 shadow-[4px_4px_0px_rgb(206,255,26)] border-[#6637ee] rounded-xs overflow-hidden bg-black">
+    <div className={` ${style} border-2 shadow-[4px_4px_0px_rgb(206,255,26) border-[#6637ee rounded-xs overflow-hidden bg-blac`}>
       <MapContainer 
         center={position} 
         zoom={13} 
         scrollWheelZoom={false}
-        className="black-primary-map"
+        zoomControl={false}
+        attributionControl={false}
+        className={`${mapStyle}`}
         style={{ 
           height: "100%", 
           width: "100%", 

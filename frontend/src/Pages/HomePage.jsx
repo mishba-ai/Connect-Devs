@@ -16,7 +16,7 @@ const HomePage = () => {
             <ProjectSpotlight />
           </div>
           <div className="">
-            <Map />
+            <Map style={'w-[550px] h-84 '} mapStyle={'black-primary-map'}/>
           </div>
         </div>
 
@@ -49,9 +49,12 @@ Top Hackers            </h2>
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="group">
+          <div className="gap-8">
+            <div className=" flex  justify-between">
             <TopHackers/>
+            <TopHackers/>
+            <TopHackers/>
+
             </div>
            
           </div>

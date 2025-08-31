@@ -5,6 +5,9 @@ import github from "../assets/github.svg";
 import website from "../assets/website.svg";
 import forward from "../assets/forward.svg";
 const ProfilePage = () => {
+ 
+  
+
   return (
     <div className="w-full">
       <section className="">
