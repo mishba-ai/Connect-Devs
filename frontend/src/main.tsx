@@ -1,16 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import Home from "./Pages/HomePage.jsx";
-import Profile from "./Pages/ProfilePage.jsx";
-import Project from "./Pages/Project.jsx";
-import Feed from "./Pages/Feed.jsx";
-import Challenges from "./Pages/Challenges.jsx";
+import App from "./App";
+import Home from "./Pages/HomePage";
+import Profile from "./Pages/ProfilePage";
+import Project from "./Pages/Project";
+import Feed from "./Pages/Feed";
+import Challenges from "./Pages/Challenges";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Notfound from "./components/Notfound.jsx";
-import Setting from "./Pages/Setting.jsx";
-import Layout from "./components/Layout.jsx";
+import Notfound from "./components/Notfound";
+import Setting from "./Pages/Setting";
+import Layout from "./components/Layout";
 
 const router = createBrowserRouter([
   {
@@ -53,8 +53,11 @@ const router = createBrowserRouter([
     element: <Setting />,
   },
 ]);
-
-ReactDOM.createRoot(document.getElementById("root")).render(
+const rootElement = document.getElementById("root");
+if (!rootElement) {
+  throw new Error("Failed to find the root element");
+}
+ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>

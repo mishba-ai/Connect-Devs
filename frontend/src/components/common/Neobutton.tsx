@@ -1,5 +1,12 @@
-import { useState } from "react";
-const Neobutton = ({ style, text, hoverStyle }) => {
+import React, { useState } from "react";
+
+interface NeobuttonTypes {
+  style:React.CSSProperties,
+  hoverStyle:React.CSSProperties,
+  text:string
+}
+
+const Neobutton:React.FC<NeobuttonTypes> = ({ style, text, hoverStyle }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div>

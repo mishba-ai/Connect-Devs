@@ -8,9 +8,16 @@ import profile from "../../assets/profile.svg";
 // import explore from "../assets/explore.svg";
 // import logout from "../assets/logout.svg";
 import userplus from "../../assets/userplus.svg";
+import React from "react";
 
+interface NavItem {
+  path: string;
+  icon: string;
+  alt: string;
+  tooltip: string;
+}
 // A single array to hold all your navigation items
-const navItems = [
+const navItems:NavItem[] = [
   { path: "/userplus", icon: userplus, alt: "User", tooltip: "User" },
   { path: "/Home", icon: dashboard, alt: "Dashboard", tooltip: "dashboard" },
   { path: "/Project", icon: project, alt: "Project", tooltip: "Project" },
@@ -21,11 +28,15 @@ const navItems = [
 
 const ProfileItem = { path: "/Profile", icon: profile, alt: "profile", tooltip: "profile" };
 
-function Sidebar({ style }) {
+
+interface SidebarTypes{
+  style:React.CSSProperties,
+}
+function Sidebar({ style }:SidebarTypes) {
   const location = useLocation();
 
   // Helper function to determine the button classes
-  const getButtonClass = (path) => {
+  const getButtonClass = (path :string) => {
     const baseClasses = "rounded-xl px-1 py-1 transition-all hover:translate-x-[-3px] hover:shadow-[2px_2px_0px_rgb(255,255,255)] hover:translate-y-[-3px]";
     const activeClasses = "translate-x-[-3px] shadow-[2px_2px_0px_rgb(206,255,26)] translate-y-[-3px]";
     return location.pathname === path ? `${baseClasses} ${activeClasses}` : baseClasses;

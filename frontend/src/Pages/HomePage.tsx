@@ -1,8 +1,8 @@
-import Cards from "../components/Cards.jsx";
-import Paircard from "../components/dashboard/Paircard.jsx";
-import ProjectSpotlight from "../components/dashboard/ProjectSpotlight.jsx";
-import Map from "../components/dashboard/Map.jsx";
-import TopHackers from "../components/dashboard/TopHackers.jsx";
+import Cards from "../components/Cards.js";
+import Paircard from "../components/dashboard/Paircard.js";
+import ProjectSpotlight from "../components/dashboard/ProjectSpotlight.js";
+import Map from "../components/dashboard/Map.js";
+import TopHackers from "../components/dashboard/TopHackers.js";
 
 const HomePage = () => {
   return (

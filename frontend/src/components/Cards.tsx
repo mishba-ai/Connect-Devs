@@ -1,4 +1,9 @@
-function Cards({ style }) {
+import React from "react";
+
+interface cardsTypes{
+  style:React.CSSProperties
+}
+function Cards({ style }:cardsTypes) {
   return (
     <div>
       <div

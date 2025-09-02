@@ -1,4 +1,4 @@
-import Neobutton from "./Neobutton";
+import Neobutton from "../common/Neobutton";
 import Connections from "./Connections";
 import Map from "./Map";
 
@@ -37,7 +37,7 @@ const Networkbar = () => {
       </div>
       <hr className="mt-5 border-highlight"></hr>
 
-      <Map /> 
+      {/* <Map />  */}
     </div>
   );
 };

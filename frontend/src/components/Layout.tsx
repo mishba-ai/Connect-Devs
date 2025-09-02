@@ -6,7 +6,7 @@ export default function Layout() {
   const location = useLocation();
 
   //get pagename from the url
-  const getPageName = () => {
+  const getPageName = ():string => {
     const pathname = location.pathname;
     //remove leadin slash
     const segments = pathname.split("/").filter((segment) => segment !== "");

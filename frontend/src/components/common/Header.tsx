@@ -1,11 +1,17 @@
+import React from "react";
 import connectlogo from "../../assets/connectlogo.png";
 // import DarkLight from "./DarkLight";
 import { Link } from "react-router-dom";
-const Header = ({ page, style }) => {
+
+interface HeaderTypes{
+  page:string,
+  style?:React.CSSProperties
+}
+const Header :React.FC<HeaderTypes> = ({ page, style }) => {
   return (
     <div
       className="py-2  sticky top-0 px-3   text-black flex justify-between bg-trasparent h-8 w-full "
-      style={{ style }}
+      style={ style }
     >
       <div>
         {" "}

@@ -4,9 +4,16 @@ import linkedin from "../assets/linkedin.svg";
 import github from "../assets/github.svg";
 import website from "../assets/website.svg";
 import forward from "../assets/forward.svg";
+import { useState } from "react";
 const ProfilePage = () => {
  
   
+const [fullname ,setFullname] = useState('')
+const [about,setAbout] =useState('')
+const [location,setLocation] = useState('')
+const [totalProjects,setTotalProjects]=useState('')
+const [totalConnections,setTotalConnection] = useState('')
+
 
   return (
     <div className="w-full">
@@ -52,6 +59,7 @@ const ProfilePage = () => {
               </button>
             </div>
 
+{/*  */}
             <div className="flex justify-between w-full mt-4 ">
               <div className="w-[800px] h-[450px] bg-[#fff] shadow-[4px_4px_0px_rgb(0,0,0)] border-2 border-black p-4">
                 <div className="text-lg font-PressStart">About</div>
@@ -63,7 +71,7 @@ const ProfilePage = () => {
                       Javascript
                     </li>
                     <li className="p-2 w-20 rounded-full border-green border text-center">
-                      Python
+                      Python 
                     </li>
                     <li className="p-2 w-20 rounded-full border-green border text-center">
                       React
