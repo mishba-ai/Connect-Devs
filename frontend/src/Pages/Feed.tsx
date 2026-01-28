@@ -2,6 +2,7 @@ import forum from "../assets/forum.svg";
 import pitch from "../assets/pitch.png";
 import idea from "../assets/idea.png";
 import projectt from "../assets/projectt.png";
+
 const Feed = () => {
   return (
     <div className="">

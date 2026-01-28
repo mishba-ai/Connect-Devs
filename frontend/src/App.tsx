@@ -11,16 +11,12 @@ import boy2 from "./assets/boy2.jfif";
 import boy3 from "./assets/boy3.jfif";
 import boy4 from "./assets/boy4.jfif";
 import boy5 from "./assets/boy5.jfif";
-import teamicon from "./assets/teamicon.svg";
-import ratings from "./assets/ratings.svg";
-import forum from "./assets/forumicon.svg";
-import tools from "./assets/tools.svg";
-import easysearch from "./assets/easysearch.svg";
+import { FormInput, MessageCircleHeart, UserRoundSearch, UserCog, Lightbulb } from "lucide-react";
+
 function App() {
   return (
     <div className="bg-[#191919]  w-full">
       <Headerlanding />
-
       <main className=" pb-4 overflow-hidden">
         <section className="mt-0 mx-0 px-2 text-white  overflow-hidden h-screen w-full ">
           <div className="flex -mt-44 justify-between">
@@ -33,7 +29,6 @@ function App() {
               <div className="w-44 h-[620px] animate-pulse  -mt-80 rotate-47 bg-transparent border-tiltbtn border-2 border-t-0 rounded-b-full"></div>
             </div>
           </div>
-
           {/* connect icon */}
           <div className="flex justify-between">
             <div className=" bottom-56 absolute flex ">
@@ -84,7 +79,6 @@ function App() {
             </div>
           </div>
           {/* hero heading */}
-
           <div
             className=" absolute top-[35%] flex flex-col left-[50%] text-center  w-[900px] "
             style={{ transform: "translate(-50%, 0)" }}
@@ -157,12 +151,11 @@ function App() {
             <h1 className="text-[#3f3e3e] text-4xl font-Ubuntu font-semibold mt-4">
               Hackathons? Projects? Get Your Team Onboard & Brighten Things Up!
             </h1>
-
             <div className="mt-8 ">
               <ul className=" flex-wrap w-full flex gap-x-2 gap-y-3  font-Michroma  text-white">
                 <li className="w-[45%] h-44 bg-tiltbtn text-purple p-10 rounded-xl ">
                   <div className="flex">
-                    <img src={teamicon} alt="team" className="w-12 h-12" />
+                    <Lightbulb />
                     <h1 className="text-xl">Collaboration</h1>
                   </div>
                   <p className="text-sm font-Ubuntu mt-2">
@@ -175,11 +168,7 @@ function App() {
                   bg-[#323031] rounded-xl hover:text-purple p-10"
                 >
                   <div className="flex">
-                    <img
-                      src={ratings}
-                      alt=""
-                      className="hover:text-purple h-12 w-12"
-                    />{" "}
+                    <MessageCircleHeart />
                     <h1>Feedback & Ratings</h1>
                   </div>
                   <p className="text-sm font-Ubuntu mt-2">
@@ -189,7 +178,7 @@ function App() {
                 </li>
                 <li className="w-[45%] h-44 hover:bg-tiltbtn bg-[#323031] rounded-xl hover:text-purple p-10">
                   <div className="flex">
-                    <img src={forum} alt="" className="w-12  h-12" />{" "}
+                    <FormInput />
                     <h1>Community Forums</h1>
                   </div>{" "}
                   <p className="text-sm font-Ubuntu mt-2">
@@ -199,7 +188,7 @@ function App() {
                 <li className="w-[45%] h-44 hover:bg-tiltbtn bg-[#323031] rounded-xl hover:text-purple p-10">
                   <div className="flex">
                     {" "}
-                    <img src={tools} alt="" className="w-12 h-12" />
+                    <UserCog />
                     <h1>Collaboration Tools</h1>
                   </div>
                   <p className="text-sm font-Ubuntu mt-2">
@@ -209,8 +198,7 @@ function App() {
                 </li>
                 <li className="w-[92%] h-44 hover:bg-tiltbtn hover:text-purple bg-[#323031] rounded-xl  p-10 ">
                   <div className="flex ">
-                    <img src={easysearch} alt="" className="w-12 h-12" />
-                  
+                    <UserRoundSearch />
                     <h1>Easy Search</h1>
                   </div>
                   <p className="text-sm font-Ubuntu mt-2">

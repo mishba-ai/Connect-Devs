@@ -1,4 +1,4 @@
-import message from "../assets/message.svg";
+import { Mail } from "lucide-react";
 
 const Connections = () => {
   return (
@@ -16,11 +16,11 @@ const Connections = () => {
               <p className=" font-Archivo text-sm text-gray-400">2nd</p>{" "}
             </div>
             <div className="flex items-center">
-              <img src={message} alt="message" className="w-6  h-6" />
+              <Mail />
             </div>
           </div>
         </li>
-        
+
         <li className="flex p-1 gap-x-1">
           <img
             src="https://t3.ftcdn.net/jpg/05/16/27/58/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg"
@@ -33,7 +33,7 @@ const Connections = () => {
               <p className=" font-Archivo text-sm text-gray-400">2nd</p>{" "}
             </div>
             <div className="flex items-center">
-              <img src={message} alt="message" className="w-6  h-6" />
+              <Mail />
             </div>
           </div>
         </li>
@@ -50,7 +50,7 @@ const Connections = () => {
               <p className=" font-Archivo text-sm text-gray-400">2nd</p>{" "}
             </div>
             <div className="flex items-center">
-              <img src={message} alt="message" className="w-6  h-6" />
+              <Mail />
             </div>
           </div>
         </li>
@@ -67,7 +67,7 @@ const Connections = () => {
               <p className=" font-Archivo text-sm text-gray-400">2nd</p>{" "}
             </div>
             <div className="flex items-center">
-              <img src={message} alt="message" className="w-6  h-6" />
+              <Mail />
             </div>
           </div>
         </li>
@@ -84,7 +84,7 @@ const Connections = () => {
               <p className=" font-Archivo text-sm text-gray-400">2nd</p>{" "}
             </div>
             <div className="flex items-center">
-              <img src={message} alt="message" className="w-6  h-6" />
+              <Mail />
             </div>
           </div>
         </li>

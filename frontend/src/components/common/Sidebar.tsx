@@ -1,32 +1,25 @@
 import { Link, useLocation } from "react-router-dom";
 import Tooltip from "./Tooltip";
-
-import dashboard from "../../assets/dashboard.svg";
-import project from "../../assets/project.svg";
-// import challenge from "../../assets/challenge.svg";
-import profile from "../../assets/profile.svg";
-// import explore from "../assets/explore.svg";
-// import logout from "../assets/logout.svg";
-import userplus from "../../assets/userplus.svg";
+import { SquareUser,LayoutDashboard ,UserPlus,SquareChartGantt} from "lucide-react"; 
 import React from "react";
 
 interface NavItem {
   path: string;
-  icon: string;
-  alt: string;
+  icon: React.ReactNode;
+  alt?:string
   tooltip: string;
 }
 // A single array to hold all your navigation items
 const navItems:NavItem[] = [
-  { path: "/userplus", icon: userplus, alt: "User", tooltip: "User" },
-  { path: "/Home", icon: dashboard, alt: "Dashboard", tooltip: "dashboard" },
-  { path: "/Project", icon: project, alt: "Project", tooltip: "Project" },
+  { path: "/userplus", icon: <UserPlus className="text-white"/>, tooltip: "User" },
+  { path: "/Home", icon: <LayoutDashboard className="text-white"/>,tooltip: "dashboard" },
+  { path: "/Project", icon: <SquareChartGantt className="text-white"/>, tooltip: "Project" },
   // { path: "/Challenges", icon: challenge, alt: "Challenges", tooltip: "Challenge" },
   // { path: "/Feed", icon: explore, alt: "Explore", tooltip: "Feed" },
   // { path: "/Profile", icon: profile, alt: "Profile", tooltip: "Profile" },
 ];
 
-const ProfileItem = { path: "/Profile", icon: profile, alt: "profile", tooltip: "profile" };
+const ProfileItem = { path: "/Profile", icon: <SquareUser className="text-white"/>, tooltip: "profile" };
 
 
 interface SidebarTypes{
@@ -55,7 +48,7 @@ function Sidebar({ style }:SidebarTypes) {
               <Tooltip text={navItems[0].tooltip}>
                 <Link to={navItems[0].path}>
                   <button className={getButtonClass(navItems[0].path)}>
-                    <img src={navItems[0].icon} alt={navItems[0].alt} className="h-8 w-8 p-1" />
+                    <div> {navItems[0].icon} </div>
                   </button>
                 </Link>
               </Tooltip>
@@ -68,7 +61,7 @@ function Sidebar({ style }:SidebarTypes) {
                 <Tooltip text={item.tooltip}>
                   <Link to={item.path}>
                     <button className={getButtonClass(item.path)}>
-                      <img src={item.icon} alt={item.alt} />
+                      <div>{item.icon}</div>
                     </button>
                   </Link>
                 </Tooltip>
@@ -81,7 +74,7 @@ function Sidebar({ style }:SidebarTypes) {
               <Tooltip text={ProfileItem.tooltip}>
                 <Link to={ProfileItem.path}>
                   <button className={`${getButtonClass(ProfileItem.path)} mt-2`}>
-                    <img src={ProfileItem.icon} alt={ProfileItem.alt} className="" />
+                    <div>{ProfileItem.icon} </div>
                   </button>
                 </Link>
               </Tooltip>
