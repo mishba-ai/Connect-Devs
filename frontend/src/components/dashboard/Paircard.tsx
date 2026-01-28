@@ -44,7 +44,6 @@ export default function Paircard({
   const [skills, setSkills] = useState<string[]>(initialSkills)
   const [roles, setRoles] = useState<string[]>(initialRoles);
 
-
   const statusConfig: Record<Status, StatusConfigTypes> = {
     'open': {
       colorClass: "text-[#10B981]",
@@ -72,8 +71,7 @@ export default function Paircard({
   
 
   return (
-    <div className="w-96 pb-4 h-auto bg-[#6637ee bg-white border opacity-75 borderblack- rounded-[0.5rem] hover:bord  hover:shadow-[4px_4px_0px_rgb(0,0,0)] transition-all ease-out duration-75 flex  flex-col ">
-
+    <div className="w-96 pb-4 h-auto bg-[#6637ee bg-transparent border-black border opacity-75 borderblack- rounded-[0.5rem] hover:bord  hover:shadow-[4px_4px_0px_rgb(0,0,0)] transition-all ease-out duration-75 flex  flex-col ">
       {/* header section */}
       <div className="p-6  border-b-2 border-black bg-rd rounded-[0.5rem]">
         <div className="flex justify-between items-start mb-3">

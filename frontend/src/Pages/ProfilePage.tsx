@@ -1,120 +1,107 @@
-import location from "../assets/location.svg";
-import x from "../assets/x.svg";
-import linkedin from "../assets/linkedin.svg";
-import github from "../assets/github.svg";
-import website from "../assets/website.svg";
-import forward from "../assets/forward.svg";
 import { useState } from "react";
+import React from "react";
+import avatar1 from '../assets/avatar1.jpeg'
+interface teamProps {
+  name: string,
+  image: string
+}
+const teamMembers = [
+  {
+    name: 'john',
+    image: avatar1
+  },
+  {
+    add: 'add',
+  }
+]
+
+const skills = ['ai', 'mech engineering', 'technology']
 const ProfilePage = () => {
- 
+  const [fullname, setFullname] = useState('')
+  const [about, setAbout] = useState('')
+  const [location, setLocation] = useState('')
+  const [totalProjects, setTotalProjects] = useState('')
+  const [totalConnections, setTotalConnection] = useState('') 
   
-const [fullname ,setFullname] = useState('')
-const [about,setAbout] =useState('')
-const [location,setLocation] = useState('')
-const [totalProjects,setTotalProjects]=useState('')
-const [totalConnections,setTotalConnection] = useState('')
-
-
   return (
-    <div className="w-full">
-      <section className="">
-        <div className="">
-          <div className="flex gap-y-6 flex-col justify-center text-black items-center mb-4">
+    <div className="w-full ">
+      <section className="mt-10">
+        <div className="flex justify-between">
+          <div className="flex gap-y-1 flex-col  text-black  mb-4">
+            {/* <div></div> */}
             <img
-              src="https://t3.ftcdn.net/jpg/05/16/27/58/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg"
-              className="w-32 h-32 rounded-full"
-              alt="pfp"
+              src={avatar1}
+              className="w-32 h-32 rounded-full shadow-[4px_4px_0px_rgb(0,0,0)]"
+              alt="image"
             />
-
-            <h1 className="text-xl font-PressStart ">Lorem Ipsum</h1>
-
-            <p className="font-Ubuntu text-lg ">
-              Computer science student| learning JS| aspiring Full-Stack web
-              developer
-            </p>
-
-            <div className="flex gap-x-2">
-              <span>
-                <img src={location} alt="location" className="w-8 h-8" />
-              </span>
-              <span className="font-Ubuntu text-xl">LOCATION</span>
-            </div>
-
-            <div className="flex flex-col  font-PressStart">
-              <div className="flex gap-x-12">
-                <h1 className=" ">Projects</h1>
-                <div className=" h-6  border-l-green border-l mt-6"></div>
-                <h1 className="">Connections</h1>
-              </div>
-
-              <div className="flex justify-between text-center text-xl font-PressStart">
-                <p>400</p>
-                <p>141.k</p>
-              </div>
-            </div>
-
-            <div className="">
-              <button className="font-Ubuntu text-xl p-2 font-semibold  w-56 bg-green text-black  transition-all hover:translate-x-[3px] hover:shadow-[4px_4px_0px_rgb(255,255,255)] hover:border-2 hover:translate-y-[3px] hover:border-black">
-                Edit Your Profile
-              </button>
-            </div>
-
-{/*  */}
-            <div className="flex justify-between w-full mt-4 ">
-              <div className="w-[800px] h-[450px] bg-[#fff] shadow-[4px_4px_0px_rgb(0,0,0)] border-2 border-black p-4">
-                <div className="text-lg font-PressStart">About</div>
-                <hr className="border-green mt-2" />
-                <div className="gap-y-2 mt-2 font-Ubuntu flex flex-col">
-                  <p className="text-lg">Tech stacks</p>
-                  <ul className="flex font-Ubuntu gap-x-3 ">
-                    <li className="p-2 w-28 rounded-full border-green border text-center">
-                      Javascript
-                    </li>
-                    <li className="p-2 w-20 rounded-full border-green border text-center">
-                      Python 
-                    </li>
-                    <li className="p-2 w-20 rounded-full border-green border text-center">
-                      React
-                    </li>
-                    <li className="p-2 w-20 rounded-full border-green border text-center">
-                      Git
-                    </li>
-                  </ul>
+            <div className="flex-1 border ">
+              <div className="">
+                <div className="flex gap-x-2">
+                  <h1 className="text-2xl font-bold">username lastname</h1>
+                  <div className="border px-4 flex justify-center items-center rounded-xs border-black ">Developer</div>
                 </div>
+                <p className="text-gray-700">email@gmail.com</p>
               </div>
-              <div className="w-[450px] h-[400px] bg-[#fff] shadow-[4px_4px_0px_rgb(0,0,0)] border-2 border-black mr-10 p-4">
-                <h1 className="text-lg font-PressStart">Socials</h1>
-                <ul className="gap-y-5 font-Ubuntu  text-2xl  p-1  flex flex-col mt-4">
-                  <li className="bg-[#252525] hover:bg-[#393939]  p-4 w-full h-16 rounded-xl">
-                    <a href="" className="flex justify-between ">
-                      <img src={x} alt="" className="h-9 w-9" />
-                      <p className="">X</p>
-                      <img src={forward} alt="" />
-                    </a>
-                  </li>
-                  <li className="bg-[#252525] hover:bg-[#393939]  p-4 w-full h-16 rounded-xl">
-                    <a href="" className="flex justify-between ">
-                      <img src={github} alt="" className="h-9 w-9" />
-                      <p className="">GitHub</p>
-                      <img src={forward} alt="" />
-                    </a>
-                  </li>
-                  <li className="bg-[#252525]  hover:bg-[#393939] p-4 w-full h-16 rounded-xl">
-                    <a href="" className="flex justify-between ">
-                      <img src={linkedin} alt="" className="h-9 w-9" />
-                      <p className="">Linkedin</p>
-                      <img src={forward} alt="" />
-                    </a>
-                  </li>
-                  <li className="bg-[#252525] hover:bg-[#393939]  p-4 w-full h-16 rounded-xl">
-                    <a href="" className="flex justify-between items-center">
-                      <img src={website} alt="" className="h-9 w-9" />
-                      <p className="">Website</p>
-                      <img src={forward} alt="" />
-                    </a>
-                  </li>
-                </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+        {/*  */}
+
+        <div className=" w-full bg-ed flex justify-between">
+          <div className="w- flex bg-yellow- flex-col gap-y-6">
+            <div className="w-[530px] h-84 border-black border-2">
+              <h1>looking for </h1>
+              <div>
+                
               </div>
+            </div>
+            <div className="w-[530px] h-84 border-black border-2"></div>
+            <div className="w-[530px] h-84 border-black border-2"></div>
+          </div>
+          <div className="">
+            {/* teammates */}
+            <div className="">
+              <h1 className="text-2xl ">Teammembers </h1>
+              <ul className="flex gap-x-3 mt-2">
+                {teamMembers.map((team, index) => {
+                  return (<li key={index} className="w-12 h-12 rounded-full ">
+                    <img src={team.image} alt="img" className="w-12 h-12 rounded-full" />
+
+                  </li>)
+
+                })}
+                <button className="w-12 h-12 rounded-full border flex justify-center items-center">
+                  <p className="text-2xl">+</p>
+
+                </button>
+              </ul>
+            </div>
+            <div className="w-400px mt-10 bg-amber-">
+              <h1 className="text-3xl font">Projects</h1>
+              <ul className="grid grid-cols-2 mt-4">
+                <li className="w-64 transition-transform scale-95 h-44 border-black border-2 "></li>
+                <li className="w-64 h-44 transition-transform scale-95 border-black border-2 "></li>
+                <li className="w-64 h-44 transition-transform scale-95 border-black border-2 "></li>
+                <li className="w-64 h-44 transition-transform scale-95 border-black border-2 "></li>
+
+
+              </ul>
+            </div>
+
+            <div>
+              <h1 className="text-3xl mt-8">skills</h1>
+              <ul className="flex gap-x-2 mt-2">
+                {skills.map((skill, index) => {
+                  return (
+                    <li key={index} className="border border-black px-3 py-1">
+                      {skill}
+                    </li>
+                  )
+                })}
+              </ul>
             </div>
           </div>
         </div>

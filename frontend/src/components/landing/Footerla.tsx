@@ -1,7 +1,7 @@
 
 import x from "../../assets/x.svg";
 import linkedin from "../../assets/linkedin.svg";
-import discord from "../../assets/discord.svg";
+// import discord from "../../assets/discord.svg";
 import connectlogo from "../../assets/connectlogo.png";
 const Footerla = () => {
   return (
@@ -51,10 +51,10 @@ const Footerla = () => {
                 <a href="">
                   <img src={linkedin} alt="inimage" />{" "}
                 </a>
-                <a href="">
+                {/* <a href="">
                   {" "}
                   <img src={discord} alt="" />{" "}
-                </a>
+                </a> */}
               </div>
              
             </div>
