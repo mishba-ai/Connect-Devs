@@ -37,7 +37,8 @@ const ProfilePage = () => {
             <div className="flex-1 border ">
               <div className="">
                 <div className="flex gap-x-2">
-                  <h1 className="text-2xl font-bold">username lastname</h1>
+                
+                  {/* <h1 className="text-2xl font-bold">{{request.session.user_data.given_name}}</h1> */}
                   <div className="border px-4 flex justify-center items-center rounded-xs border-black ">Developer</div>
                 </div>
                 <p className="text-gray-700">email@gmail.com</p>

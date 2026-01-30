@@ -12,8 +12,8 @@ interface NavItem {
 // A single array to hold all your navigation items
 const navItems:NavItem[] = [
   { path: "/userplus", icon: <UserPlus className="text-white"/>, tooltip: "User" },
-  { path: "/Home", icon: <LayoutDashboard className="text-white"/>,tooltip: "dashboard" },
-  { path: "/Project", icon: <SquareChartGantt className="text-white"/>, tooltip: "Project" },
+  { path: "/home", icon: <LayoutDashboard className="text-white"/>,tooltip: "dashboard" },
+  { path: "/project", icon: <SquareChartGantt className="text-white"/>, tooltip: "Project" },
   // { path: "/Challenges", icon: challenge, alt: "Challenges", tooltip: "Challenge" },
   // { path: "/Feed", icon: explore, alt: "Explore", tooltip: "Feed" },
   // { path: "/Profile", icon: profile, alt: "Profile", tooltip: "Profile" },
