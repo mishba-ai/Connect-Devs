@@ -2,6 +2,14 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 load_dotenv()
+
+GOOGLE_OAUTH_CLIENT_ID = os.environ.get('GOOGLE_OAUTH_CLIENT_ID')
+
+if not GOOGLE_OAUTH_CLIENT_ID:
+    raise ValueError(
+        'GOOGLE_OAUTH_CLIENT_ID is missing.',
+    )
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
@@ -25,6 +33,11 @@ INSTALLED_APPS = [
     'accounts'
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication', 
+    ],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,7 +70,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
-
 
 # Database
 DATABASES = {
@@ -92,10 +104,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# for react app
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:5173',
-)
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+]
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'
