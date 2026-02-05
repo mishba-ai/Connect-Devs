@@ -1,7 +1,5 @@
-// import connectlogo from "../assets/connectlogo.png";
 import connecthlogo from "../../assets/connecthlogo.png";
-import Buttonlanding from "./Buttonlanding";
-// import cdlogo from "../assets/cdlogo.png";
+import GoogleLoginbtn from "./GoogleLoginbtn";
 
 const Headerlanding = () => {
   return (
@@ -10,11 +8,9 @@ const Headerlanding = () => {
         <img src={connecthlogo} alt="logo" className=" h-20" />
       </div>
       <div className="flex gap-x-6 mt-2">
+        <GoogleLoginbtn/>
         <h3 className="mt-2 font-semibold text-lg text-white font-PressStart">About</h3>
-        <Buttonlanding
-          text="SIGN UP"
-          style_button={{ width: "135px", rotate: "0px" }}
-        />
+        
       </div>
     </div>
   );

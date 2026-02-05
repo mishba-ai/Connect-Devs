@@ -1,3 +1,4 @@
+from datetime import timedelta
 import os
 from dotenv import load_dotenv
 from pathlib import Path
@@ -32,14 +33,49 @@ INSTALLED_APPS = [
     'rest_framework',
     'accounts'
 ]
+AUTH_USER_MODEL = 'accounts.User'
+
+SECURE_COOKIE=True
+SESSION_COOKIE_SAMESITE='Lax'
+CSRF_COOKIE_SAMESITE='Lax'
+SESSION_COOKIE_SECURE = False  # Set to True in production (HTTPS)
+SESSION_COOKIE_HTTPONLY = True
+CSRF_COOKIE_SECURE = False  # Set to True in production (HTTPS)
+
+SIMPLE_JWT ={
+    'ACCESS_TOKEN_LIFETIME':timedelta(hours=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS':True,
+    'BLACKLIST_AFTER_ROTATION':True,
+    'AUTH_HEADER_TYPES':('Bearer',),
+    'AUTH_COOKIE': 'refresh_token',  # Name of the cookie
+    'AUTH_COOKIE_HTTP_ONLY': True,   # Prevents JS from reading it
+    'AUTH_COOKIE_PATH': '/',         # Available everywhere
+    'AUTH_COOKIE_SAMESITE': 'Lax',
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication', 
+        'accounts.authentication.CookieJWTAuthentication', 
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',  # Require auth by default
     ],
 }
 
+CORS_ALLOW_CREDENTIALS = True
+SECURE_REFERRER_POLICY = 'no-referrer-when-downgrade'
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
+CORS_ALLOWED_ORIGINS = [
+     'http://localhost:5173',
+     'http://127.0.0.1:5173'
+]
+
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -47,8 +83,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware'
-
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -104,11 +138,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CORS_ALLOW_CREDENTIALS = True
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-]
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'

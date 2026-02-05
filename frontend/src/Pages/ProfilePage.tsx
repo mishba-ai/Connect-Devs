@@ -1,10 +1,15 @@
 import { useState } from "react";
 import React from "react";
 import avatar1 from '../assets/avatar1.jpeg'
+import api from "../api/axiosInstance";
+import { useAuth } from "../hooks/useAuth";
+
+
 interface teamProps {
   name: string,
   image: string
 }
+
 const teamMembers = [
   {
     name: 'john',
@@ -16,13 +21,17 @@ const teamMembers = [
 ]
 
 const skills = ['ai', 'mech engineering', 'technology']
+
+
 const ProfilePage = () => {
   const [fullname, setFullname] = useState('')
   const [about, setAbout] = useState('')
   const [location, setLocation] = useState('')
   const [totalProjects, setTotalProjects] = useState('')
   const [totalConnections, setTotalConnection] = useState('') 
-  
+  const {user} = useAuth();
+  console.log('User data:', user);
+
   return (
     <div className="w-full ">
       <section className="mt-10">
@@ -30,7 +39,7 @@ const ProfilePage = () => {
           <div className="flex gap-y-1 flex-col  text-black  mb-4">
             {/* <div></div> */}
             <img
-              src={avatar1}
+              src={user?.profile_picture}
               className="w-32 h-32 rounded-full shadow-[4px_4px_0px_rgb(0,0,0)]"
               alt="image"
             />
@@ -38,10 +47,10 @@ const ProfilePage = () => {
               <div className="">
                 <div className="flex gap-x-2">
                 
-                  {/* <h1 className="text-2xl font-bold">{{request.session.user_data.given_name}}</h1> */}
+                  <h1 className="text-2xl font-bold">{user?.full_name}</h1>
                   <div className="border px-4 flex justify-center items-center rounded-xs border-black ">Developer</div>
                 </div>
-                <p className="text-gray-700">email@gmail.com</p>
+                <p className="text-gray-700">{user?.email}</p>
               </div>
 
             </div>

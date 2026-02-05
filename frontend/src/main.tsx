@@ -7,11 +7,14 @@ import Project from "./Pages/Project";
 import Feed from "./Pages/Feed";
 import Challenges from "./Pages/Challenges";
 import "./index.css";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import { AuthProvider } from "./context/AuthContext";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Notfound from "./components/Notfound";
 import Setting from "./Pages/Setting";
 import Layout from "./components/Layout";
 
+const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID
 const router = createBrowserRouter([
   {
     path: "/",
@@ -59,6 +62,10 @@ if (!rootElement) {
 }
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </GoogleOAuthProvider>
   </React.StrictMode>
 );

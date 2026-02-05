@@ -49,9 +49,74 @@ class CustomUserManager(BaseUserManager):
             raise ValueError('Superuser must have password.')
         
         return self.create_user(email ,password=password,**extra_fields)
-        
-    
 
 class User(AbstractBaseUser,PermissionsMixin) :
     #primary key in using uuid
-    id = models.UUIDField(primary_key=True,db_index=True)
+    id = models.UUIDField(primary_key=True,default=uuid.uuid4 , editable=False)
+    email = models.EmailField(unique=True )
+    full_name = models.CharField(max_length=100,blank=True)
+    google_id = models.CharField(max_length=255,unique=True,null=True,blank=True)
+    
+    # User uploaded (optional, for when they want to change it)
+    profile_picture = models.URLField(max_length=500, blank=True)
+        
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    is_verified = models.BooleanField(default=False)
+    
+    # Timestamps
+    date_joined = models.DateTimeField(default=timezone.now)
+    last_login = models.DateTimeField(null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    # Permissions
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    objects = CustomUserManager()
+    
+    class Meta:
+        ordering = ['-date_joined']
+        indexes = [
+            models.Index(fields = ['email']),
+            models.Index(fields = ['google_id']),
+        ]
+    
+    def __str__(self):
+        return self.email
+    
+    @property
+    def display_name(self):
+        """Returns fullname if available, otherwise email prefix"""
+        return self.fullname or self.email.split('@')[0]
+    def get_profile_picture(self):
+        return self.profile_picture.url if self.profile_picture else self.google_profile_picture  
+    
+    
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    bio = models.TextField(blank=True)
+
+    date_of_birth = models.DateField(null=True, blank=True)
+    gender = models.CharField(max_length=20, blank=True, choices=[
+        ('male', 'Male'),
+        ('female', 'Female'),
+        ('other', 'Other'),
+        ('prefer_not_to_say', 'Prefer not to say'),
+    ])
+    
+    # Contact info
+    city = models.CharField(max_length=100, blank=True)
+    country = models.CharField(max_length=100, blank=True)
+        
+    # Social links
+    website = models.URLField(blank=True)
+    github_url = models.URLField(blank=True)
+    twitter_url = models.URLField(blank=True)
+        
+    # Metadata
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return f"{self.user.email}'s Profile"

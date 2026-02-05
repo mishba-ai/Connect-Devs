@@ -1,14 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
 import api from "../api/axiosInstance";
-
-interface AuthContextType {
-    user: any;
-    loading: boolean;
-    checkAuth: () => Promise<void>;
-}
-interface AuthProviderProps {
-    children: React.ReactNode;
-}
+import type { AuthContextType, User, AuthProviderProps } from "../types/auth";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL
 
@@ -20,7 +12,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
     const checkAuth = async () => {
         try {
-            const response = await api.get('/auth_receiver/');
+            const response = await api.get('/user/profile/');
+
             setUser(response.data);
         } catch (error) {
             setUser(null)
@@ -29,17 +22,26 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         }
     }
 
-    const handleGoogleLogin = () => {
-        window.location.href = `${API_BASE_URL}/auth/google`
+    const login = async (credential: string) => {
+        try {
+            const response = await api.post('/auth/google/', { credential })
+            setUser(response.data.user)
+            return response.data
+        } catch (error) {
+            console.error('login failed', error);
+            throw error
+        }
     }
 
     //logout
-    const logout = async() => {
+    const logout = async () => {
         try {
             await api.post('/auth/logout')
             setUser(null)
         } catch (error) {
-            console.error('logout failed',error);
+            console.error('logout failed', error);
+        } finally {
+            setUser(null)
         }
     }
 
@@ -48,11 +50,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }, []);
 
     return (
-        <AuthContext.Provider value={{user,loading,checkAuth}} >
+        <AuthContext.Provider value={{ user, loading, checkAuth, logout, login }} >
             {!loading && children}
         </AuthContext.Provider>
     )
 }
-
-
-export const useAuth = () => useContext(AuthContext)
