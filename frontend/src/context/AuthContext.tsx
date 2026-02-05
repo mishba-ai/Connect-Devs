@@ -2,8 +2,6 @@ import React, { createContext, useState, useEffect, useContext } from "react";
 import api from "../api/axiosInstance";
 import type { AuthContextType, User, AuthProviderProps } from "../types/auth";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL
-
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
@@ -13,7 +11,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     const checkAuth = async () => {
         try {
             const response = await api.get('/user/profile/');
-
             setUser(response.data);
         } catch (error) {
             setUser(null)

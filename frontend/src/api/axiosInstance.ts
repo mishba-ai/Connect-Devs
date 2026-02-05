@@ -15,7 +15,7 @@ api.interceptors.response.use(
     async (err) => {
         const originalRequest = err.config
         //if access token expired and we havent retired yet
-        if (err.response?.status === 401 && !originalRequest._retry) {
+        if (err.response?.status === 401 && !originalRequest._retry && !originalRequest.url.includes('auth/refresh/')) {
             originalRequest._retry = true
             try {
                 //try to refresh the token
@@ -25,7 +25,7 @@ api.interceptors.response.use(
                 return api(originalRequest);
             } catch (error) {
                 //refresh failed , redirect to login
-                window.location.href = '/login';
+                window.location.href = '/';
                 return Promise.reject(error)
             }
         }

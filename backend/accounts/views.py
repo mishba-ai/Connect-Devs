@@ -12,7 +12,6 @@ from datetime import datetime, timedelta
 from django.conf import settings
 from .models import User, UserProfile
 import os 
-# Create your views here.
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -147,6 +146,10 @@ def refresh_token(request):
     """refresh access token using refresh token from cookie"""
     refresh_token = request.COOKIES.get('refresh_token')
     
+      # DEBUG
+    # print("All cookies:", request.COOKIES)
+    # print("Refresh token:", refresh_token)
+    
     if not refresh_token:
         return Response(
             {'error':'Refresh token not found'},
@@ -186,12 +189,29 @@ def logout(request):
 @permission_classes([IsAuthenticated])
 def get_user_profile(request):
     """ get current user's full profile """
-    user = request.user.id
-    current_user = request.param.id
-    if user is None:
-        return None
+    user = request.user
+
+    profile_data = {
+        'id':str(user.id),
+        'email':user.email,
+        'full_name':user.full_name,
+        'profile_picture':user.profile_picture,
+        'date_joined': user.date_joined.isoformat(),
+        'last_login': user.last_login.isoformat() if user.last_login else None,
+
+    }   
     
-    # if current_user is Equalt
+    if hasattr(user,'profile'):
+       profile_data.update({
+        'bio': user.profile.bio,
+        'date_of_birth': user.profile.date_of_birth.isoformat() if user.profile.date_of_birth else None,
+        'gender': user.profile.gender,
+        'city':user.profile.city,
+        'country': user.profile.country,
+        'website': user.profile.website,
+        'github_url': user.profile.github_url,
+        'twitter_url': user.profile.twitter_url,
+       })
     
-    
+    return Response(profile_data)
     
