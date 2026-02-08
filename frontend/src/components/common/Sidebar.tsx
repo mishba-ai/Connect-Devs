@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import Tooltip from "./Tooltip";
-import { SquareUser,LayoutDashboard ,UserPlus,SquareChartGantt} from "lucide-react"; 
+import { SquareUser,LayoutDashboard ,UserPlus,SquareChartGantt,AppWindow} from "lucide-react"; 
 import React from "react";
 
 interface NavItem {
@@ -14,6 +14,8 @@ const navItems:NavItem[] = [
   { path: "/userplus", icon: <UserPlus className="text-white"/>, tooltip: "User" },
   { path: "/home", icon: <LayoutDashboard className="text-white"/>,tooltip: "dashboard" },
   { path: "/project", icon: <SquareChartGantt className="text-white"/>, tooltip: "Project" },
+  { path: "/CreateProject", icon: <AppWindow className="text-white"/>, tooltip: "CreateProject" },
+
   // { path: "/Challenges", icon: challenge, alt: "Challenges", tooltip: "Challenge" },
   // { path: "/Feed", icon: explore, alt: "Explore", tooltip: "Feed" },
   // { path: "/Profile", icon: profile, alt: "Profile", tooltip: "Profile" },

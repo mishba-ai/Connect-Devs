@@ -13,6 +13,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Notfound from "./components/Notfound";
 import Setting from "./Pages/Setting";
 import Layout from "./components/Layout";
+import CreateProject from "./Pages/Createproject";
 
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "Project",
         element: <Project />,
+      },
+      {
+        path:"CreateProject",
+        element:<CreateProject/>
       },
       {
         path: "Challenges",
