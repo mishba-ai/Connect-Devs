@@ -38,7 +38,7 @@ export default function MultiSelectAutocomplete({ label, options }: tagsType) {
             <label className="block text-xl font- mb-4 uppercase tracking-">
                 {label}
             </label>
-            <div className={`w-[80%] text-lg gap-2 p-1 border-2 h-12 border-black focus:outline-none ${!Open ? '' : 'shadow-[6px_6px_0_#fb6f92]'}  transition-all duration-200 bg-white font- flex justify-between items-center align-baseline`}>
+            <div className={`w-[80%] text-lg gap-2 p-1 border-2 h-12 border-black focus:outline-none ${!Open ? '' : 'shadow-[6px_6px_0_#fb6f92]'}  transition-all duration-200 bg-transparent font- flex justify-between items-center align-baseline`}>
                 {selectedOption.map((tag, index) => (
                     <div key={index} className='flex items-center gap-1 px-2 py-1 bg-amber-100 border border-black text-sm'>
                         {tag}
