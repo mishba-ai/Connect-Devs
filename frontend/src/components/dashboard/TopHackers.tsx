@@ -10,8 +10,8 @@ export default function TopHackers() {
     return (
         <div className="w-84 max-h-  bg-gray-50 border-black rounded-sm shadow-[4px_4px_0px_rgb(0,0,0)] border-2 overflow-hidden">
             <div className="relative w-full h-44">
-                <Map style={'w-full absolute inset-0  h-44 z-10'} />
-
+                {/* <Map style={'w-full absolute inset-0  h-44 z-10'} /> */}
+   <div className="w-full absolute inset-0 h-44 z-10 bg-purple"></div>
                 {/* profile  */}
                 <div className="h-44 w-full absolute inset-0 flex flex-col justify-center items-center p-2 gap-y-2 bg-gradient-to-b from-white/75 via-white/60 to-white/75 z-20">
 

@@ -214,4 +214,6 @@ def get_user_profile(request):
        })
     
     return Response(profile_data)
-    
+
+#  list users, get user by ID, update user account settings
+# bio, skills, experience, portfolio links, social media, preferences, availability status

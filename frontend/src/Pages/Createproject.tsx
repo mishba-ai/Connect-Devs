@@ -15,7 +15,7 @@ export default function CreateProject() {
   })
 
   return (
-    <div className='flex justify-center p-8 min-h-screen'>
+    <div className='flex justify-center p- min-h-screen'>
       <form className="w-full max-w-5xl " onSubmit={(e) => e.preventDefault()}>
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 mb-10'>
