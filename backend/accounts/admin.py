@@ -11,8 +11,8 @@ class CustomUserAdmin(UserAdmin):
     
     fieldsets=(
         (None,{'fields':('email','password')}),
-        ('Personal Info',{'fields':('first_name','last_name','profile_picture')}),
-        ('Google Info', {'fields': ('google_id', 'google_picture')}),
+        ('Personal Info',{'fields':('full_name','profile_picture')}),
+        ('Google Info', {'fields': ('google_id',)}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser')}),
         ('Important Dates', {'fields': ('last_login', 'date_joined')}),
     )
@@ -23,6 +23,8 @@ class CustomUserAdmin(UserAdmin):
             'fields': ('email', 'password1','password2', 'is_staff', 'is_active')}
         ),
     )
+    
+    readonly_fields=('date_joined','last_login')
     
 admin.site.register(User,CustomUserAdmin)
 admin.site.register(UserProfile)
