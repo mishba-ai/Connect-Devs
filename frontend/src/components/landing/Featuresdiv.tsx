@@ -9,9 +9,7 @@ interface FeaturesDiv {
   heading:string,
   para:string,
   styletext:React.CSSProperties
-
 }
-
 
 const Featuresdiv:React.FC<FeaturesDiv> = ({ style, image, heading, para, styleimg, styletext }) => {
   return (

@@ -4,18 +4,20 @@ import { ChevronDown, ChevronUp } from 'lucide-react'
 interface dropdown {
     label: string,
     options: string[]
+    onChange?: (value: string) => void
 }
-export default function Dropdown({ label, options }: dropdown) {
+export default function Dropdown({ label, options ,onChange}: dropdown) {
     const [open, setOpen] = useState(false)
-    const [selectedState ,setSelectedState] = useState('Options')
+    const [selectedState, setSelectedState] = useState('Options')
+     
     return (
         <div>
             <label className="block text-xl font- mb-4 uppercase tracking-">
-{label} 
-           </label>
+                {label}
+            </label>
             <div className='w-72 relative'>
-                <div 
-                className={`flex text-xl bg-amber-100 hover:bg-amber-300 p-2 border-2 justify-center items-center border-black focus:outline-none ${open? 'shadow-[6px_6px_0_#FFD700]':''} hover:cursor-pointer active:transition-all active:duration-200`}
+                <div
+                    className={`flex text-xl bg-amber-100 hover:bg-amber-300 p-2 border-2 justify-center items-center border-black focus:outline-none ${open ? 'shadow-[6px_6px_0_#FFD700]' : ''} hover:cursor-pointer active:transition-all active:duration-200`}
                     onClick={() => setOpen(!open)}
                 >
                     <p>{selectedState}</p>
@@ -31,6 +33,7 @@ export default function Dropdown({ label, options }: dropdown) {
                                     onClick={() => {
                                         setOpen(false)
                                         setSelectedState(option)
+                                        onChange?.(option)
                                     }}
                                 >{option}</div>
 

@@ -13,9 +13,9 @@ from django.conf import settings
 from .models import User, UserProfile
 import os 
 
+@csrf_exempt
 @api_view(['POST'])
 @permission_classes([AllowAny])
-@csrf_exempt
 @transaction.atomic
 def google_auth(request):
     """
@@ -168,6 +168,7 @@ def refresh_token(request):
             secure=True,
             samesite='Lax',
             max_age=3600,
+            path='/'
         )
         return response
     except Exception as e:

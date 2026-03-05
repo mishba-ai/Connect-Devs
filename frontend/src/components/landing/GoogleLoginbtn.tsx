@@ -18,7 +18,7 @@ const GoogleLoginbtn = ({ text = "Sign in", onSuccess }: GoogleLoginButtonProps)
             if (credentialResponse.credential) {
                 await login(credentialResponse.credential);
                 onSuccess?.();
-                navigate('/home'); // or wherever you want to redirect
+                navigate('/home'); 
             }
         } catch (error) {
             console.error('Login failed:', error);

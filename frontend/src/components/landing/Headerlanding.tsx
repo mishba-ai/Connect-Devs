@@ -10,10 +10,10 @@ const Headerlanding = () => {
       <div className="flex gap-x-6 mt-2">
         <GoogleLoginbtn/>
         <h3 className="mt-2 font-semibold text-lg text-white font-PressStart">About</h3>
-        
       </div>
     </div>
   );
 };
 
 export default Headerlanding;
+

@@ -8,6 +8,7 @@ TAG_CHOICES = [
     ("on_hold", "On hold"),
 ]
 
+
 class Category_tag(models.Model):
     name = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=150, unique=True)
@@ -17,6 +18,7 @@ class Category_tag(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Skilled_tag(models.Model):
     name = models.CharField(max_length=250, unique=True)
@@ -28,6 +30,7 @@ class Skilled_tag(models.Model):
     def __str__(self):
         return self.name
 
+
 class Looking_for(models.Model):
     name = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=150, unique=True)
@@ -38,14 +41,15 @@ class Looking_for(models.Model):
     def __str__(self):
         return self.name
 
-# choices are only meaningful on single-value fields
-
 class Projects(models.Model):
     project_title = models.TextField()
     tags = models.CharField(max_length=20, choices=TAG_CHOICES, default="open")
     project_thumbnail = models.URLField(max_length=500, blank=True)
     category_tags = models.ManyToManyField(Category_tag, related_name="projects")
     skilled_tags = models.ManyToManyField(Skilled_tag, related_name="projects")
-    looking_for = models.ManyToManyField(Looking_for,related_name="projects")
+    looking_for = models.ManyToManyField(Looking_for, related_name="projects")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Metal:
+        ordering = ["-created_at"]
