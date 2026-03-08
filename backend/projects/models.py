@@ -45,6 +45,7 @@ class Projects(models.Model):
     project_title = models.TextField()
     tags = models.CharField(max_length=20, choices=TAG_CHOICES, default="open")
     project_thumbnail = models.URLField(max_length=500, blank=True)
+    description = models.TextField(max_length=400 , blank=True)
     category_tags = models.ManyToManyField(Category_tag, related_name="projects")
     skilled_tags = models.ManyToManyField(Skilled_tag, related_name="projects")
     looking_for = models.ManyToManyField(Looking_for, related_name="projects")

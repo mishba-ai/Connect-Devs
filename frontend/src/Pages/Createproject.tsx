@@ -12,7 +12,6 @@ export default function CreateProject() {
     category_tags: [] as number[],
     skilled_tags: [] as number[],
     looking_for: [] as number[],
-    
     description: '',
   })
 
@@ -32,19 +31,18 @@ export default function CreateProject() {
 
   const handleLaunchBtn = async () => {
     try {
-      
-const payload = {
-      project_title: formData.project_title,
-      tags: formData.tags,
-      project_thumbnail: formData.project_thumbnail,
-      description: formData.description,
-      category_tags_ids: formData.category_tags,   // ← rename to match backend
-      skilled_tag_ids: formData.skilled_tags,       // ← rename to match backend  
-      looking_for_ids: formData.looking_for,        // ← rename to match backend
-       }
+      const payload = {
+        project_title: formData.project_title,
+        tags: formData.tags,
+        project_thumbnail: formData.project_thumbnail,
+        description: formData.description,
+        category_tags_ids: formData.category_tags,
+        skilled_tag_ids: formData.skilled_tags,
+        looking_for_ids: formData.looking_for,
+      }
       await api.post('api/create_project/', payload);
-    } catch (error:any) {
-       console.error(error.response?.data)
+    } catch (error: any) {
+      console.error(error.response?.data)
     }
   }
 
@@ -96,8 +94,8 @@ const payload = {
         <div className='flex flex-col mb-10'>
           <label className="text-xl font-medium mb-4 uppercase">Description</label>
           <textarea
-          value={formData.description}
-           onChange={(e) => handleChange('description', e.target.value)}  
+            value={formData.description}
+            onChange={(e) => handleChange('description', e.target.value)}
             placeholder="Describe your project vision..."
             className='w-full h-32 text-lg p-3 border-2 border-black focus:shadow-[4px_4px_0_#FFD700] outline-none transition-all resize-none'
           />
