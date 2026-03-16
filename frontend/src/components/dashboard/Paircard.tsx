@@ -1,10 +1,10 @@
 import { DotIcon, Users, Clock, Star, Code, Zap, } from "lucide-react";
 import type { Status, StatusConfigTypes, PairCardProps } from "../../types/"
 
-export default function Paircard({project_thumbnail,looking_for,project_title,tags,category_tags,skilled_tags,description}:PairCardProps) {
+export default function Paircard({project_thumbnail,owner,looking_for,project_title,tags,category_tags,skilled_tags,description}:PairCardProps) {
 
 const statusConfig: Record<Status, StatusConfigTypes> = {
-  'open': {
+  'Open': {
     colorClass: "text-[#10B981]",
     bgColorClass: "bg-[#D1FAE5]",
     text: "Open"
@@ -14,20 +14,19 @@ const statusConfig: Record<Status, StatusConfigTypes> = {
     bgColorClass: "bg-[#FEE2E2]",
     text: "Closed"
   },
-  'in_progress': {                     
+  'In progress': {                     
     colorClass: "text-[#F59E0B]",
     bgColorClass: "bg-[#FEF3C7]",
     text: "In Progress"
   },
-  'on_hold': {                         
+  'On Hold': {                         
     colorClass: "text-[#6B7280]",
     bgColorClass: "bg-[#F3F4F6]",
     text: "On Hold"
   }
 }
 
-  const currentStatus = statusConfig[(tags ?? 'open') as Status]
-
+  const currentStatus = statusConfig[(tags ?? 'Open') as Status]
 
   return (
     <div className="w-96 pb-4 h-auto bg-[#6637ee bg-transparent border-black border opacity-75 borderblack- rounded-[0.5rem] hover:bord  hover:shadow-[4px_4px_0px_rgb(0,0,0)] transition-all ease-out duration-75 flex  flex-col ">
@@ -36,7 +35,7 @@ const statusConfig: Record<Status, StatusConfigTypes> = {
         <div className="flex justify-between items-start mb-3">
           <h1>{project_title}</h1>
           {/* status */}
-          <div className={`flex items-center font-Ubuntu rounded-xs px-1  justify-center border-black py- text-xs font-medium border ${currentStatus.colorClass} ${currentStatus.bgColorClass}`}>
+          <div className={`flex items-center font-Ubuntu rounded-xs px-1  justify-center border-black py- text-xs font-medium border ${currentStatus?.colorClass} ${currentStatus?.bgColorClass}`}>
             <div className="bg-amber-"> <DotIcon size={12} /></div>
             <span className={` `}>{tags}</span>
           </div>
@@ -44,21 +43,17 @@ const statusConfig: Record<Status, StatusConfigTypes> = {
 
         {/* category */}
         <div className="flex gap-2 mb-3">
-          <span className="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-bold border border-black rounded">
-            {category_tags.map((ctg)=>(
-              <span key={ctg.id}>{ctg.name}</span>
+          <ul className="flex gap-x-1">
+            {(category_tags??[]).map((ctg)=>(
+              <li key={ctg.id} className="px-3 py-1 flex gap-x-1 bg-purple-100 text-purple-800 text-xs font-bold border border-black rounded">{ctg.name}</li>
             ))}
-          </span>
-          {/* {category_tags?.includes("hackathon project") && (
-            <span className="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold border border-black rounded">
-              Hackathon Project
-            </span>
-          )} */}
+          </ul>
+        
         </div>
         <div className="flex bg-yellow-0 gap-x-6 ">
           <img src={project_thumbnail} alt="img" className="w-20 p-1 h-20 transition-transform scale-105 rounded-sm  border-2 border-black border-dashed" />
           <div className="">
-            {/* <h1 className="font-Michroma font-semibold">{ownerName}</h1> */}
+            <h1 className="font-Michroma font-semibold">{owner}</h1>
             {/* <h4 className="text-sm text-gray-700">{roles}</h4> */}
             <p className="text-sm text-gray-600">{description}</p>
           </div>
@@ -76,7 +71,6 @@ const statusConfig: Record<Status, StatusConfigTypes> = {
           <ul className="flex gap-1 mt-1 ">
             {(skilled_tags ?? []).map((skill) => (
               <li className="border-gray-600 text-xs text-gray-500 px-1 border rounded-xs" key={skill.id}>{skill.name}</li>
-            
             ))}
           </ul>
           <div className="flex gap-x-2  mt-2">

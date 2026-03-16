@@ -92,10 +92,9 @@ class User(AbstractBaseUser,PermissionsMixin) :
     def get_profile_picture(self):
         return self.profile_picture.url if self.profile_picture else self.google_profile_picture  
     
-    
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    bio = models.TextField(blank=True)
+    bio = models.TextField(blank=True, default="not bio yet" ,max_length=500)
 
     date_of_birth = models.DateField(null=True, blank=True)
     gender = models.CharField(max_length=20, blank=True, choices=[
@@ -113,7 +112,8 @@ class UserProfile(models.Model):
     website = models.URLField(blank=True)
     github_url = models.URLField(blank=True)
     twitter_url = models.URLField(blank=True)
-        
+    # skills  =  
+    
     # Metadata
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

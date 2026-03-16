@@ -21,7 +21,7 @@ class ProjectsSerializer(serializers.ModelSerializer):
     category_tags = CategoryTagSerializer(many=True, read_only=True)
     skilled_tags = SkilledTagSerializer(many=True, read_only=True)
     looking_for = LookingForSerializer(many=True, read_only=True)
-
+    owner = serializers.StringRelatedField(read_only=True)
     category_tags_ids = serializers.PrimaryKeyRelatedField(
         many=True,
         queryset=Category_tag.objects.all(),

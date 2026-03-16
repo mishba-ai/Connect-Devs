@@ -4,6 +4,9 @@ export interface User{
     full_name: string;
     profile_picture: string;
     date_joined: string;
+    bio?:string;
+    skills?:string[];
+    projects?:string[]
 }
 
 export interface AuthContextType {

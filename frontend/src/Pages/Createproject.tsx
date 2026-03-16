@@ -27,6 +27,7 @@ export default function CreateProject() {
 
   const handleChange = async (field: string, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }))
+    
   }
 
   const handleLaunchBtn = async () => {
@@ -41,6 +42,17 @@ export default function CreateProject() {
         looking_for_ids: formData.looking_for,
       }
       await api.post('api/create_project/', payload);
+      setFormData({
+        project_title: '',
+        tags: 'open',
+        project_thumbnail: '',
+        category_tags: [],
+        skilled_tags: [],
+        looking_for: [],
+        description: '',
+      })
+      alert('Project created successfully!')
+
     } catch (error: any) {
       console.error(error.response?.data)
     }
