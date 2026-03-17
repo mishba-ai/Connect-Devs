@@ -146,9 +146,6 @@ def refresh_token(request):
     """refresh access token using refresh token from cookie"""
     refresh_token = request.COOKIES.get('refresh_token')
     
-      # DEBUG
-    # print("All cookies:", request.COOKIES)
-    # print("Refresh token:", refresh_token)
     
     if not refresh_token:
         return Response(
@@ -199,7 +196,6 @@ def get_user_profile(request):
         'profile_picture':user.profile_picture,
         'date_joined': user.date_joined.isoformat(),
         'last_login': user.last_login.isoformat() if user.last_login else None,
-
     }   
     
     if hasattr(user,'profile'):
@@ -212,6 +208,8 @@ def get_user_profile(request):
         'website': user.profile.website,
         'github_url': user.profile.github_url,
         'twitter_url': user.profile.twitter_url,
+        'linkedin_url':user.profile.linkedin_url,
+        'skills':user.profile.skills
        })
     
     return Response(profile_data)

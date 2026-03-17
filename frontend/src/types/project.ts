@@ -19,3 +19,10 @@ export interface PairCardProps {
   created_at: string
   updated_at: string
 }
+
+export interface Project {
+  id: number
+  project_title: string
+  project_thumbnail: string
+  tags: string
+}

@@ -13,7 +13,6 @@ from .serializers import (
 from rest_framework import generics
 from .models import Projects, Looking_for, Skilled_tag, Category_tag
 
-
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def launch_proj(request):
@@ -62,9 +61,16 @@ def get_categories(request):
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
+# show all the project list 
 def get_projects_list(request):
     queryset = Projects.objects.all()
     serializer = ProjectsSerializer(queryset, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
-
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+# get latest top 4 projects from the authenticated user to show their respective projects in the profile
+def get_latest_user_project(request):
+    queryset = Projects.objects.filter(owner=request.user).order_by('-created_at')[:4]
+    serializer = ProjectsSerializer(queryset,many= True)
+    return Response(serializer.data , status = status.HTTP_200_OK) 
