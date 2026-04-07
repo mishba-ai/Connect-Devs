@@ -1,30 +1,30 @@
 import { DotIcon, Users, Clock, Star, Code, Zap, } from "lucide-react";
 import type { Status, StatusConfigTypes, PairCardProps } from "../../types/"
 
-export default function Paircard({project_thumbnail,owner,looking_for,project_title,tags,category_tags,skilled_tags,description}:PairCardProps) {
+export default function Paircard({ project_thumbnail, owner, looking_for, project_title, tags, category_tags, skilled_tags, description }: PairCardProps) {
 
-const statusConfig: Record<Status, StatusConfigTypes> = {
-  'Open': {
-    colorClass: "text-[#10B981]",
-    bgColorClass: "bg-[#D1FAE5]",
-    text: "Open"
-  },
-  'closed': {                          
-    colorClass: "text-[#EF4444]",
-    bgColorClass: "bg-[#FEE2E2]",
-    text: "Closed"
-  },
-  'In progress': {                     
-    colorClass: "text-[#F59E0B]",
-    bgColorClass: "bg-[#FEF3C7]",
-    text: "In Progress"
-  },
-  'On Hold': {                         
-    colorClass: "text-[#6B7280]",
-    bgColorClass: "bg-[#F3F4F6]",
-    text: "On Hold"
+  const statusConfig: Record<Status, StatusConfigTypes> = {
+    'Open': {
+      colorClass: "text-[#10B981]",
+      bgColorClass: "bg-[#D1FAE5]",
+      text: "Open"
+    },
+    'closed': {
+      colorClass: "text-[#EF4444]",
+      bgColorClass: "bg-[#FEE2E2]",
+      text: "Closed"
+    },
+    'In progress': {
+      colorClass: "text-[#F59E0B]",
+      bgColorClass: "bg-[#FEF3C7]",
+      text: "In Progress"
+    },
+    'On Hold': {
+      colorClass: "text-[#6B7280]",
+      bgColorClass: "bg-[#F3F4F6]",
+      text: "On Hold"
+    }
   }
-}
 
   const currentStatus = statusConfig[(tags ?? 'Open') as Status]
 
@@ -44,11 +44,11 @@ const statusConfig: Record<Status, StatusConfigTypes> = {
         {/* category */}
         <div className="flex gap-2 mb-3">
           <ul className="flex gap-x-1">
-            {(category_tags??[]).map((ctg)=>(
+            {(category_tags ?? []).map((ctg) => (
               <li key={ctg.id} className="px-3 py-1 flex gap-x-1 bg-purple-100 text-purple-800 text-xs font-bold border border-black rounded">{ctg.name}</li>
             ))}
           </ul>
-        
+
         </div>
         <div className="flex bg-yellow-0 gap-x-6 ">
           <img src={project_thumbnail} alt="img" className="w-20 p-1 h-20 transition-transform scale-105 rounded-sm  border-2 border-black border-dashed" />
