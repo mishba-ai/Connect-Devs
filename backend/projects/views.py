@@ -3,14 +3,12 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
-from google.auth.transport import requests
 from .serializers import (
     ProjectsSerializer,
     CategoryTagSerializer,
     LookingForSerializer,
     SkilledTagSerializer,
 )
-from rest_framework import generics
 from .models import Projects, Looking_for, Skilled_tag, Category_tag
 
 @api_view(["POST"])
@@ -23,7 +21,6 @@ def launch_proj(request):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
@@ -58,7 +55,6 @@ def get_categories(request):
     serializer = CategoryTagSerializer(queryset, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
-
 @api_view(["GET"])
 @permission_classes([AllowAny])
 # show all the project list 
@@ -69,8 +65,11 @@ def get_projects_list(request):
 
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
-# get latest top 4 projects from the authenticated user to show their respective projects in the profile
 def get_latest_user_project(request):
     queryset = Projects.objects.filter(owner=request.user).order_by('-created_at')[:4]
+    
+    if not queryset.exists():
+        return Response({"message": "No projects created yet", "projects": []}, status=status.HTTP_200_OK)
+    
     serializer = ProjectsSerializer(queryset,many= True)
     return Response(serializer.data , status = status.HTTP_200_OK) 

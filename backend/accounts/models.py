@@ -122,9 +122,9 @@ class UserProfile(models.Model):
     twitter_url = models.TextField(blank=True)
     linkedin_url = models.URLField(blank=True)
     
-    # add projects it will have latest top 4 projects
-    # projects =  models.
-    skills = ArrayField(models.CharField(max_length=100), blank=True, default=list)
+    skills = ArrayField(
+        models.CharField(max_length=100), blank=True, default=list ,
+        size=8)
     
     # Metadata
     created_at = models.DateTimeField(auto_now_add=True)

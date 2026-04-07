@@ -6,4 +6,5 @@ urlpatterns = [
     path('auth/logout/', views.logout, name='logout'),
     path('auth/refresh/', views.refresh_token, name='refresh_token'), 
     path('user/profile/', views.get_user_profile, name='user_profile'),
+    path('user/update_user_profile',views.update_user_profile, name='update_user_profile')
 ]

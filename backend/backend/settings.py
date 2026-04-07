@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = (
@@ -45,9 +45,13 @@ AUTH_USER_MODEL = "accounts.User"
 SECURE_COOKIE = not DEBUG
 SESSION_COOKIE_SAMESITE = "Lax"
 CSRF_COOKIE_SAMESITE = "Lax"
-SESSION_COOKIE_SECURE = False  # Set to True in production (HTTPS)
+SESSION_COOKIE_SECURE = True  # Set to True in production (HTTPS)
 SESSION_COOKIE_HTTPONLY = True
-CSRF_COOKIE_SECURE = False  # Set to True in production (HTTPS)
+CSRF_COOKIE_SECURE = True  # Set to True in production (HTTPS)
+
+SECURE_BROWSER_XSS_FILTER=True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = 'DENY'
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(hours=1),
@@ -55,7 +59,7 @@ SIMPLE_JWT = {
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
     "AUTH_HEADER_TYPES": ("Bearer",),
-    "AUTH_COOKIE": "refresh_token",  # Name of the cookie
+    "AUTH_COOKIE": "refresh_token",  
     "AUTH_COOKIE_HTTP_ONLY": True,  # Prevents JS from reading it
     "AUTH_COOKIE_PATH": "/",  # Available everywhere
     "AUTH_COOKIE_SAMESITE": "Lax",
@@ -121,7 +125,7 @@ DATABASES = {
         "HOST": os.environ.get("DB_HOST", "localhost"),
         "PORT": os.environ.get("DB_PORT", "5432"),
         "OPTIONS": {
-            "sslmode": "prefer",  # Enable SSL if available
+            "sslmode": "require" if not DEBUG else "prefer",  
         },
     }
 }

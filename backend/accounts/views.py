@@ -8,10 +8,10 @@ from django.views.decorators.csrf import csrf_exempt
 from google.oauth2 import id_token
 from google.auth.transport import requests
 from rest_framework_simplejwt.tokens import RefreshToken
-from datetime import datetime, timedelta
 from django.conf import settings
 from .models import User, UserProfile
 import os 
+from .serializers import UserProfileSerializer , UserSerializer
 
 @csrf_exempt
 @api_view(['POST'])
@@ -188,31 +188,17 @@ def logout(request):
 def get_user_profile(request):
     """ get current user's full profile """
     user = request.user
+    UserProfile.objects.get_or_create(user=user)
+    serializer  = UserSerializer(user)
+    return Response(serializer.data) 
 
-    profile_data = {
-        'id':str(user.id),
-        'email':user.email,
-        'full_name':user.full_name,
-        'profile_picture':user.profile_picture,
-        'date_joined': user.date_joined.isoformat(),
-        'last_login': user.last_login.isoformat() if user.last_login else None,
-    }   
-    
-    if hasattr(user,'profile'):
-       profile_data.update({
-        'bio': user.profile.bio,
-        'date_of_birth': user.profile.date_of_birth.isoformat() if user.profile.date_of_birth else None,
-        'gender': user.profile.gender,
-        'city':user.profile.city,
-        'country': user.profile.country,
-        'website': user.profile.website,
-        'github_url': user.profile.github_url,
-        'twitter_url': user.profile.twitter_url,
-        'linkedin_url':user.profile.linkedin_url,
-        'skills':user.profile.skills
-       })
-    
-    return Response(profile_data)
-
-#  list users, get user by ID, update user account settings
-# bio, skills, experience, portfolio links, social media, preferences, availability status
+#update the user profile 
+@api_view(['PATCH'])
+@permission_classes([IsAuthenticated])
+def update_user_profile(request) :
+    profile = request.user.profile
+    serializer = UserProfileSerializer(profile , data =request.data , partial=True);
+    if serializer.is_valid() :
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)  

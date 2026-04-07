@@ -4,9 +4,15 @@ export interface User{
     full_name: string;
     profile_picture: string;
     date_joined: string;
-    bio?:string;
-    skills?:string[];
     projects?:string[]
+    profile: {
+    bio: string
+    skills: string[]
+    github_url: string
+    linkedin_url: string
+    twitter_url: string
+    website: string
+  } | null
 }
 
 export interface AuthContextType {

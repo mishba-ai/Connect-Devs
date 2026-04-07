@@ -6,7 +6,7 @@ import type { PairCardProps } from "../types";
 const project = () => {
 
   const [projects, setProjects] = useState<PairCardProps[]>([])
-
+  
   const get_project_lists = async () => {
     try {
       const response = await api.get('api/get_projects_lists/')
