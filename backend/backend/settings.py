@@ -83,7 +83,7 @@ REST_FRAMEWORK = {
 CORS_ALLOW_CREDENTIALS = True
 SECURE_REFERRER_POLICY = "no-referrer-when-downgrade"
 SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"
-CORS_ALLOWED_ORIGINS = [".onrender.com","http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000"]
+CORS_ALLOWED_ORIGINS = ["https://connect-devs.onrender.com","https://connect-devs-backend.onrender.com","http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000"]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
@@ -135,7 +135,7 @@ DATABASES = {
     }
 }
 
-# Password validation
+# Password validation 
 
 AUTH_PASSWORD_VALIDATORS = [
     {

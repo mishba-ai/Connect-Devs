@@ -16,13 +16,14 @@ api.interceptors.response.use(
     async (err) => {
         const originalRequest = err.config
         //if access token expired and we havent retired yet
-        if (err.response?.status === 401 && !originalRequest._retry && !originalRequest.url.includes('auth/refresh/')) {
+        if (err.response?.status === 401 && !originalRequest._retry && originalRequest.retryCount < 1) {
             originalRequest._retry = true
+             originalRequest.retryCount = (originalRequest.retryCount || 0) + 1
             try {
-                //try to refresh the token
+                //try to refresh the token 
                 await api.post('auth/refresh/')
 
-                //retry the original request
+                // retry the original request
                 return api(originalRequest);
             } catch (error) {
                 //refresh failed , redirect to login
