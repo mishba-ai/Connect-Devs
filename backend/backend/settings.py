@@ -20,11 +20,15 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 # SECURITY WARNING
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = (
-    os.environ.get("ALLOWED_HOSTS", "").split(",")
-    if os.environ.get("ALLOWED_HOSTS")
-    else []
-)
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '.onrender.com',
+]
+
+env_hosts = os.environ.get('ALLOWED_HOSTS', '')
+if env_hosts:
+    ALLOWED_HOSTS.extend([host.strip() for host in env_hosts.split(',') if host.strip()])
 
 # Application definition
 
