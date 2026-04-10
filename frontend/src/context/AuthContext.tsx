@@ -7,18 +7,21 @@ export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 export const AuthProvider = ({ children }: AuthProviderProps) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-
+  
     const checkAuth = async () => {
-        try {
-            const response = await api.get('/user/profile/');
-            setUser(response.data);
-        } catch (error) {
-            setUser(null)
-        } finally {
-            setLoading(false)
-        }
+         try {
+        setLoading(true)
+        // if refresh token 
+        await api.post('/auth/refresh/')
+        const userResponse = await api.get('/user/profile/')
+        setUser(userResponse.data)
+    } catch (error) {
+        console.error(error);
+        setUser(null);
+    }
     }
 
+    // login
     const login = async (credential: string) => {
         try {
             const response = await api.post('/auth/google/', { credential })
@@ -41,7 +44,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             setUser(null)
         }
     }
-
+   
     useEffect(() => {
         checkAuth();
     }, []);

@@ -12,9 +12,15 @@ import boy3 from "./assets/boy3.jfif";
 import boy4 from "./assets/boy4.jfif";
 import boy5 from "./assets/boy5.jfif";
 import { FormInput, MessageCircleHeart, UserRoundSearch, UserCog, Lightbulb } from "lucide-react";
-
+import { useAuth } from "./hooks/useAuth";
+import { Navigate } from "react-router-dom";
 
 function App() {
+  const { user, loading } = useAuth();
+  
+  if (loading) return <div>Loading...</div>;
+    if (user) return <Navigate to="/Home" replace />;
+
   return (
     <div className="bg-[#191919]  w-full">
       <Headerlanding />

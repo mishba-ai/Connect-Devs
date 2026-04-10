@@ -1,10 +1,16 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "./common/Header";
 import Sidebar from "./common/Sidebar";
+import { useAuth } from "../hooks/useAuth";
+import { Navigate } from "react-router-dom";
 
 export default function Layout() {
   const location = useLocation();
-
+  const { user, loading } = useAuth();
+  
+  if (loading) return <div>Loading...</div>;
+  if (!user) return <Navigate to="/" replace />;
+  
   //get pagename from the url
   const getPageName = ():string => {
     const pathname = location.pathname;
@@ -30,7 +36,6 @@ export default function Layout() {
         // Capitalize first letter of any other page
         return pageName.charAt(0).toUpperCase() + pageName.slice(1);
     }
-    //
   };
   const pageName = getPageName();
   const isHome = pageName.toLowerCase() === "home";
