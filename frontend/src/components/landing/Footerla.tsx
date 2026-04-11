@@ -1,6 +1,6 @@
 import { X } from "lucide-react";
 import linkedin from "../../assets/linkedin.svg";
-import connectlogo from "../../assets/connectlogo.png";
+import connectlogo from "/connectlogo.png";
 const Footerla = () => {
   return (
     <div className="px-14 mt-2 pb-3">

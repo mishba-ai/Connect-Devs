@@ -3,8 +3,8 @@ import api from "../api/axiosInstance.ts";
 import { useAuth } from "../hooks/useAuth.ts";
 import { PencilIcon, PlusSquareIcon, GithubIcon, LinkedinIcon, XIcon, GlobeIcon } from "lucide-react";
 import type { Project, userProfile } from "../types/index.ts";
-import TagInput from "../components/TagInput.tsx";
-import Socilalinks from "../components/Socilalinks.tsx";
+import TagInput from "../components/common/TagInput.tsx";
+import Socilalinks from "../components/profile/Socilalinks.tsx";
 
 
 

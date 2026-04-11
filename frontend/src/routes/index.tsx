@@ -4,9 +4,9 @@ import Profile from "../Pages/ProfilePage.tsx";
 import Project from "../Pages/Project.tsx";
 import Feed from "../Pages/Feed.tsx";
 import Challenges from "../Pages/Challenges.tsx";
-import Notfound from "../components/Notfound.tsx";
+import Notfound from "../Pages/Notfound.tsx";
 import Setting from "../Pages/Setting.tsx";
-import Layout from "../components/Layout.tsx";
+import Layout from "../Pages/Layout.tsx";
 import CreateProject from "../Pages/Createproject.tsx";
 export const routes =   [
   {

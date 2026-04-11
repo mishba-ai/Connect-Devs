@@ -1,4 +1,4 @@
-import connecthlogo from "../../assets/connecthlogo.png";
+import connecthlogo from "/connecthlogo.png";
 import GoogleLoginbtn from "./GoogleLoginbtn.tsx";
 
 export const Headerlanding = () => {

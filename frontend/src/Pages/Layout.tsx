@@ -1,9 +1,9 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Header from "./common/Header.tsx";
-import Sidebar from "./common/Sidebar.tsx";
+import Header from "../components/common/Header.tsx";
+import Sidebar from "../components/common/Sidebar.tsx";
 import { useAuth } from "../hooks/useAuth.ts";
 import { Navigate } from "react-router-dom";
-import Splashscreen from "../Pages/Splashscreen.tsx";
+import Splashscreen from "./Splashscreen.tsx";
 
 export default function Layout() {
   const location = useLocation();

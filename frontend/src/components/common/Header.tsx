@@ -1,5 +1,5 @@
 import React from "react";
-import connectlogo from "../../assets/connectlogo.png";
+import connectlogo from "/connectlogo.png";
 // import DarkLight from "./DarkLight";
 import { Link } from "react-router-dom";
 
