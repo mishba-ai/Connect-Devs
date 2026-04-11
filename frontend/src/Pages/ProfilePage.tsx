@@ -2,21 +2,24 @@ import { useEffect, useState } from "react";
 import api from "../api/axiosInstance.ts";
 import { useAuth } from "../hooks/useAuth.ts";
 import { PencilIcon, PlusSquareIcon, GithubIcon, LinkedinIcon, XIcon, GlobeIcon } from "lucide-react";
-import type { Project ,userProfile} from "../types/index.ts";
+import type { Project, userProfile } from "../types/index.ts";
 import TagInput from "../components/TagInput.tsx";
 import Socilalinks from "../components/Socilalinks.tsx";
+
+
 
 const ProfilePage = () => {
   const [editProfile, setEditProfile] = useState(false)
   const [addBio, setAddBio] = useState(false)
   const [bio, setBio] = useState('')
   const [addProjects, setAddProjects] = useState<Project[]>([])
-  const { user } = useAuth(); 
+  const { user } = useAuth();
   const [addskills, setAddSkills] = useState(false)
   const [skills, setSkills] = useState<string[]>(user?.profile?.skills || [])
-  const [github, setgithub] = useState('')
-  const [linkedin, setLinkedin] = useState('')
-  const [portfolio, setPortfolio] = useState('')
+  const [twitter, setTwitter] = useState(user?.profile?.twitter_url||'')
+  const [github, setGithub] = useState(user?.profile?.github_url||'')
+  const [linkedin, setLinkedin] = useState(user?.profile?.linkedin_url||'')
+  const [website, setWebsite] = useState(user?.profile?.website_url||'')
   const [saved, setSaved] = useState(false)
   const [displayBio, setDisplayBio] = useState(user?.profile?.bio || '')
 
@@ -26,11 +29,13 @@ const ProfilePage = () => {
 
   const updateProfile = () => {
     api.patch('/user/update_user_profile', {
-      bio, skills, github, linkedin, portfolio
+      bio, skills, github, linkedin, website,twitter
     })
     setDisplayBio(bio)
     setAddBio(false)
+
     setSaved(true)
+
     setTimeout(() => {
       setSaved(false)
     }, 3000);
@@ -50,7 +55,6 @@ const ProfilePage = () => {
   useEffect(() => {
     api.get('api/latest_proj/').then(r => setAddProjects(r.data))
   }, [])
-
 
   return (
     <div className="w-full ">
@@ -138,10 +142,22 @@ const ProfilePage = () => {
               </div>
             </div>
           </div>
-          {/* social links */}
-          <div className="gap-y-4 flex flex-col rounded-lg p-4 w-64 ">
-           <Socilalinks/>
-          </div>
+          {/* social links */} {
+            editProfile && (
+              <div className="gap-y-4 flex flex-col rounded-lg p-4 w-64 ">
+                <Socilalinks editProfile={true} github={github} setGithub={setGithub}
+                  linkedin={linkedin} setLinkedin={setLinkedin}
+                  website={website} setWebsite={setWebsite}
+                  twitter={twitter} setTwitter={setTwitter} />
+              </div>
+            )
+          }
+
+          {!editProfile && <Socilalinks editProfile={false} github={github} setGithub={setGithub}
+            linkedin={linkedin} setLinkedin={setLinkedin}
+            website={website} setWebsite={setWebsite}
+            twitter={twitter} setTwitter={setTwitter} />
+          }
         </div>
         {
           editProfile && (

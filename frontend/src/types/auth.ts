@@ -11,7 +11,7 @@ export interface User{
     github_url: string
     linkedin_url: string
     twitter_url: string
-    website: string
+    website_url: string
   } | null
 }
 

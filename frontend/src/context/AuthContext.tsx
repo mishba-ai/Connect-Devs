@@ -7,20 +7,20 @@ export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 export const AuthProvider = ({ children }: AuthProviderProps) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-  
+
     const checkAuth = async () => {
-         try {
-        setLoading(true)
-        // if refresh token 
-        await api.post('/auth/refresh/')
-        const userResponse = await api.get('/user/profile/')
-        setUser(userResponse.data)
-    } catch (error) {
-        console.error(error);
-        setUser(null);
-    } finally{
-        setLoading(false)
-    }
+        try {
+            setLoading(true)
+            // if refresh token 
+            await api.post('/auth/refresh/')
+            const userResponse = await api.get('/user/profile/')
+            setUser(userResponse.data)
+        } catch (error) {
+            console.error(error);
+            setUser(null);
+        } finally {
+            setLoading(false)
+        }
     }
 
     // login
@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             setUser(null)
         }
     }
-   
+
     useEffect(() => {
         checkAuth();
     }, []);

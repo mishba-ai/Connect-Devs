@@ -3,13 +3,14 @@ import Header from "./common/Header.tsx";
 import Sidebar from "./common/Sidebar.tsx";
 import { useAuth } from "../hooks/useAuth.ts";
 import { Navigate } from "react-router-dom";
+import Splashscreen from "../Pages/Splashscreen.tsx";
 
 export default function Layout() {
   const location = useLocation();
   const { user, loading } = useAuth();
   
-  if (loading) return <div>Loading...</div>;
-  if (!user) return <Navigate to="/" replace />;
+  if (loading) return <Splashscreen/>;
+  // if (!user) return <Navigate to="/" replace />;
   
   //get pagename from the url
   const getPageName = ():string => {

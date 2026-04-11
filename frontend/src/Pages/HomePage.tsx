@@ -1,12 +1,13 @@
-import TopHackers from "../components/dashboard/TopHackers.js";
-import Recommendation from "../components/dashboard/Recommendation.js";
-import QuickActions from "../components/dashboard/QuickActions.js";
-import React from 'react'
+import TopHackers from "../components/dashboard/TopHackers.tsx";
+import Recommendation from "../components/dashboard/Recommendation.tsx";
+import QuickActions from "../components/dashboard/QuickActions.tsx";
+
+
 const HomePage = () => {
   return (
     <div className="min-h-screen ">
       {/* Main Content Container */}
-      <div className="">
+      <div className=""> 
         <div className="flex   mt-10 gap-4  w-full bg-red- mb-16">
             <QuickActions />
             <Recommendation />
