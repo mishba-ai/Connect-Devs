@@ -1,7 +1,7 @@
 import { PencilIcon, PlusSquareIcon, GithubIcon, LinkedinIcon, XIcon, GlobeIcon } from "lucide-react";
 import { useState } from "react";
-import type { Project } from "../types/project";
-import { useAuth } from "../hooks/useAuth";
+import type { userProfile } from "../types/index.ts";
+import { useAuth } from "../hooks/useAuth.ts";
 
 export default function () {
 
@@ -9,22 +9,22 @@ export default function () {
     const [linksExist, setLinkExist] = useState()
     const [github, setgithub] = useState('')
     const [linkedin, setLinkedin] = useState('')
-    const [portfolio, setPortfolio] = useState('')
-    const [X, setX] = useState('')
+    const [website, setwebsite] = useState('')
+    const [twitter, setTwitter] = useState('')
 
     const socials = [
         { name: 'Github', logo: <GithubIcon />, value: github, setValue: setgithub },
-        { name: 'Linkedin', logo: <LinkedinIcon />, value: linkedin, setValue: setgithub },
-        { name: 'Portfolio', logo: <GlobeIcon />, value: portfolio, setValue: setgithub },
-        { name: 'X', logo: <XIcon />, value: X, setValue: setgithub }
+        { name: 'Linkedin', logo: <LinkedinIcon />, value: linkedin, setValue: setLinkedin },
+        { name: 'website', logo: <GlobeIcon />, value: website, setValue: setwebsite },
+        { name: 'twitter', logo: <XIcon />, value: twitter, setValue: setTwitter }
     ]
 
-    // show the links which are not empty if empty then do not show 
+    // show the links icon which are not empty if empty then do not show 
     const socialsDisplay = [
         { name: 'Github', logo: <GithubIcon /> },
         { name: 'Linkedin', logo: <LinkedinIcon /> },
         { name: 'Portfolio', logo: <GlobeIcon /> },
-        { name: 'X', logo: <XIcon />, value: X }
+        { name: 'twitter', logo: <XIcon />, value: twitter }
     ]
 
     return (

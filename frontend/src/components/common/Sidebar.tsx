@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import Tooltip from "./Tooltip";
+import Tooltip from "./Tooltip.tsx";
 import { SquareUser,LayoutDashboard ,UserPlus,SquareChartGantt,AppWindow} from "lucide-react"; 
 import React from "react";
 

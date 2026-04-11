@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Dropdown from '../components/project/Dropdown'
-import MultiSelectAutocomplete from '../components/project/MultiSelectAutocomplete'
-import UploadFile from '../components/common/UploadFile'
-import api from '../api/axiosInstance'
+import Dropdown from '../components/project/Dropdown.tsx'
+import MultiSelectAutocomplete from '../components/project/MultiSelectAutocomplete.tsx'
+import UploadFile from '../components/common/UploadFile.tsx'
+import api from '../api/axiosInstance.ts'
 
 export default function CreateProject() {
   const [formData, setFormData] = useState({

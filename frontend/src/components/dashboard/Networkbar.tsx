@@ -1,6 +1,6 @@
-import Neobutton from "../common/Neobutton";
-import Connections from "./Connections";
-import Map from "./Map";
+import Neobutton from "../common/Neobutton.tsx";
+import Connections from "./Connections.tsx";
+import Map from "./Map.tsx";
 
 const Networkbar = () => {
   return (

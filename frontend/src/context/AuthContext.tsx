@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
-import api from "../api/axiosInstance";
-import type { AuthContextType, User, AuthProviderProps } from "../types/auth";
+import api from "../api/axiosInstance.ts";
+import type { AuthContextType, User, AuthProviderProps } from "../types/index.ts";
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -18,6 +18,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     } catch (error) {
         console.error(error);
         setUser(null);
+    } finally{
+        setLoading(false)
     }
     }
 

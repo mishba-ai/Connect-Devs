@@ -1,6 +1,6 @@
-import Headerlanding from "./components/landing/Headerlanding";
-import Footerla from "./components/landing/Footerla";
-import Buttonlanding from "./components/landing/Buttonlanding";
+import Headerlanding from "./components/landing/Headerlanding.tsx";
+import Footerla from "./components/landing/Footerla.tsx";
+import Buttonlanding from "./components/landing/Buttonlanding.tsx";
 import girl1 from "./assets/girl1.jfif";
 import girl2 from "./assets/girl2.jfif";
 import girl3 from "./assets/girl3.jfif";
@@ -12,7 +12,7 @@ import boy3 from "./assets/boy3.jfif";
 import boy4 from "./assets/boy4.jfif";
 import boy5 from "./assets/boy5.jfif";
 import { FormInput, MessageCircleHeart, UserRoundSearch, UserCog, Lightbulb } from "lucide-react";
-import { useAuth } from "./hooks/useAuth";
+import { useAuth } from "./hooks/useAuth.ts";
 import { Navigate } from "react-router-dom";
 
 function App() {

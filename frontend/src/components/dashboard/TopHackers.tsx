@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Map from "./Map";
+import Map from "./Map.tsx";
 
 export default function TopHackers() {
     const [usersname, setUsername] = useState('hailey');

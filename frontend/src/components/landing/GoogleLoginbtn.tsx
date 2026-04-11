@@ -1,5 +1,5 @@
 import { GoogleLogin, CredentialResponse } from '@react-oauth/google';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../hooks/useAuth.ts';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 

@@ -1,10 +1,7 @@
-import Cards from "../components/Cards.js";
-import Paircard from "../components/dashboard/Paircard.js";
-import Map from "../components/dashboard/Map.js";
 import TopHackers from "../components/dashboard/TopHackers.js";
 import Recommendation from "../components/dashboard/Recommendation.js";
 import QuickActions from "../components/dashboard/QuickActions.js";
-
+import React from 'react'
 const HomePage = () => {
   return (
     <div className="min-h-screen ">

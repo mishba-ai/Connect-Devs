@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Header from "./common/Header";
-import Sidebar from "./common/Sidebar";
-import { useAuth } from "../hooks/useAuth";
+import Header from "./common/Header.tsx";
+import Sidebar from "./common/Sidebar.tsx";
+import { useAuth } from "../hooks/useAuth.ts";
 import { Navigate } from "react-router-dom";
 
 export default function Layout() {

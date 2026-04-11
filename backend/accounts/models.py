@@ -95,31 +95,13 @@ class User(AbstractBaseUser, PermissionsMixin):
             else self.google_profile_picture
         )
 
-
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     bio = models.TextField(blank=True, default="not bio yet", max_length=500)
-
-    date_of_birth = models.DateField(null=True, blank=True)
-    gender = models.CharField(
-        max_length=20,
-        blank=True,
-        choices=[
-            ("male", "Male"),
-            ("female", "Female"),
-            ("other", "Other"),
-            ("prefer_not_to_say", "Prefer not to say"),
-        ],
-    )
-    
     # Contact info
-    city = models.CharField(max_length=100, blank=True)
-    country = models.CharField(max_length=100, blank=True)
-    
-    # Social links
     website = models.URLField(blank=True)
-    github_url = models.TextField(blank=True)
-    twitter_url = models.TextField(blank=True)
+    github_url = models.URLField(blank=True)
+    twitter_url = models.URLField(blank=True)
     linkedin_url = models.URLField(blank=True)
     
     skills = ArrayField(
@@ -129,6 +111,5 @@ class UserProfile(models.Model):
     # Metadata
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
     def __str__(self):
         return f"{self.user.email}'s Profile"

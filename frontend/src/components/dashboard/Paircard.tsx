@@ -1,5 +1,5 @@
 import { DotIcon, Users, Clock, Star, Code, Zap, } from "lucide-react";
-import type { Status, StatusConfigTypes, PairCardProps } from "../../types/"
+import type { Status, StatusConfigTypes, PairCardProps } from "../../types/index.ts"
 
 export default function Paircard({ project_thumbnail, owner, looking_for, project_title, tags, category_tags, skilled_tags, description }: PairCardProps) {
 

@@ -1,7 +1,7 @@
 import connecthlogo from "../../assets/connecthlogo.png";
-import GoogleLoginbtn from "./GoogleLoginbtn";
+import GoogleLoginbtn from "./GoogleLoginbtn.tsx";
 
-const Headerlanding = () => {
+export const Headerlanding = () => {
   return (
     <div className="flex justify-between w-full h-16 px-10 py-2">
       <div className="-mt-2">
@@ -16,4 +16,3 @@ const Headerlanding = () => {
 };
 
 export default Headerlanding;
-

@@ -1,6 +1,6 @@
 from django.db import models
-from django.contrib.postgres.fields import ArrayField
 from django.conf import settings
+
 TAG_CHOICES = [
     ("open", "Open"),
     ("closed", "Closed"),

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Paircard from "../components/dashboard/Paircard";
-import api from "../api/axiosInstance";
-import type { PairCardProps } from "../types";
+import Paircard from "../components/dashboard/Paircard.tsx";
+import api from "../api/axiosInstance.ts";
+import type { PairCardProps } from "../types/index.ts";
 
 const project = () => {
 

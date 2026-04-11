@@ -1,14 +1,13 @@
-import App from "../App";
-import Home from "../Pages/HomePage";
-import Profile from "../Pages/ProfilePage";
-import Project from "../Pages/Project";
-import Feed from "../Pages/Feed";
-import Challenges from "../Pages/Challenges";
-import Notfound from "../components/Notfound";
-import Setting from "../Pages/Setting";
-import Layout from "../components/Layout";
-import CreateProject from "../Pages/Createproject";
-
+import App from "../App.tsx";
+import Home from "../Pages/HomePage.tsx";
+import Profile from "../Pages/ProfilePage.tsx";
+import Project from "../Pages/Project.tsx";
+import Feed from "../Pages/Feed.tsx";
+import Challenges from "../Pages/Challenges.tsx";
+import Notfound from "../components/Notfound.tsx";
+import Setting from "../Pages/Setting.tsx";
+import Layout from "../components/Layout.tsx";
+import CreateProject from "../Pages/Createproject.tsx";
 export const routes =   [
   {
     path: "/",

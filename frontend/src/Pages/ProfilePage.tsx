@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import api from "../api/axiosInstance";
-import { useAuth } from "../hooks/useAuth";
+import api from "../api/axiosInstance.ts";
+import { useAuth } from "../hooks/useAuth.ts";
 import { PencilIcon, PlusSquareIcon, GithubIcon, LinkedinIcon, XIcon, GlobeIcon } from "lucide-react";
-import type { Project } from "../types/project";
-import TagInput from "../components/TagInput";
-import Socilalinks from "../components/Socilalinks";
+import type { Project ,userProfile} from "../types/index.ts";
+import TagInput from "../components/TagInput.tsx";
+import Socilalinks from "../components/Socilalinks.tsx";
 
 const ProfilePage = () => {
   const [editProfile, setEditProfile] = useState(false)
