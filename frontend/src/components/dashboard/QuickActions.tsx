@@ -1,5 +1,4 @@
 import { ArrowUpRight } from 'lucide-react'
-import React from 'react'
 import cp from "../../assets/cp.png"
 import { Link } from 'react-router-dom'
 

@@ -1,253 +1,135 @@
 import Headerlanding from "./components/landing/Headerlanding.tsx";
 import Footerla from "./components/landing/Footerla.tsx";
 import Buttonlanding from "./components/landing/Buttonlanding.tsx";
-import girl1 from "./assets/girl1.jpeg";
-import girl2 from "./assets/girl2.jpeg";
-import girl3 from "./assets/girl3.jpeg";
-import girl4 from "./assets/girl4.jpeg";
-import girl5 from "./assets/girl5.jpeg";
-import boy1 from "./assets/boy1.jpeg";
-import boy2 from "./assets/boy2.jpeg";
-import boy3 from "./assets/boy3.jpeg";
-import boy4 from "./assets/boy4.jpeg";
-import boy5 from "./assets/boy5.jpeg";
 import { FormInput, MessageCircleHeart, UserRoundSearch, UserCog, Lightbulb } from "lucide-react";
 import { useAuth } from "./hooks/useAuth.ts";
 import { Navigate } from "react-router-dom";
 
+const LEFT_AVATARS = [
+  { src: "/girl1.png", cls: "top-48 left-36" },
+  { src: "/girl2.png", cls: "-top-10 left-40" },
+  { src: "/boy1.png",  cls: "top-64 left-80" },
+  { src: "/girl3.png", cls: "top-44 left-24" },
+  { src: "/boy2.png",  cls: "-top-80 left-80" },
+];
+
+const RIGHT_AVATARS = [
+  { src: "/girl4.png", cls: "top-48 left-[1370px]" },
+  { src: "/boy5.png",  cls: "-top-16 left-[1300px]" },
+  { src: "/girl5.png", cls: "-top-56 left-[1070px]" },
+  { src: "/boy3.png",  cls: "top-64 left-[1040px]" },
+  { src: "/boy4.png",  cls: "top-20 left-[1200px]" },
+];
+
+const FEATURES = [
+  { icon: <Lightbulb />,         title: "Collaboration",       desc: "Find your perfect match!",                                                                                         wide: false },
+  { icon: <MessageCircleHeart />, title: "Feedback & Ratings",  desc: "Get valuable insights and build trust.",                                                                           wide: false },
+  { icon: <FormInput />,          title: "Community Forums",    desc: "Engage with the developer community.",                                                                             wide: false },
+  { icon: <UserCog />,            title: "Collaboration Tools", desc: "Streamline your teamwork.",                                                                                        wide: false },
+  { icon: <UserRoundSearch />,    title: "Easy Search",         desc: "Find the right partner fast. Use advanced filters to identify collaborators by skills, experience, and interests.", wide: true  },
+];
+
+const SHOWCASE_IMAGES = [
+  { url: "/avt1.png", cls: "rounded-bl-[50%] rounded-tl-[50%] rounded-br-[50%] mt-10" },
+  { url: "/avt2.png", cls: "relative -top-8 rounded-t-[50%] rounded-br-[50%] mt-10" },
+  { url: "/avt3.png", cls: "rounded-bl-[50%] rounded-tl-[50%] rounded-br-[50%] mt-10" },
+  { url: "/avt4.png", cls: "relative -top-10 rounded-t-[50%] rounded-br-[50%] mt-10" },
+];
+
+const Avatar = ({ src, cls }: { src: string; cls: string }) => (
+  <img src={src} className={`relative rounded-full w-12 h-12 ${cls}`} alt="" />
+);
+
+const FeatureCard = ({ icon, title, desc, wide }: typeof FEATURES[0]) => (
+  <li className={`${wide ? "w-[92%]" : "w-[45%]"} h-44 hover:bg-tiltbtn bg-[#323031] first:bg-tiltbtn hover:text-purple first:text-purple rounded-xl p-10`}>
+    <div className="flex gap-1">{icon}<h1 className={wide ? "" : "text-xl"}>{title}</h1></div>
+    <p className="text-sm font-Ubuntu mt-2">{desc}</p>
+  </li>
+);
+
 function App() {
   const { user, loading } = useAuth();
-  
+
   if (loading) return <div>Loading...</div>;
-    if (user) return <Navigate to="/Home" replace />;
+  if (user) return <Navigate to="/Home" replace />;
 
   return (
-    <div className="bg-[#191919]  w-full">
+    <div className="bg-[#191919] w-full">
       <Headerlanding />
-      <main className=" pb-4 overflow-hidden">
-        <section className="mt-0 mx-0 px-2 text-white  overflow-hidden h-screen w-full ">
+
+      <main className="pb-4 overflow-hidden">
+        <section className="mt-0 mx-0 px-2 text-white overflow-hidden h-screen w-full">
+
           <div className="flex -mt-44 justify-between">
-            <div className="mx-16">
-              <div className="w-44 h-[680px] animate-pulse  rotate-42 bg-transparent border-tiltbtn border-2 border-b-0 rounded-t-full"></div>
-              <div className="w-44 h-[620px] -mt-80 animate-pulse -rotate-47 bg-transparent border-cyan border-2 border-t-0 rounded-b-full"></div>{" "}
-            </div>
-            <div className="mx-16">
-              <div className="w-44 h-[680px] animate-pulse  -rotate-42 bg-transparent border-cyan border-2 border-b-0 rounded-t-full"></div>
-              <div className="w-44 h-[620px] animate-pulse  -mt-80 rotate-47 bg-transparent border-tiltbtn border-2 border-t-0 rounded-b-full"></div>
-            </div>
+            {[
+              ["rotate-42 border-tiltbtn border-b-0 rounded-t-full", "-rotate-47 border-cyan border-t-0 rounded-b-full -mt-80"],
+              ["-rotate-42 border-cyan border-b-0 rounded-t-full", "rotate-47 border-tiltbtn border-t-0 rounded-b-full -mt-80"],
+            ].map((pair, i) => (
+              <div key={i} className="mx-16">
+                <div className={`w-44 h-[680px] animate-pulse bg-transparent border-2 ${pair[0]}`} />
+                <div className={`w-44 h-[620px] animate-pulse bg-transparent border-2 ${pair[1]}`} />
+              </div>
+            ))}
           </div>
-          {/* connect icon */}
+
+          {/* Avatars */}
           <div className="flex justify-between">
-            <div className=" bottom-56 absolute flex ">
-              <div className="  ">
-                <img
-                  src={girl1}
-                  className="top-48 left-36 relative  rounded-full w-12 h-12"
-                ></img>
-                <img
-                  src={girl2}
-                  className="-top-10 left-40 relative  rounded-full w-12 h-12"
-                ></img>
-                <img
-                  src={boy1}
-                  className="top-64 left-80 relative  rounded-full w-12 h-12"
-                ></img>
-                <img
-                  src={girl3}
-                  className="top-44 left-24 relative  rounded-full w-12 h-12"
-                ></img>
-                <img
-                  src={boy2}
-                  className="-top-80 left-80 relative  rounded-full w-12 h-12"
-                ></img>
-              </div>
-              <div className="">
-                <img
-                  src={girl4}
-                  className="top-48 left-[1370px] relative   rounded-full w-12 h-12"
-                ></img>
-                <img
-                  src={boy5}
-                  className="-top-16 left-[1300px] relative  rounded-full w-12 h-12"
-                ></img>
-                <img
-                  src={girl5}
-                  className="-top-56 left-[1070px] relative  rounded-full w-12 h-12"
-                ></img>
-                <img
-                  src={boy3}
-                  className="top-64 left-[1040px] relative  rounded-full w-12 h-12"
-                ></img>
-                <img
-                  src={boy4}
-                  className="top-20 left-[1200px] relative  rounded-full w-12 h-12"
-                ></img>
-              </div>
+            <div className="bottom-56 absolute flex">
+              <div>{LEFT_AVATARS.map(a => <Avatar key={a.src} {...a} />)}</div>
+              <div>{RIGHT_AVATARS.map(a => <Avatar key={a.src} {...a} />)}</div>
             </div>
           </div>
-          {/* hero heading */}
+
           <div
-            className=" absolute top-[35%] flex flex-col left-[50%] text-center  w-[900px] "
+            className="absolute top-[35%] flex flex-col left-[50%] text-center w-[900px]"
             style={{ transform: "translate(-50%, 0)" }}
           >
-            <h1 className="text-4xl font-Ubuntu text-gray-300  font-medium">
+            <h1 className="text-4xl font-Ubuntu text-gray-300 font-medium">
               <span className="text-cyan font-Archivo text-5xl">&lt;&gt;</span>
               INSTANTLY TEAM UP FOR{" "}
-              <span
-                className=" text-green font-medium "
-                style={{
-                  WebkitTextStrokeWidth: "px",
-                  WebkitTextStrokeColor: "",
-                  textShadow: "none",
-                }}
-              >
-                {" "}
-                PROJECTS & HACKATHONS
-              </span>
+              <span className="text-green font-medium">PROJECTS & HACKATHONS</span>
               :FIND YOUR DREAM{" "}
-              <span
-                className="text-green font-medium "
-                style={{
-                  WebkitTextStrokeWidth: "px",
-                  WebkitTextStrokeColor: "",
-                  textShadow: "none",
-                }}
-              >
-                COLLABORATORS{" "}
-              </span>
+              <span className="text-green font-medium">COLLABORATORS </span>
               WITH CONNECT DEVS.
-              <span className="text-cyan font-Archivo  text-5xl">
-                &lt;/&gt;
-              </span>
+              <span className="text-cyan font-Archivo text-5xl">&lt;/&gt;</span>
             </h1>
             <p className="text-gray-400 font-mono mt-4">
-              A platform to connect great talents around the globe,build yours
-              now
+              A platform to connect great talents around the globe, build yours now
             </p>
-            <div className="ml-4 mt-8 ">
-              <Buttonlanding
-                text="START HACK!!"
-                style_button={{ padding: "10px" }}
-              />
-            </div>{" "}
+            <div className="ml-4 mt-8">
+              <Buttonlanding text="START HACK!!" style_button={{ padding: "10px" }} />
+            </div>
           </div>
         </section>
-        {/* <section className="relative mt-4 font-medium ">
-          <div className="overflow-x-hidden text-cyan  tracking-tighter leading-none whitespace-nowrap flex  text-5xl flex-nowrap relative font-Ubuntu  ">
-            <div className="uppercase animate-marquee flex whitespace-nowrap flex-nowrap">
-              <span className="block mr-7"> squad up! code up! level up! </span>
-              <span className="block mr-7"> squad up! code up! level up! </span>
-              <span className="block mr-7"> squad up! code up! level up! </span>
-              <span className="block mr-7"> squad up! code up! level up! </span>
-            </div>
-          </div>
-          <div className="overflow-hidden text-yellow   tracking-tighter text-5xl  font-Ubuntu leading-none whitespace-nowrap flex flex-nowrap">
-            <div className="uppercase flex animate-marquee2 whitespace-nowrap flex-nowrap">
-              <span className="block mr-7">Build Epic shit!</span>
-              <span className="block mr-7">Build Epic shit!</span>
-              <span className="block mr-7">Build Epic shit!</span>
-              <span className="block mr-7">Build Epic shit!</span>
-            </div>
-          </div>
-        </section> */}
 
-        {/*feature section  */}
-
-        <section className="w-screen h-screen px-12 flex mt-10 gap-16">
+        {/* ── Features ── */}
+        <section className="w-screen h-screen px-12 flex mt-10 gap-16 ">
           <div className="w-[45%]">
-            <h1 className="text-[#3f3e3e] text-4xl font-Ubuntu font-semibold mt-4">
+            <h1 className="text-[#a3e6bd] text-4xl font-Ubuntu font-semibold mt-4">
               Hackathons? Projects? Get Your Team Onboard & Brighten Things Up!
             </h1>
-            <div className="mt-8 ">
-              <ul className=" flex-wrap w-full flex gap-x-2 gap-y-3  font-Michroma  text-white">
-                <li className="w-[45%] h-44 bg-tiltbtn text-purple p-10 rounded-xl ">
-                  <div className="flex">
-                    <Lightbulb />
-                    <h1 className="text-xl">Collaboration</h1>
-                  </div>
-                  <p className="text-sm font-Ubuntu mt-2">
-                    {" "}
-                    Find your perfect match!
-                  </p>
-                </li>
-                <li
-                  className="w-[45%] h-44 hover:bg-tiltbtn 
-                  bg-[#323031] rounded-xl hover:text-purple p-10"
-                >
-                  <div className="flex">
-                    <MessageCircleHeart />
-                    <h1>Feedback & Ratings</h1>
-                  </div>
-                  <p className="text-sm font-Ubuntu mt-2">
-                    {" "}
-                    Get valuable insights and build trust.
-                  </p>
-                </li>
-                <li className="w-[45%] h-44 hover:bg-tiltbtn bg-[#323031] rounded-xl hover:text-purple p-10">
-                  <div className="flex">
-                    <FormInput />
-                    <h1>Community Forums</h1>
-                  </div>{" "}
-                  <p className="text-sm font-Ubuntu mt-2">
-                    Engage with the developer community.{" "}
-                  </p>
-                </li>
-                <li className="w-[45%] h-44 hover:bg-tiltbtn bg-[#323031] rounded-xl hover:text-purple p-10">
-                  <div className="flex">
-                    {" "}
-                    <UserCog />
-                    <h1>Collaboration Tools</h1>
-                  </div>
-                  <p className="text-sm font-Ubuntu mt-2">
-                    {" "}
-                    Streamline your teamwork.
-                  </p>
-                </li>
-                <li className="w-[92%] h-44 hover:bg-tiltbtn hover:text-purple bg-[#323031] rounded-xl  p-10 ">
-                  <div className="flex ">
-                    <UserRoundSearch />
-                    <h1>Easy Search</h1>
-                  </div>
-                  <p className="text-sm font-Ubuntu mt-2">
-                    Find the right partner, fast. Utilize advanced search
-                    filters to quickly identify potential collaborators based on
-                    skills, experience, and interests
-                  </p>
-                </li>
-              </ul>
-            </div>
+            <ul className="mt-8 flex-wrap w-full flex gap-x-2 gap-y-3 font-Michroma text-white ">
+              {FEATURES.map(f => <FeatureCard key={f.title} {...f} />)}
+            </ul>
           </div>
-          <div className="w-1/2 ">
-            <ul className="flex flex-wrap gap-x-10  justify-center items-center ">
-              <li
-                className="w-72 h-72 border-2 border-green transform-gpu rounded-bl-[50%] rounded-tl-[50%] rounded-br-[50%]  mt-10"
-                style={{
-                  backgroundImage: `url("https://i.pinimg.com/564x/3a/62/1e/3a621e147ff47f5830acdf06ee4c1b3b.jpg")`,
-                }}
-              ></li>
-              <li
-                className="w-72 h-72 border-2 border-green transform-gpu  relative  -top-8 rounded-t-[50%] rounded-tr-[] rounded-br-[50%] rounded-bl-[0%] mt-10"
-                style={{
-                  backgroundImage: `url("https://i.pinimg.com/564x/d2/70/f5/d270f57ef778b98f5cc129225dcb17a1.jpg")`,
-                }}
-              ></li>
-              <li
-                className="w-72 h-72 border-2 border-green transform-gpu  rounded-bl-[50%] rounded-tl-[50%] rounded-br-[50%] mt-10"
-                style={{
-                  backgroundImage: `url("https://i.pinimg.com/736x/58/a2/f1/58a2f1569332c0754dc50ec230766615.jpg")`,
-                }}
-              ></li>
-              <li
-                className="w-72 h-72 border-2 border-green transform-gpu  relative -top-10 rounded-t-[50%] rounded-tr-[] rounded-br-[50%] rounded-bl-[0%] mt-10"
-                style={{
-                  backgroundImage: `url("https://i.pinimg.com/564x/75/94/d9/7594d994ceca06befc20a4b1695054a5.jpg")`,
-                }}
-              ></li>
+
+          <div className="w-1/2">
+            <ul className="flex flex-wrap gap-x-10 justify-center items-center">
+              {SHOWCASE_IMAGES.map(({ url, cls }) => (
+                <li
+                  key={url}
+                  className={`w-72 h-72 border-4 overflow-hidden border-green transform-gpu bg-cover  ${cls}`}
+                >
+                  <img src={url} alt="" className={`object-cover w-full h-full `} />
+                </li>
+              ))}
             </ul>
           </div>
         </section>
+
         <hr className="border-green mx-28 mt-20" />
       </main>
+
       <Footerla />
     </div>
   );

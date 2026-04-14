@@ -1,7 +1,4 @@
-import forum from "../assets/forum.svg";
-import pitch from "../assets/pitch.png";
-import idea from "../assets/idea.png";
-import projectt from "../assets/projectt.png";
+
 
 const Feed = () => {
   return (
@@ -16,7 +13,6 @@ const Feed = () => {
               />
             </div>
             <div className="mt-10 mx-4 flex gap-x-4">
-              <img src={forum} alt="" className="h-12 w-12" />
               <h1 className="text-3xl text-tiltbtn font-Ubuntu">Forums</h1>
             </div>
 
@@ -24,7 +20,6 @@ const Feed = () => {
               <ul className="flex   flex-col  w-full gap-y-">
                 <li className=" h-20 cursor-pointer hover:bg-secondary flex p-2">
                   <div>
-                    <img src={idea} alt="" className="h-16  w-20 " />
                   </div>
                   <div className="flex justify-center items-center ml-4">
                     <h2 className="text-xl font-semibold text-center">
@@ -36,7 +31,6 @@ const Feed = () => {
                 <hr className="  w-full border-green" />
                 <li className="flex cursor-pointer gap-x-2 p-2 hover:bg-secondary h-20">
                   <div>
-                    <img src={pitch} alt="" className="h-16  w-20 " />
                   </div>
                   <div className="flex justify-center items-center ml-4">
                     <h2 className="text-xl font-semibold text-center ">
@@ -48,7 +42,6 @@ const Feed = () => {
                 <hr className=" w-full  border-green" />
                 <li className=" h-20 hover:bg-secondary flex cursor-pointer  p-2">
                   <div>
-                    <img src={projectt} alt="" className="h-20 w-20" />
                   </div>
                   <div className="flex justify-center items-center ml-4">
                     <h2 className="text-xl font-semibold text-center">
