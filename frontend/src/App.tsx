@@ -54,9 +54,9 @@ function App() {
   if (user) return <Navigate to="/Home" replace />;
 
   return (
-    <div className="bg-[#191919] w-full">
+    <div className="bg-[#191919] w-full leading-none m-0 p-0 flex flex-col ">
       <Headerlanding />
-      <main className="pb-4 overflow-hidden">
+      <main className=" overflow-hidden flex flex-col gap-y-24 p-0 m-0">
         <section className="mt-0 mx-0 px-2 text-white overflow-hidden h-screen w-full">
           <div className="flex -mt-44 justify-between">
             {[
@@ -101,7 +101,7 @@ function App() {
         </section>
 
         {/* ── Features ── */}
-        <section className="w-screen h-screen px-12 flex mt-10 gap-16 ">
+        <section className="w-screen h-screen px-12 flex mt-14 gap-16 ">
           <div className="w-[45%]">
             <h1 className="text-[#8f939179] text-4xl font-Ubuntu font-semibold mt-4">
               Hackathons? Projects? Get Your Team Onboard & Brighten Things Up!
@@ -125,7 +125,7 @@ function App() {
           </div>
         </section>
 
-        <hr className="border-green mx-28 mt-20" />
+        {/* <hr className="border-green mx-28 mt-20" /> */}
       </main>
 
       <Footerla />
