@@ -51,7 +51,7 @@ export default function Paircard({ project_thumbnail, owner, looking_for, projec
 
         </div>
         <div className="flex bg-yellow-0 gap-x-6 ">
-          <img src={project_thumbnail} alt="img" className="w-20 p-1 h-20 transition-transform scale-105 rounded-sm  border-2 border-black border-dashed" />
+          <img src={project_thumbnail}   alt="Project Thumbnail" className="w-20 p-1 h-20 transition-transform scale-105 rounded-sm  border-2 border-black border-dashed" />
           <div className="">
             <h1 className="font-Michroma font-semibold">{owner}</h1>
             {/* <h4 className="text-sm text-gray-700">{roles}</h4> */}

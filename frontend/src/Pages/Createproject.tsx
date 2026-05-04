@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { act, useEffect, useState } from 'react'
 import Dropdown from '../components/project/Dropdown.tsx'
 import MultiSelectAutocomplete from '../components/project/MultiSelectAutocomplete.tsx'
 import UploadFile from '../components/common/UploadFile.tsx'
 import api from '../api/axiosInstance.ts'
+import { uploadToS3 } from '../hooks/useS3Upload.ts'
 
 export default function CreateProject() {
   const [formData, setFormData] = useState({
@@ -18,7 +19,8 @@ export default function CreateProject() {
   const [lookingforOptions, setLookingForOptions] = useState<{ id: number, name: string }[]>([])
   const [skillOptions, setSkillOptions] = useState<{ id: number, name: string }[]>([])
   const [categoryOptions, setCategoryOptions] = useState<{ id: number, name: string }[]>([])
-
+  
+ 
   useEffect(() => {
     api.get('api/looking_for/').then(r => setLookingForOptions(r.data))
     api.get('api/skills/').then(r => setSkillOptions(r.data))
@@ -27,7 +29,6 @@ export default function CreateProject() {
 
   const handleChange = async (field: string, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }))
-    
   }
 
   const handleLaunchBtn = async () => {
@@ -92,7 +93,7 @@ export default function CreateProject() {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 mb-10'>
           <div className='flex flex-col'>
             <label className="text-xl font-medium mb-4 uppercase">Project Thumbnail</label>
-            <UploadFile />
+            <UploadFile onUploadComplete={(s3Key) => handleChange('project_thumbnail', s3Key)} />
           </div>
           <div className='flex flex-col'>
             <MultiSelectAutocomplete

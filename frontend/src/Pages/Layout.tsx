@@ -10,7 +10,7 @@ export default function Layout() {
   const { user, loading } = useAuth();
   
   if (loading) return <Splashscreen/>;
-  // if (!user) return <Navigate to="/" replace />;
+  if (!user) return <Navigate to="/" replace />;
   
   //get pagename from the url
   const getPageName = ():string => {

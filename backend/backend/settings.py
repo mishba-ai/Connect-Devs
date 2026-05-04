@@ -8,6 +8,11 @@ from datetime import timedelta
 
 GOOGLE_OAUTH_CLIENT_ID = os.environ.get("GOOGLE_OAUTH_CLIENT_ID")
 
+AWS_S3_ACCESS_CLIENT_ID = os.environ.get('S3_ACCESS_CLIENT_ID')
+AWS_S3_SECRET_ACCESS_KEY = os.environ.get('S3_SECRET_ACCESS_KEY')
+AWS_S3_REGION = os.environ.get('S3_REGION')
+AWS_S3_BUCKET = os.environ.get('S3_BUCKET')
+
 if not GOOGLE_OAUTH_CLIENT_ID:
     raise ValueError(
         "GOOGLE_OAUTH_CLIENT_ID is missing.",

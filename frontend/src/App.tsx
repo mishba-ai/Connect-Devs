@@ -56,10 +56,8 @@ function App() {
   return (
     <div className="bg-[#191919] w-full">
       <Headerlanding />
-
       <main className="pb-4 overflow-hidden">
         <section className="mt-0 mx-0 px-2 text-white overflow-hidden h-screen w-full">
-
           <div className="flex -mt-44 justify-between">
             {[
               ["rotate-42 border-tiltbtn border-b-0 rounded-t-full", "-rotate-47 border-cyan border-t-0 rounded-b-full -mt-80"],
@@ -75,8 +73,8 @@ function App() {
           {/* Avatars */}
           <div className="flex justify-between">
             <div className="bottom-56 absolute flex">
-              <div>{LEFT_AVATARS.map(a => <Avatar key={a.src} {...a} />)}</div>
-              <div>{RIGHT_AVATARS.map(a => <Avatar key={a.src} {...a} />)}</div>
+              {/* <div>{LEFT_AVATARS.map(a => <Avatar key={a.src} {...a} />)}</div> */}
+              {/* <div>{RIGHT_AVATARS.map(a => <Avatar key={a.src} {...a} />)}</div> */}
             </div>
           </div>
 
@@ -105,7 +103,7 @@ function App() {
         {/* ── Features ── */}
         <section className="w-screen h-screen px-12 flex mt-10 gap-16 ">
           <div className="w-[45%]">
-            <h1 className="text-[#a3e6bd] text-4xl font-Ubuntu font-semibold mt-4">
+            <h1 className="text-[#8f939179] text-4xl font-Ubuntu font-semibold mt-4">
               Hackathons? Projects? Get Your Team Onboard & Brighten Things Up!
             </h1>
             <ul className="mt-8 flex-wrap w-full flex gap-x-2 gap-y-3 font-Michroma text-white ">
