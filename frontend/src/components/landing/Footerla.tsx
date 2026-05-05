@@ -9,7 +9,7 @@ const Footerla = () => {
           
           {/* Logo Section */}
           <div className="flex-shrink-0">
-            <img src={connectlogo} alt="Connect Devs logo" className="h-20 w-auto mb-4" />
+            <img src={connectlogo} alt="Connect Devs logo" className="h-10 w-auto mb-4" />
             <p className="text-slategrey text-sm max-w-[200px]">
               Empowering devs to find teammates and build the future.
             </p>
