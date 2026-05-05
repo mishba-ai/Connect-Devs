@@ -31,6 +31,8 @@ export default {
         cyan: "var(--cyan)",
         tiltbtn: "var(--tiltbtn)",
         pink: "var(--pink)",
+        lavendar:"var(--lavendar)",
+        peach:"var(--peach)",
       },
       scale: {
         "-100": "-1",

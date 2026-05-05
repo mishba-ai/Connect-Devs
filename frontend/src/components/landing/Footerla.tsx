@@ -1,62 +1,71 @@
-import { X } from "lucide-react";
-import linkedin from "../../assets/linkedin.svg";
+import { FiLinkedin, FiGithub, FiTwitter } from "react-icons/fi";
 import connectlogo from "/connectlogo.png";
 
 const Footerla = () => {
   return (
-    <div className="px-10 mt-14  ">
-      <div className="w-full bg-transparent text-white  py-8">
-        <div className="flex items-start gap-16">
-
-          {/* Logo */}
+    <footer className="px-10 mt-24 bg-[#121212] relative shadow-[0_-30px_0_0_#E0D8F0,0_-66px_0_0_#A8D1E7,0_-96px_0_0_#FFCCB3] rounded-t-3xl border-t-4 border-black pt-16 pb-8 font-Ubuntu ">
+      <div className="max-w-7xl mx-auto text-white relative  ">        
+        <div className="flex flex-wrap items-start justify-between gap-10">
+          
+          {/* Logo Section */}
           <div className="flex-shrink-0">
-            <img src={connectlogo} alt="Connect Devs logo" className="h-64 w-72" />
+            <img src={connectlogo} alt="Connect Devs logo" className="h-20 w-auto mb-4" />
+            <p className="text-slategrey text-sm max-w-[200px]">
+              Empowering devs to find teammates and build the future.
+            </p>
           </div>
 
-          {/* Nav columns */}
-          <div className="flex-1">
-            <ul className="flex list-none gap-x-24 font-semibold text-xl font-PressStart mb-6">
-              <li>Products</li>
-              <li>About Us</li>
-              <li>Resources</li>
-              <li>Get in Touch</li>
-            </ul>
+          <div className="flex flex-1 justify-around gap-8">
+            {/* Column 1 */}
+            <div className="flex flex-col gap-4">
+              <h4 className="font-semibold text-yellow text-lg font-PressStart">// Products</h4>
+              <ul className="space-y-2 text-slategrey">
+                <li className="hover:text-green cursor-pointer">Log In</li>
+                <li className="hover:text-green cursor-pointer">Request Access</li>
+              </ul>
+            </div>
 
-            <div className="flex gap-x-24 font-Ubuntu text-gray-500 font-medium text-xl">
-              <ul className="space-y-3">
-                <li>Log In</li>
-                <li>Request Access</li>
+            {/* Column 2 */}
+            <div className="flex flex-col gap-4">
+              <h4 className="font-semibold text-yellow text-lg font-PressStart">// About</h4>
+              <ul className="space-y-2 text-slategrey">
+                <li className="hover:text-green cursor-pointer">Contact Us</li>
+                <li className="hover:text-green cursor-pointer">Features</li>
               </ul>
-              <ul className="space-y-3">
-                <li>Contact Us</li>
-                <li>Features</li>
-              </ul>
-              <ul className="space-y-3">
-                <li>Blog</li>
-              </ul>
-              <ul className="space-y-3">
-                <li>Questions or feedback?</li>
-                <li>We'd love to hear from you</li>
+            </div>
+
+            {/* Column 3 */}
+            <div className="flex flex-col gap-4">
+              <h4 className="font-semibold text-yellow text-lg font-PressStart">// Resources</h4>
+              <ul className="space-y-2 text-slategrey">
+                <li className="hover:text-green cursor-pointer">Blog</li>
+                <li className="hover:text-green cursor-pointer">API Docs</li>
               </ul>
             </div>
           </div>
 
-          {/* Social icons  */}
-          <div className="flex-shrink-0 flex gap-4 pt-1">
-            <a href="" aria-label="X / Twitter">
-              <X size={32} />
-            </a>
-            <a href="" aria-label="LinkedIn">
-              <img src={linkedin} alt="LinkedIn" className="w-10 h-10" />
-            </a>
+          <div className="flex-shrink-0 flex gap-6 items-center  pt-2">
+            <div  className="bg-peach p-2 border-2 border-black rounded-lg shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px] transition-all">
+              <FiTwitter size={24} color="black"/>
+            </div>
+            <div  className="bg-highlight p-2 border-2 border-black rounded-lg shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px] transition-all">
+               <FiLinkedin size={24} color="black"/>
+            </div>
+            <div  className="bg-lavendar p-2 border-2 border-black rounded-lg shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px] transition-all">
+               <FiGithub size={24} color="black"/>
+            </div>
           </div>
-
         </div>
-        <div className="uppercase text-center whitespace- transition-transform scale- text-9xl font-bold mt-12  flex justify-center items-center text-green leading-none ">
+
+        <div className="uppercase text-center text-7xl md:text-9xl font-bold mt-20 text-green leading-none opacity-80 select-none">
           Let's build together
         </div>
+
+        <div className="mt-10 pt-6 border-t border-white/5 flex justify-between text-xs text-slategrey font-mono">
+          <p>© 2026 Connect Devs</p>
+        </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

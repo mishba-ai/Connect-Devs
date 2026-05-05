@@ -19,6 +19,7 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
 @theme {
   --animate-marquee: marquee 25s linear infinite;
   --animate-marquee2: marquee2 25s linear infinite;
@@ -35,6 +36,8 @@ html, body {
   --color-cyan: var(--cyan);
   --color-tiltbtn: var(--tiltbtn);
   --color-pink: var(--pink);
+  --color-lavendar: var(--lavendar);
+  --color-peach: var(--peach);
 
   --scale--100: -1;
 
@@ -90,15 +93,18 @@ html, body {
   --primaryColor: #000000;
   --secondaryColor: #0f0e0e;
   --backgroundColor: #000;
-  --purple: #6637ee;
-  --highlightColor: #deff0a;
+  --purple: #C5B4E3;
+  --highlightColor: #A8D1E7;
   --cyan: #00ffc2;
-  --green: rgb(153, 255, 82);
+  --green: #B4E197;
   --orange: #fe4e00;
-  --yellow: #efff36;
+  --yellow: #F9D371;
   --tiltbtn: rgb(206, 255, 26);
   --red:#fb6612;
-  --pink:rgb(242, 163, 216);
+  --pink:#F9B2A8;
+  --lavendar:#E0D8F0;
+  --peach:#FFCCB3;
+  --slategrey:#333333;
 }
 
 /* width */
@@ -114,7 +120,7 @@ html, body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(206, 255, 26);
+  background: #333333;
   border-radius: px;
 }
 
