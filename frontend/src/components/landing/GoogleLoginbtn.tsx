@@ -32,14 +32,16 @@ const GoogleLoginbtn = ({ text = "Sign in", onSuccess }: GoogleLoginButtonProps)
     };
 
     return (
-        <div className='relative'>
+        <div className='relative group w-56 w-fit'>
             {/* hide the default button */}
-            <div className='opacity-0 absolute inset-0 cursor-pointer'>
+            <div className='opacity-0 absolute inset-0 cursor-pointer z-10'>
                 <GoogleLogin onSuccess={handleSuccess} onError={() => alert('login failed')} width={224} />
             </div>
             <button
                 disabled={isLoading}
-                className="px-2 py-2 w-56 rounded-md hover:shadow-none transition-all hover:translate-x-[3px] border-black shadow-[4px_4px_0px_rgb(255,255,255)] hover:border hover:translate-y-[3px] font-Lexend font-semibold border-2 bg-purple text-black hover:bg-green"
+                className=" px-2 py-3 w-54 rounded-md hover:shadow-none transition-all hover:translate-x-[3px] border-black shadow-[4px_4px_0px_rgb(255,255,255)] hover:border hover:translate-y-[3px] font-Lexend font-semibold border-2 bg-purple text-black group-hover:bg-green 
+                group-hover:translate-x-[3px] 
+                group-hover:translate-y-[3px]"
             >
                 <span>{isLoading ? 'Signing in...' : text}</span>
             </button>

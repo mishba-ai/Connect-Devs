@@ -32,14 +32,6 @@ function App() {
             ))}
           </div>
 
-          {/* Avatars */}
-          <div className="flex justify-between">
-            <div className="bottom-56 absolute flex">
-              {/* <div>{LEFT_AVATARS.map(a => <Avatar key={a.src} {...a} />)}</div> */}
-              {/* <div>{RIGHT_AVATARS.map(a => <Avatar key={a.src} {...a} />)}</div> */}
-            </div>
-          </div>
-
           <div
             className="absolute top-[35%] flex flex-col left-[50%] text-center w-[900px]"
             style={{ transform: "translate(-50%, 0)" }}
@@ -53,37 +45,27 @@ function App() {
               WITH CONNECT DEVS.
               <span className="text-highlight font-Archivo text-5xl">&lt;/&gt;</span>
             </h1>
-            <p className="text-gray-400 font-mono mt-4">
+            <p className="text-neutral-400 font-SpaceGrotesk mt-4">
               A platform to connect great talents around the globe, build yours now
             </p>
-            <div className="ml-4 mt-8">
-              <Buttonlanding text="START HACK!!" style_button={{ padding: "10px" }} />
-            </div>
           </div>
         </section>
 
         {/* ── Features ── */}
         <section className="w-screen gap-y-24 bg-red- flex flex-col justify-center items-center mt-14 px-30 text-white ">
-          {/* <div className="w-[45%]"> */}
-          {/* <h1 className="text-[#8f939179] text-4xl font-Ubuntu font-semibold mt-4">
-              Hackathons? Projects? Get Your Team Onboard & Brighten Things Up!
-            </h1> */}
-
-          {/* </div> */}
-
           <div className="flex justify-around w-full h-screen bg-green- items-center ">
             <img src={collaborate} alt="" />
             <div className="w-[50%] ">
 
-              <h1 className="uppercase text-6xl text-[#C5B4E3] font-presstart whitespace-nowrap">Collaboration</h1>
-              <p className="font-ubuntu text-lg mt-2 text-neutral-400">Find your perfect match!</p>
+              <h1 className="uppercase text-6xl text-[#C5B4E3] font-Anton whitespace-nowrap">Collaboration</h1>
+              <p className="font-SpaceGrotesk text-lg mt-2 text-neutral-400">Find your perfect match!</p>
             </div>
           </div>
 
           <div className="flex justify-around w-full h-screen bg-green- items-center ">
             <div className="w-[50%]">
-              <h1 className="uppercase text-6xl text-[#F9B2A8] font-presstart whitespace-nowrap">Feedback & Ratings</h1>
-              <p className="font-ubuntu text-lg mt-2 text-neutral-400">Find your perfect match!</p>
+              <h1 className="uppercase text-6xl text-[#F9B2A8] font-Anton whitespace-nowrap">Feedback & Ratings</h1>
+              <p className="font-SpaceGrotesk text-lg mt-2 text-neutral-400">Get valuable insights and build trust.</p>
             </div>
             <img src={feedback} alt="" className="w-96 " />
 
@@ -92,23 +74,21 @@ function App() {
           <div className="flex justify-around w-full h-screen bg-green- items-center ">
             <img src={dev_comm} alt="" />
             <div className="w-[50%]">
-              <h1 className="uppercase text-6xl text-[#F9D371] font-presstart whitespace-nowrap">Community Forums</h1>
-              <p className="font-ubuntu text-lg mt-2 text-neutral-400">Engage with the developer community.</p>
+              <h1 className="uppercase text-6xl text-[#F9D371] font-Anton whitespace-nowrap">Community Forums</h1>
+              <p className="font-SpaceGrotesk text-lg mt-2 text-neutral-400">Engage with the developer community.</p>
             </div>
           </div>
 
           <div className="flex justify-around w-full h-screen bg-green- items-center ">
             <div className="w-[50%]">
-              <h1 className="uppercase text-6xl text-[#B4E197] font-presstart whitespace-nowrap">easy search</h1>
-              <p className="font-ubuntu text-lg mt-2 text-neutral-400">Find the right partner fast. Use advanced filters to identify collaborators by skills, experience, and interests.</p>
+              <h1 className="uppercase text-6xl text-[#B4E197] font-Anton whitespace-nowrap">easy search</h1>
+              <p className="font-SpaceGrotesk text-lg mt-2 text-neutral-400">Find the right partner fast. Use advanced filters to identify collaborators by skills, experience, and interests.</p>
             </div>
             <img src={search} alt="" className="w-96" />
           </div>
 
 
         </section>
-
-        {/* <hr className="border-green mx-28 mt-20" /> */}
       </main>
 
       <Footerla />

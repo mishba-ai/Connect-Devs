@@ -57,7 +57,7 @@ const Footerla = () => {
           </div>
         </div>
 
-        <div className="uppercase text-center text-7xl md:text-9xl font-bold mt-20 text-green leading-none opacity-80 select-none">
+        <div className="uppercase text-center text-9xl md:text-9xl font-Anton mt-20 text-green leading-none opacity-80 select-none">
           Let's build together
         </div>
 

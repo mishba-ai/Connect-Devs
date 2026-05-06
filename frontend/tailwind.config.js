@@ -39,13 +39,10 @@ export default {
       },
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
-        Lexend: ["Lexend Mega", "sans-serif"],
-        Encode: ["Encode Sans Semi Condensed", "sans-serif"],
-        Michroma: ["Michroma", "sans-serif"],
-        Archivo: ["Archivo", "sans-serif"],
-        PressStart: ['"Press Start 2P"', "monospace"],
         Ubuntu: ["Ubuntu Mono", "monospace"],
-        RobotoMono: ["Roboto Mono", "monospace"],
+        Anton:["Anton","sans-serif"],
+        SpaceGrotesk:["SpaceGrotesk","sans-serif"],
+        Lexend:["Lexend","sans-serif"]
       },
       boxShadow: {
         custom:
