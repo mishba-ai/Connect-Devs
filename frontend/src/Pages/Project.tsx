@@ -22,7 +22,7 @@ const project = () => {
   }, [])
 
   return (
-    <section className="mt-10">
+    <section className="mt-4">
       <div className="flex items-center h-24 justify-center px-1 mr-24   ">
         <input
           className="py-4 px-6 text-purple text-bas w-full bg-transparent border-2 text-xl border-black rounded-sm hover:shadow-none transition-all hover:translate-x-[3px] shadow-[4px_4px_0px_rgb(0,0,0)] hover:border hover:translate-y-[3px]"

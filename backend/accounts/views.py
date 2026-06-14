@@ -122,7 +122,7 @@ def google_auth(request):
             httponly=True,
             secure=settings.SECURE_COOKIE,
             samesite='Lax',
-            max_age= 604800,
+            max_age= 7*24*3600,
             path='/'
         )
         
@@ -156,15 +156,25 @@ def refresh_token(request):
     try:
         refresh = RefreshToken(refresh_token)
         access_token = str(refresh.access_token)
+        new_refresh_token = str(refresh)
         
         response = Response({'message':'Token refreshed'})
         response.set_cookie(
             key='access_token',
             value=access_token,
             httponly=True,
-            secure=True,
+            secure=settings.SECURE_COOKIE,
             samesite='Lax',
             max_age=3600,
+            path='/'
+        )
+        response.set_cookie(
+            key='refresh_token',
+            value=new_refresh_token,
+            httponly=True,
+            secure=settings.SECURE_COOKIE,
+            samesite='Lax',
+            max_age=7*24*3600,
             path='/'
         )
         return response

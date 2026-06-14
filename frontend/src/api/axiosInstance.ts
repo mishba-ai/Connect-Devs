@@ -6,19 +6,20 @@ const api = axios.create({
     baseURL: BaseUrl ,
     withCredentials: true,
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json' 
     }
 })
 
-//add response interceptor to handle token refresh
 api.interceptors.response.use(
     (response) => response,
     async (err) => {
         const originalRequest = err.config
+        //check if the failed request itself was the refresh endpoint
+                const isRefreshRequest = originalRequest.url?.includes('auth/refresh/')
+
         //if access token expired and we havent retired yet
-        if (err.response?.status === 401 && !originalRequest._retry && originalRequest.retryCount < 1) {
+        if (err.response?.status === 401 && !originalRequest._retry &&!isRefreshRequest) {
             originalRequest._retry = true
-             originalRequest.retryCount = (originalRequest.retryCount || 0) + 1
             try {
                 //try to refresh the token 
                 await api.post('auth/refresh/')

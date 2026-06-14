@@ -60,12 +60,12 @@ export default function CreateProject() {
   }
 
   return (
-    <div className='flex justify-center p- min-h-screen'>
+    <div className='flex justify-center font-SpaceGrotesk p- min-h-screen'>
       <form className="w-full max-w-5xl " onSubmit={(e) => e.preventDefault()}>
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 mb-10'>
           <div className='flex flex-col'>
-            <label className="text-xl font-medium mb-4 uppercase">Project Name</label>
+            <label className="text-xl  mb-4 uppercase">Project Name</label>
             <input
               value={formData.project_title}
               onChange={(e) => handleChange('project_title', e.target.value)}
@@ -92,7 +92,7 @@ export default function CreateProject() {
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 mb-10'>
           <div className='flex flex-col'>
-            <label className="text-xl font-medium mb-4 uppercase">Project Thumbnail</label>
+            <label className="text-xl  mb-4 uppercase">Project Thumbnail</label>
             <UploadFile onUploadComplete={(s3Key) => handleChange('project_thumbnail', s3Key)} />
           </div>
           <div className='flex flex-col'>
@@ -105,7 +105,7 @@ export default function CreateProject() {
         </div>
 
         <div className='flex flex-col mb-10'>
-          <label className="text-xl font-medium mb-4 uppercase">Description</label>
+          <label className="text-xl  mb-4 uppercase">Description</label>
           <textarea
             value={formData.description}
             onChange={(e) => handleChange('description', e.target.value)}
@@ -135,7 +135,7 @@ export default function CreateProject() {
 
         {/* SUBMIT BUTTON */}
         <div className="mt-16 flex justify-end">
-          <button className="bg-black text-[#FFD700] px-12 py-5 text-2xl font-black uppercase border-4 border-black shadow-[8px_8px_0_#FFD700] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+          <button className="bg-[#B4E197] text-[#000] font-Lexend px-12 py-3 rounded-lg text-2xl font-black uppercase border-2 border- shadow-[8px_8px_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
             onClick={handleLaunchBtn}
           >
             Launch Project

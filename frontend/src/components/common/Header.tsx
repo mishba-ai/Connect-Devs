@@ -15,7 +15,7 @@ const Header: React.FC<HeaderTypes> = ({ page, style }) => {
       <div className=" px-20 sticky top-0   text-black flex  justify-between bg-trasparent  w-full  " style={style}>
         <div className=" ">
           {" "}
-          <strong className="text-4xl font-Michroma md:text-4xl font-light text-gray-900  tracking-tight">
+          <strong className="text-4xl font-Ubuntu uppercase md:text-4xl font-light text-neutral-600  tracking-tight">
             {page}
           </strong>{" "}
         </div>
@@ -28,10 +28,9 @@ const Header: React.FC<HeaderTypes> = ({ page, style }) => {
             className="rounded-full w-10 h-10"
           />{" "}
         </Link> */}
-          <img src={connectlogo} alt="" className="h-20 w-20 -mt-4" />
         </div>
       </div>
-      <hr className="mt- border-black flex flex-1 border-[1.3px]" />
+      <hr className="mt-2 border-black flex flex-1 border-[1.3px]" />
     </div>
   );
 };

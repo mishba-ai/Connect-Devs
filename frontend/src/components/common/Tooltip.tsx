@@ -8,7 +8,7 @@ const Tooltip:React.FC<TooltipTypes> = ({ text, children }) => {
   const [isVisible, setIsVisible] = useState(false);
   return (
     <div
-      className="group relative flex flex-col "
+      className="group relative flex flex-col  "
       onMouseEnter={() => setIsVisible(true)}
       onMouseLeave={() => setIsVisible(false)}
     >

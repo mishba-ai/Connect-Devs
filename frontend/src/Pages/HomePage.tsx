@@ -50,10 +50,10 @@ const HomePage = () => {
           <h3 className="text-xl font-Lexend text-white mb-4 tracking-tight">
             Ready to Start Building?
           </h3>
-          <p className="text-white font-Michroma mb-6 max-w-md mx-auto">
+          <p className="text-white font-SpaceGrotesk mb-6 max-w-md mx-auto">
             Join thousands of developers creating amazing projects together
           </p>
-          <button className="px-8 py-3 bg-purple shadow-[4px_4px_0px_rgb(255,255,255)] text-white font-medium rounded-xs">
+          <button className="px-8 py-3 bg-green shadow-[4px_4px_0px_rgb(255,255,255)] text-black font-Lexend font-medium text-lg rounded-xs">
             Explore Projects
           </button>
         </section>

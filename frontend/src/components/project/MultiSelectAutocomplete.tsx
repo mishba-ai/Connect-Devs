@@ -92,7 +92,7 @@ export default function MultiSelectAutocomplete({ label, options, onChange }: ta
                 <div className={`text-md absolute mt-3 w-[80%] h-auto border-2 z-50 border-black focus:outline-none shadow-[4px_4px_0_#000] transition-all duration-200 bg-white `}>
                     {filteredOptions.length > 0 ?
                         (filteredOptions.map((option, index) => (
-                            <div className={`w-full p-2 border-b-2 hover:bg-amber-300  border-black cursor-pointer ${index !== filteredOptions.length - 1 ? 'border-b-2 border-black' : ''}`}
+                            <div className={`w-full p-2 border-b-2 hover:bg-[#fb6f92]  border-black cursor-pointer ${index !== filteredOptions.length - 1 ? 'border-b-2 border-black' : ''}`}
                                 key={index}
                                 onClick={() => addTags(option)}
                             >
