@@ -98,6 +98,7 @@ export default function CreateProject() {
           <div className='flex flex-col'>
             <MultiSelectAutocomplete
               label='Category Tags'
+              limit={4}
               options={categoryOptions}
               onChange={(selected) => handleChange('category_tags', selected)}
             />
@@ -119,6 +120,7 @@ export default function CreateProject() {
           <div className='flex flex-col'>
             <MultiSelectAutocomplete
               label='Skills Required'
+              limit={6}
               options={skillOptions}
               onChange={(selected) => handleChange('skilled_tags', selected)}
             />
@@ -127,6 +129,7 @@ export default function CreateProject() {
             <MultiSelectAutocomplete
               label='Looking For'
               options={lookingforOptions}
+              limit={5}
               onChange={(selected) => handleChange('looking_for', selected)}
             />
 
@@ -135,7 +138,7 @@ export default function CreateProject() {
 
         {/* SUBMIT BUTTON */}
         <div className="mt-16 flex justify-end">
-          <button className="bg-[#B4E197] text-[#000] font-Lexend px-12 py-3 rounded-lg text-2xl font-black uppercase border-2 border- shadow-[8px_8px_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+          <button className="bg-[#B4E197] text-[#000] font-Lexend px-4 py-2 rounded-lg text-xl font-black uppercase border-2 border- shadow-[6px_6px_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
             onClick={handleLaunchBtn}
           >
             Launch Project

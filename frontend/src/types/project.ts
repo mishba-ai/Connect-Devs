@@ -1,4 +1,4 @@
-export type Status = 'Open' | 'On Hold' | 'In progress'|  "closed"
+export type Status = 'open' | 'on_hold' | 'in_progress'|  "closed"
 
 export interface StatusConfigTypes {
   colorClass: string;

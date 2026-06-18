@@ -10,16 +10,16 @@ interface HeaderTypes {
 const Header: React.FC<HeaderTypes> = ({ page, style }) => {
   return (
     <div
-      className="h-18 bg-red-"
+      className="h-14 bg-red-"
     >
-      <div className=" px-20 sticky top-0   text-black flex  justify-between bg-trasparent  w-full  " style={style}>
+      <div className=" px-20 sticky top-0 text-black flex  justify-between bg-trasparent  w-full  " style={style}>
         <div className=" ">
           {" "}
-          <strong className="text-4xl font-Ubuntu uppercase md:text-4xl font-light text-neutral-600  tracking-tight">
+          <strong className="text-4xl font-Ubuntu uppercase md:text-4xl font-light text-neutral-800  tracking-tight">
             {page}
           </strong>{" "}
         </div>
-        <div className="flex gap-x-6">
+        {/* <div className="flex gap-x-6"> */}
           {/* <DarkLight /> */}
           {/* <Link to="/Profile">
           <img
@@ -28,9 +28,9 @@ const Header: React.FC<HeaderTypes> = ({ page, style }) => {
             className="rounded-full w-10 h-10"
           />{" "}
         </Link> */}
-        </div>
+        {/* </div> */}
       </div>
-      <hr className="mt-2 border-black flex flex-1 border-[1.3px]" />
+      <hr className="mt-2 border-neutral-500 flex flex-1 border-[1.3px]" />
     </div>
   );
 };

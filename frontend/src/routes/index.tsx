@@ -17,22 +17,22 @@ export const routes =   [
     path: "",
     element: <Layout />,
     children: [
-      {
-        path: "Home",
-        element: <Home />,
-      },
+      // {
+      //   path: "Home",
+      //   element: <Home />,
+      // },
       {
         path: "Feed",
-        element: <Feed />,
+        element: <Project />,
       },
       {
         path: "Profile",
         element: <Profile />,
       },
-      {
-        path: "Project",
-        element: <Project />,
-      },
+      // {
+      //   path: "Community",
+      //   element: <Feed />,
+      // },
       {
         path:"CreateProject",
         element:<CreateProject/>

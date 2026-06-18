@@ -12,8 +12,8 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   // { path: "/userplus", icon: <UserPlus className="text-white"/>, tooltip: "User" },
-  { path: "/home", icon: <LayoutDashboard className="text-white" />, tooltip: "dashboard" },
-  { path: "/project", icon: <SquareChartGantt className="text-white" />, tooltip: "Project" },
+  // { path: "/home", icon: <LayoutDashboard className="text-white" />, tooltip: "dashboard" },
+  { path: "/feed", icon: <SquareChartGantt className="text-white" />, tooltip: "Feed" },
   { path: "/CreateProject", icon: <AppWindow className="text-white" />, tooltip: "CreateProject" },
   // { path: "/Challenges", icon: challenge, alt: "Challenges", tooltip: "Challenge" },
   // { path: "/Feed", icon: explore, alt: "Explore", tooltip: "Feed" },

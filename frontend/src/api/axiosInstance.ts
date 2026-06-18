@@ -15,7 +15,7 @@ api.interceptors.response.use(
     async (err) => {
         const originalRequest = err.config
         //check if the failed request itself was the refresh endpoint
-                const isRefreshRequest = originalRequest.url?.includes('auth/refresh/')
+         const isRefreshRequest = originalRequest.url?.includes('auth/refresh/')
 
         //if access token expired and we havent retired yet
         if (err.response?.status === 401 && !originalRequest._retry &&!isRefreshRequest) {
