@@ -7,7 +7,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
+Task.md
 # Node/Frontend specific files
 frontend/node_modules/
 frontend/dist/
