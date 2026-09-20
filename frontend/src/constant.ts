@@ -1,11 +1,16 @@
-const colors = [
+
+import type { PairCardProps } from "./types/index.ts";
+
+
+export const colors = [
    "#D1FAE5",
    "#EDE9FE",
    "#FFEDD5",
-   "#F8FAFC"
+   "#d8dadc"
 ]
 
 // render random  colors
-const randomColors =() => {
-    
+export const randomColors =(postId:number):string => {
+      const randomIndex = postId % colors.length
+      return colors[randomIndex]
 }

@@ -15,7 +15,7 @@ export default function Layout() {
   //get pagename from the url
   const getPageName = ():string => {
     const pathname = location.pathname;
-    //remove leadin slash
+    //remove leading slash
     const segments = pathname.split("/").filter((segment) => segment !== "");
 
     if (segments.length === 0) {
@@ -40,7 +40,7 @@ export default function Layout() {
   const isHome = pageName.toLowerCase() === "feed";
 
   return (
-    <div className=" w-full relative bg-[#F8FAFC]">
+    <div className=" w-f ull relative bg-[#F8FAFC]">
       <section className="flex relative z-10 w-full">
        <div className="absolute top-0 right-0 w-[70%] h-[400px] bg-gradient-to-bl from-[#F66254] via-[#0052FF] to-[#8a5f21] opacity-30 pointer-events-none rounded-bl-full blur-3xl z-[-10]"></div>
         <div className="shrink-0">

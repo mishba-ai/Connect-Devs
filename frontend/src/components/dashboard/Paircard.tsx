@@ -1,7 +1,10 @@
 import { DotIcon, Users, Clock, Star, Code, Zap, } from "lucide-react";
 import type { Status, StatusConfigTypes, PairCardProps } from "../../types/index.ts"
+import { randomColors } from "../../constant.ts";
+import { useEffect, useState } from "react";
 
-export default function Paircard({ project_thumbnail, owner, looking_for, project_title, tags, category_tags, skilled_tags, description }: PairCardProps) {
+
+export default function Paircard({ project_thumbnail, owner, looking_for, project_title, tags, category_tags, skilled_tags, description,id }: PairCardProps) {
 
   const statusConfig: Record<Status, StatusConfigTypes> = {
     'open': {
@@ -25,24 +28,20 @@ export default function Paircard({ project_thumbnail, owner, looking_for, projec
       text: "On Hold"
     }
   }
-
+ const [projCardColor] =useState<string>(()=> randomColors(id))
   const currentStatus = statusConfig[(tags ?? 'open') as Status]
-
+  
   return (
-    <div className="w-82 relative scale-95  pb-4 h-auto bg-[#6637ee bg- border-black border-2 bg-amber-50 shadow-[4px_4px_0px_rgb(0,0,0)] transition-all ease-out duration-75 flex  flex-col ">
+    <div className={`w-82 relative   pb-2 h-auto  border-black border-2 shadow-[4px_4px_0px_rgb(0,0,0)] transition-transform scale-90 ease-out duration-75 flex   flex-col`} style={{ backgroundColor: projCardColor }}>
       {/* header section */}
-      <div className="p-4  border-b-2 border-black bg-rd rounded-[0.5rem]">
+      <div className="p-4 bg-rd ">
         <div className="flex justify-between  items-start mb-3">
-          <h1 className="font-SpaceGrotesk text-xl font-semibold">{project_title}</h1>
+          <img src={project_thumbnail}   alt="Project Thumbnail" className="w-12 p-1 h-12 transition-transform scale-105 rounded-sm  border-2 border-black border-dashed"   onError={(e) => console.log("Thumbnail failed:", project_thumbnail)}/>
           {/* status */}
-          <div className={`flex items-center font-Ubuntu rounded-xs px-1  justify-center border-black py- text-xs font-medium border ${currentStatus?.colorClass} ${currentStatus?.bgColorClass}`}>
+          {/* <div className={`flex items-center font-Ubuntu rounded-xs px-1  justify-center border-black py- text-xs font-medium border ${currentStatus?.colorClass} ${currentStatus?.bgColorClass}`}>
             <div className="bg-amber-"> <DotIcon size={12} /></div>
             <span className={` `}>{tags}</span>
-          </div>
-        </div>
-
-        {/* category */}
-        <div className="flex gap-1 mb-3">
+          </div> */}
           <ul className="flex gap-x-1">
             {(category_tags ?? []).map((ctg) => (
               <li key={ctg.id} className="px-3 py-1 flex gap-x-1 bg-purple-100 text-purple-800 text-xs font-bold border border-black rounded">{ctg.name}</li>
@@ -50,8 +49,14 @@ export default function Paircard({ project_thumbnail, owner, looking_for, projec
           </ul>
         </div>
 
-        <div className="flex bg-yellow-0 gap-x-6 ">
-          <img src={project_thumbnail}   alt="Project Thumbnail" className="w-20 p-1 h-20 transition-transform scale-105 rounded-sm  border-2 border-black border-dashed"   onError={(e) => console.log("Thumbnail failed:", project_thumbnail)}/>
+        {/* category */}
+        <div className=" gap-1 mb-2">
+          <h1 className="font-SpaceGrotesk text-xl font-semibold">{project_title}</h1>
+          
+        </div>
+
+        <div className="flex gap-x-6 ">
+         
           <div className="">
             <h1 className="font-Michroma font-semibold">{owner}</h1>
             {/* <h4 className="text-sm text-gray-700">{roles}</h4> */}
@@ -63,10 +68,8 @@ export default function Paircard({ project_thumbnail, owner, looking_for, projec
 
       {/* skills required */}
       <div className="mt-4 font-Lexend flex justify-center">
-        <div className="  p-4 text-black  bg-[#b2e2bb bg-white border-[0.2vmin] border-black rounded-[1vmin] w-64 h-40"
-          style={{
-            boxShadow: '0.6vmin 0.6vmin #f8e0fa, 0.2vmin 0.2vmin #000, 0.5vmin 0.5vmin #000, 1vmin 0.65vmin #000'
-          }} >
+        <div className="p- text-black w-64 h-40"
+           >
           <h1 className="">Skills Required</h1>
           <ul className="flex gap-1 mt-1 ">
             {(skilled_tags ?? []).map((skill) => (
@@ -87,8 +90,8 @@ export default function Paircard({ project_thumbnail, owner, looking_for, projec
 
 
       {/* footer */}
-<div className="flex justify-center items-center mt-auto pt-4">
-  <button className="bg-black p-2 text-white text-xl w-64 font-Michroma">
+<div className="flex justify-center items-center mt-auto pt-">
+  <button className="bg-black p-1 text-white text-xl w-64 font-Michroma">
     Join Project
   </button>
 </div>

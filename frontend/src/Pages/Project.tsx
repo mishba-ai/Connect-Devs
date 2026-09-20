@@ -3,6 +3,8 @@ import Paircard from "../components/dashboard/Paircard.tsx";
 import api from "../api/axiosInstance.ts";
 import type { PairCardProps } from "../types/index.ts";
 
+
+
 const project = () => {
 
   const [projects, setProjects] = useState<PairCardProps[]>([])
@@ -30,7 +32,7 @@ const project = () => {
           placeholder="search"
         ></input>
       </div>
-      <div className="mt-14 mx- mb-2 flex flex-wrap gap-8">
+      <div className="mt-14 mx- mb-2 flex flex-wra gap-1">
 
         {projects?.map(p => {
           if (!p || !p.id) {

@@ -18,7 +18,7 @@ const GoogleLoginbtn = ({ text = "Sign in", onSuccess }: GoogleLoginButtonProps)
             if (credentialResponse.credential) {
                 await login(credentialResponse.credential);
                 onSuccess?.();
-                navigate('/home'); 
+                navigate('/feed'); 
             }
         } catch (error) {
             console.error('Login failed:', error);

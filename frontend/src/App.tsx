@@ -13,7 +13,7 @@ function App() {
   const { user, loading } = useAuth();
 
   if (loading) return <div>Loading...</div>;
-  if (user) return <Navigate to="/Feed" replace />;
+  if (user) return <Navigate to="/feed" replace />;
 
   return (
     <div className="bg-[#121212] w-full leading-none m-0 p-0 flex flex-col ">

@@ -1,5 +1,6 @@
-import { createContext, useState, useEffect, useContext } from "react";
+import { createContext, useState, useEffect, useContext, useRef } from "react";
 import api from "../api/axiosInstance.ts";
+
 import type { AuthContextType, User, AuthProviderProps } from "../types/index.ts";
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -7,6 +8,7 @@ export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 export const AuthProvider = ({ children }: AuthProviderProps) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const hasCheckedAuth = useRef(false);
 
     const checkAuth = async () => {
         try {
@@ -48,6 +50,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
 
     useEffect(() => {
+        if (hasCheckedAuth.current) return;
+        hasCheckedAuth.current = true;
         checkAuth();
     }, []);
 
