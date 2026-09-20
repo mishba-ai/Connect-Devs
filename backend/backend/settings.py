@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "accounts",
     "projects",
+    'rest_framework_simplejwt.token_blacklist',
 ]
 AUTH_USER_MODEL = "accounts.User"
 
@@ -67,6 +68,7 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
+    'UPDATE_LAST_LOGIN': True,
     "AUTH_HEADER_TYPES": ("Bearer",),
     "AUTH_COOKIE": "refresh_token",  
     "AUTH_COOKIE_HTTP_ONLY": True,  # Prevents JS from reading it

@@ -12,6 +12,9 @@ from django.conf import settings
 from .models import User, UserProfile
 import os 
 from .serializers import UserProfileSerializer , UserSerializer
+from datetime import timedelta
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.exceptions import TokenError
 
 @csrf_exempt
 @api_view(['POST'])
@@ -144,24 +147,29 @@ def google_auth(request):
 @permission_classes([AllowAny])
 def refresh_token(request):
     """refresh access token using refresh token from cookie"""
-    refresh_token = request.COOKIES.get('refresh_token')
-    
-    
-    if not refresh_token:
+    old_refresh_token = request.COOKIES.get('refresh_token')
+    if not old_refresh_token:
         return Response(
-            {'error':'Refresh token not found'},
+            {'error': 'Refresh token not found'},
             status=status.HTTP_401_UNAUTHORIZED
         )
+  
         
     try:
-        refresh = RefreshToken(refresh_token)
-        access_token = str(refresh.access_token)
-        new_refresh_token = str(refresh)
+        old_refresh = RefreshToken(old_refresh_token)
+        user_id = old_refresh['user_id']
+        
+        #blacklist the used token
+        old_refresh.blacklist()
+        
+        #issue a brand new refresh + acess token pair
+        new_refresh_token = RefreshToken.for_user(User.objects.get(id=user_id))
+        new_access_token = str(new_refresh_token.access_token)
         
         response = Response({'message':'Token refreshed'})
         response.set_cookie(
             key='access_token',
-            value=access_token,
+            value=new_access_token,
             httponly=True,
             secure=settings.SECURE_COOKIE,
             samesite='Lax',
@@ -170,7 +178,7 @@ def refresh_token(request):
         )
         response.set_cookie(
             key='refresh_token',
-            value=new_refresh_token,
+            value=str(new_refresh_token),
             httponly=True,
             secure=settings.SECURE_COOKIE,
             samesite='Lax',
@@ -178,20 +186,31 @@ def refresh_token(request):
             path='/'
         )
         return response
+    except TokenError as e:
+        print(f"refresh_token TokenError: {e}")
+        return Response({'error': 'Invalid or blacklisted refresh token'}, status=status.HTTP_401_UNAUTHORIZED)
+    except User.DoesNotExist:
+        return Response({'error': 'User not found'}, status=status.HTTP_401_UNAUTHORIZED)
     except Exception as e:
-        return Response(
-            {'error': 'Invalid refresh token'},
-            status=status.HTTP_401_UNAUTHORIZED
-        )
+        print(f"refresh_token error: {e}")
+        return Response({'error': 'Invalid refresh token'}, status=status.HTTP_401_UNAUTHORIZED)
     
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def logout(request):
-    """logout user by clearing cookies"""
-    response = Response({'message': 'Logged out successful'})
-    response.delete_cookie('access_token')
-    response.delete_cookie('refresh_token')
-    return response
+   """logout user: blacklist refresh token and clear cookies"""
+   refresh_token = request.COOKIES.get('refresh_token')
+   if refresh_token:
+        try:
+            RefreshToken(refresh_token).blacklist()
+        except TokenError:
+            pass  # already invalid/expired, nothing to do
+
+   """logout user by clearing cookies"""
+   response = Response({'message': 'Logged out successful'})
+   response.delete_cookie('access_token')
+   response.delete_cookie('refresh_token')
+   return response
     
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
