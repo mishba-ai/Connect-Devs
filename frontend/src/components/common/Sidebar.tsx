@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import Tooltip from "./Tooltip.tsx";
-import { SquareUser, LayoutDashboard, UserPlus, SquareChartGantt, AppWindow } from "lucide-react";
+import { SquareUser, LayoutDashboard, UserPlus,Plus, SquareChartGantt, AppWindow,Users ,MessageSquareMore} from "lucide-react";
 import React from "react";
 import connectlogo from "/connectlogo.png"
 interface NavItem {
@@ -14,9 +14,9 @@ const navItems: NavItem[] = [
   // { path: "/userplus", icon: <UserPlus className="text-white"/>, tooltip: "User" },
   // { path: "/home", icon: <LayoutDashboard className="text-white" />, tooltip: "dashboard" },
   { path: "/feed", icon: <SquareChartGantt className="text-white" />, tooltip: "Feed" },
-  { path: "/CreateProject", icon: <AppWindow className="text-white" />, tooltip: "CreateProject" },
-  // { path: "/Challenges", icon: challenge, alt: "Challenges", tooltip: "Challenge" },
-  // { path: "/Feed", icon: explore, alt: "Explore", tooltip: "Feed" },
+  { path: "/CreateProject", icon: <Plus className="text-white" />, tooltip: "CreateProject" },
+  { path: "/matches", icon: <Users className="text-white"/>, alt: "Matches", tooltip: "Matches" },
+  { path: "/rooms", icon: <MessageSquareMore className="text-white"/>, alt: "rooms", tooltip: "rooms" },
   // { path: "/Profile", icon: profile, alt: "Profile", tooltip: "Profile" },
 ];
 
@@ -49,7 +49,7 @@ function Sidebar({ style }: SidebarTypes) {
         <hr className="border-gray-300 m-3 pb-4" />
 
         <div className="">
-          <ul className="gap-y-10 flex justify-center items-center flex-col list-none">
+          <ul className="gap-y-8 flex justify-center items-center flex-col list-none">
             {navItems.map((item) => (
               <li key={item.path} className="">
                 <Tooltip text={item.tooltip}>

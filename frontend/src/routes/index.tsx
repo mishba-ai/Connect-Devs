@@ -8,6 +8,8 @@ import Notfound from "../Pages/Notfound.tsx";
 import Setting from "../Pages/Setting.tsx";
 import Layout from "../Pages/Layout.tsx";
 import CreateProject from "../Pages/Createproject.tsx";
+import Matches from "../Pages/Matches.tsx";
+import Rooms from "../Pages/Rooms.tsx";
 
 export const routes = [
   {
@@ -21,6 +23,9 @@ export const routes = [
       // { index: true, element: <Project /> },
       { path: "Feed", element: <Project />, },
       { path: "Profile", element: <Profile />, },
+      { path: "Matches", element: <Matches />, },
+      { path: "Rooms", element: <Rooms />, },
+
       // {//   path: "Community",  //   element: <Feed />,// },
       { path: "CreateProject", element: <CreateProject /> },
       { path: "Challenges", element: <Challenges />, },
