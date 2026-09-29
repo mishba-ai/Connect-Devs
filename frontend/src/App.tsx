@@ -1,6 +1,5 @@
 import Headerlanding from "./components/landing/Headerlanding.tsx";
 import Footerla from "./components/landing/Footerla.tsx";
-import Buttonlanding from "./components/landing/Buttonlanding.tsx";
 import { useAuth } from "./hooks/useAuth.ts";
 import { Navigate } from "react-router-dom";
 import collaborate from './assets/collaborate.png'
