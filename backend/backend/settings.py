@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "accounts",
     "projects",
+    "matches",
+    "rooms",
     'rest_framework_simplejwt.token_blacklist',
 ]
 AUTH_USER_MODEL = "accounts.User"
